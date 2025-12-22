@@ -34,18 +34,18 @@ const Home = () => {
                             {/* Platform Shadow/Glow */}
                             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-4/5 h-12 md:h-24 bg-gradient-to-t from-black via-brand-red/10 to-transparent blur-3xl z-0 transition-all duration-1000 group-hover:via-brand-red/20" />
 
-                            {/* Smoke/Cloud Oval Background */}
+                            {/* Smoke/Cloud Oval Background - Visible only on Laptop/Desktop */}
                             <img
                                 src="/assets/figma-img/smoke0cloud.png"
                                 alt="Smoke Effect"
-                                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] md:w-[130%] max-w-none h-auto object-contain opacity-80 z-0 pointer-events-none mix-blend-screen"
+                                className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mt-[100px] md:w-[1750px] max-w-none h-auto object-contain opacity-80 z-0 pointer-events-none mix-blend-screen"
                             />
 
                             {/* CLEAN IMAGE: No background text/ghosting behind it */}
                             <img
                                 src="/assets/figma-img/car2.png"
                                 alt="Modified Porsche GT3 RS"
-                                className="relative z-10 w-[90%] md:w-[90%] h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700 ease-out"
+                                className="relative z-10 w-[90%] md:w-[90%] h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700 ease-out md:-mt-[800px]"
                             />
                         </div>
 
