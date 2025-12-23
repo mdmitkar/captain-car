@@ -202,18 +202,18 @@ const Home = () => {
                 {/* Mobile View: Manual Horizontal Scroll (Snap) */}
                 <div className="md:hidden w-full overflow-x-auto pb-8 px-6 flex gap-4 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
                     {[
-                        { title: 'Bespoke Interiors', desc: 'Hand-stitched leather tailored to perfection.', img: '/seatcover8.png', color: 'from-red-900' },
-                        { title: 'Concert Audio', desc: 'High-fidelity sound systems that shake the ground.', img: '/bossaudiosystem.png', color: 'from-blue-900' },
-                        { title: 'Privacy Films', desc: 'Advanced heat rejection and UV protection.', img: '/suntekwindowfilm.png', color: 'from-yellow-900' },
-                        { title: 'Tech Upgrades', desc: 'Android players, mood lighting, & security.', img: '/cardisplay2.png', color: 'from-purple-900' },
-                        { title: 'Exterior Accessories', desc: 'Roof carriers, wheel caps, and detailing.', img: '/roofcarrier.png', color: 'from-green-900' },
+                        { title: 'Bespoke Interiors', desc: 'Hand-stitched leather tailored to perfection.', img: '/seatcover8.png' },
+                        { title: 'Concert Audio', desc: 'High-fidelity sound systems that shake the ground.', img: '/bossaudiosystem.png' },
+                        { title: 'Privacy Films', desc: 'Advanced heat rejection and UV protection.', img: '/suntekwindowfilm.png' },
+                        { title: 'Tech Upgrades', desc: 'Android players, mood lighting, & security.', img: '/cardisplay2.png' },
+                        { title: 'Exterior Accessories', desc: 'Roof carriers, wheel caps, and detailing.', img: '/roofcarrier.png' },
                     ].map((service, idx) => (
-                        <div key={idx} className="flex-shrink-0 w-[85vw] snap-center h-[500px] relative rounded-3xl overflow-hidden border border-white/10 group">
-                            <div className={`absolute inset-0 bg-gradient-to-b ${service.color} to-black opacity-30`} />
-                            <img src={service.img} alt={service.title} className="absolute inset-0 w-full h-full object-contain p-8" />
-                            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black via-black/80 to-transparent">
-                                <h3 className="text-3xl font-black text-white uppercase italic mb-2">{service.title}</h3>
-                                <p className="text-gray-400 text-sm mb-4">{service.desc}</p>
+                        <div key={idx} className="flex-shrink-0 w-[85vw] snap-center h-[380px] relative rounded-3xl overflow-hidden border border-white/10 group">
+                            <div className="absolute inset-0 bg-gradient-to-b from-[#1a0505] to-black opacity-60" />
+                            <img src={service.img} alt={service.title} className="absolute inset-0 w-full h-full object-contain" />
+                            <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black via-black/90 to-transparent">
+                                <h3 className="text-2xl font-black text-white uppercase italic mb-2">{service.title}</h3>
+                                <p className="text-gray-400 text-xs mb-3">{service.desc}</p>
                                 <span className="text-brand-red font-bold uppercase tracking-widest text-xs flex items-center gap-2">Explore <span>→</span></span>
                             </div>
                         </div>
@@ -222,26 +222,26 @@ const Home = () => {
 
                 {/* Desktop View: Auto Marquee */}
                 <div className="hidden md:block relative w-full overflow-hidden pb-4">
-                    <div className="flex gap-8 animate-marquee-slow hover:[animation-play-state:paused] w-max">
+                    <div className="flex gap-6 animate-marquee-slow hover:[animation-play-state:paused] w-max">
                         {/* Duplicate the array 3 times for seamless looping */}
                         {[...Array(3)].map((_, i) => (
                             <React.Fragment key={i}>
                                 {[
-                                    { title: 'Bespoke Interiors', desc: 'Hand-stitched leather tailored to perfection.', img: '/seatcover8.png', color: 'from-red-900' },
-                                    { title: 'Concert Audio', desc: 'High-fidelity sound systems that shake the ground.', img: '/bossaudiosystem.png', color: 'from-blue-900' },
-                                    { title: 'Privacy Films', desc: 'Advanced heat rejection and UV protection.', img: '/suntekwindowfilm.png', color: 'from-yellow-900' },
-                                    { title: 'Tech Upgrades', desc: 'Android players, mood lighting, & security.', img: '/cardisplay2.png', color: 'from-purple-900' },
-                                    { title: 'Exterior Accessories', desc: 'Roof carriers, wheel caps, and detailing.', img: '/roofcarrier.png', color: 'from-green-900' },
+                                    { title: 'Bespoke Interiors', desc: 'Hand-stitched leather tailored to perfection.', img: '/seatcover8.png' },
+                                    { title: 'Concert Audio', desc: 'High-fidelity sound systems that shake the ground.', img: '/bossaudiosystem.png' },
+                                    { title: 'Privacy Films', desc: 'Advanced heat rejection and UV protection.', img: '/suntekwindowfilm.png' },
+                                    { title: 'Tech Upgrades', desc: 'Android players, mood lighting, & security.', img: '/cardisplay2.png' },
+                                    { title: 'Exterior Accessories', desc: 'Roof carriers, wheel caps, and detailing.', img: '/roofcarrier.png' },
                                 ].map((service, idx) => (
-                                    <div key={`${i}-${idx}`} className="w-[400px] flex-shrink-0 relative h-[500px] rounded-3xl overflow-hidden group border border-white/10 bg-white/5">
-                                        <div className={`absolute inset-0 bg-gradient-to-b ${service.color} to-black opacity-30 group-hover:opacity-20 transition-opacity duration-500`} />
-                                        <img src={service.img} alt={service.title} className="absolute inset-0 w-full h-full object-contain p-8 group-hover:scale-105 transition-transform duration-700" />
+                                    <div key={`${i}-${idx}`} className="w-[350px] flex-shrink-0 relative h-[400px] rounded-3xl overflow-hidden group border border-white/10 bg-white/5">
+                                        <div className="absolute inset-0 bg-gradient-to-b from-[#1a0505] to-black opacity-50 group-hover:opacity-40 transition-opacity duration-500" />
+                                        <img src={service.img} alt={service.title} className="absolute inset-0 w-full h-full object-contain group-hover:scale-105 transition-transform duration-700" />
 
-                                        <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black via-black/80 to-transparent">
-                                            <h3 className="text-3xl font-black text-white uppercase italic mb-2 tracking-tighter">{service.title}</h3>
-                                            <p className="text-gray-300 mb-6 font-medium text-sm leading-relaxed">{service.desc}</p>
+                                        <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black via-black/90 to-transparent">
+                                            <h3 className="text-2xl font-black text-white uppercase italic mb-2 tracking-tighter">{service.title}</h3>
+                                            <p className="text-gray-300 mb-4 font-medium text-xs leading-relaxed">{service.desc}</p>
                                             <span className="inline-flex items-center gap-2 text-brand-red font-bold uppercase tracking-widest text-xs group-hover:gap-4 transition-all">
-                                                Explore Service <span>→</span>
+                                                Explore <span>→</span>
                                             </span>
                                         </div>
                                     </div>
