@@ -323,7 +323,7 @@ const Home = () => {
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.986877524957!2d73.0534!3d19.2829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDE2JzU4LjQiTiA3M8KwMDMnMTIuMiJF!5e0!3m2!1sen!2sin!4v1634567890123!5m2!1sen!2sin&q=Captain+Car+Accessories,+Next+to+Greenland+Hotel,+Chavindra,+Bhiwandi"
                                 width="100%"
                                 height="100%"
-                                className="w-full h-full grayscale invert-[.9] contrast-[1.1] hover:grayscale-0 hover:invert-0 hover:contrast-100 transition-all duration-700"
+                                className="w-full h-full grayscale-0 invert-0 md:grayscale md:invert-[.9] md:contrast-[1.1] md:hover:grayscale-0 md:hover:invert-0 md:hover:contrast-100 transition-all duration-700"
                                 style={{ border: 0 }}
                                 allowFullScreen=""
                                 loading="lazy"
