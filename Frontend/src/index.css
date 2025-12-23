@@ -3,8 +3,14 @@
 
 :root {
   --color-brand-red: #DC143C;
-  --color-brand-red-dark: #B22222;
-  --color-brand-red-light: #FF6B6B;
+  --color-brand-red-dark: #8B0000;
+  --color-brand-red-light: #FF4D4D;
+  --color-premium-black: #050505;
+  --color-carbon-gray: #1a1a1a;
+  --color-metallic-silver: #C0C0C0;
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --neon-glow: 0 0 10px rgba(220, 20, 60, 0.5), 0 0 20px rgba(220, 20, 60, 0.3);
 }
 
 * {
@@ -14,11 +20,36 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: var(--color-premium-black);
   color: white;
-  font-family: Inter, system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  /* Prevent horizontal scroll from entry animations */
+}
+
+/* Custom Utilities for "Rich" Feel */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-silver {
+  background: linear-gradient(to right, #A0A0A0, #F0F0F0, #A0A0A0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 #root {
