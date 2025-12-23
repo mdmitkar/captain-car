@@ -51,7 +51,7 @@ const Home = () => {
                                 loop
                                 muted
                                 playsInline
-                                className="relative z-10 w-full h-auto object-cover md:-mt-[700px]"
+                                className="relative z-10 w-full h-auto object-cover -mt-90 md:-mt-[700px]"
                             >
                                 <source src="/assets/figma-img/car-video - Made with Clipchamp.mp4" type="video/mp4" />
                                 Your browser does not support the video tag.
