@@ -37,16 +37,20 @@ const Products = () => {
                 { id: 10, name: "Touch Display Unit 1", img: "/cardisplay1.png" },
                 { id: 11, name: "Touch Display Unit 2", img: "/cardisplay2.png" },
                 { id: 12, name: "Touch Display Unit 3", img: "/cardisplay3.png" },
-                { id: 13, name: "Pioneer System", img: "/pioneeraudio.png" },
-                { id: 14, name: "Sony Experience", img: "/sonymakebelive.png" },
+                { id: 41, name: "Premium Audio 1", img: "/assets/car-audio-1.png" },
+                { id: 42, name: "Premium Audio 2", img: "/assets/car-audio-2.png" },
+                { id: 43, name: "Premium Audio 3", img: "/assets/car-audio-3.png" },
             ]
         },
         {
             title: "Speakers & Woofers",
             id: "speakers",
             items: [
-                { id: 15, name: "Audio Bull Woofer", img: "/audiobull.png" },
+
                 { id: 16, name: "Boss Audio System", img: "/bossaudiosystem.png" },
+                { id: 38, name: "Pro Series Speaker", img: "/assets/car-speaker.png" },
+                { id: 39, name: "Component Speaker", img: "/assets/car-speaker-2.png" },
+                { id: 40, name: "Coaxial Speaker Pair", img: "/assets/car-speaker-3.png" },
             ]
         },
         {
@@ -81,14 +85,20 @@ const Products = () => {
             title: "Wheel Caps",
             id: "wheel-caps",
             items: [
-                { id: 22, name: "Sport Alloy Style", img: "/tyremiddle.png" },
+                { id: 22, name: "Sport Ring Cap", img: "/assets/car-wheel cap.png" },
+                { id: 34, name: "Matte Black Cap", img: "/assets/car-wheel cap2.png" },
+                { id: 35, name: "Silver Star Cap", img: "/assets/car-wheel cap-3.png" },
             ]
         },
         {
             title: "Floor Mats",
             id: "floor-mats",
             items: [
-                { id: 23, name: "3D Custom Mats", img: "/uploaded_cloud_0.png" }, // Placeholder based on plan
+                { id: 23, name: "Premium 7D Mat", img: "/assets/floor-mat.png" },
+                { id: 32, name: "Luxury Floor Mat", img: "/assets/floor-mat2.png" },
+                { id: 33, name: "All-Weather Mat", img: "/assets/floor-mat3.png" },
+                { id: 36, name: "Custom Stitch Mat", img: "/assets/floor-mat4.png" },
+                { id: 37, name: "Rubber Heavy Mat", img: "/assets/floor-mat5.png" },
             ]
         }
     ];
@@ -119,8 +129,20 @@ const Products = () => {
             <div className="max-w-7xl mx-auto px-6 pb-32">
                 {categories.map((category, idx) => {
                     const isExpanded = expandedCategories[category.id];
-                    const visibleItems = isExpanded ? category.items : category.items.slice(0, 6);
-                    const hasMore = category.items.length > 6;
+                    let visibleItems = isExpanded ? category.items : category.items.slice(0, 6);
+                    let hasMore = category.items.length > 6;
+
+                    // Special logic for categories expanding from 3 items
+                    // 'wheel-caps' needs to show only 3 but view all expands to custom view
+                    if (['wheel-caps', 'floor-mats', 'seat-covers', 'speakers', 'audio-video', 'sun-control'].includes(category.id)) {
+                        visibleItems = isExpanded ? category.items : category.items.slice(0, 3);
+                        hasMore = category.items.length > 3;
+                    }
+
+                    // Special Override for Wheel Caps logic: Always allow 'View All' even if items <= 3 (to show full image)
+                    if (category.id === 'wheel-caps' && !isExpanded) {
+                        hasMore = true;
+                    }
 
                     return (
                         <div key={category.id} className="mb-24 last:mb-0">
@@ -172,6 +194,27 @@ const Products = () => {
                                     </ScrollReveal>
                                 ))}
                             </div>
+
+                            {/* Special Full Image for Wheel Caps when expanded */}
+                            {category.id === 'wheel-caps' && isExpanded && (
+                                <ScrollReveal direction="up" delay={200}>
+                                    <div className="mt-8 relative w-full bg-[#111] rounded-3xl overflow-hidden border border-white/5 group">
+                                        <div
+                                            className="relative h-[500px] w-full bg-[#1a1a1a] p-0 flex items-center justify-center overflow-hidden cursor-zoom-in"
+                                            onClick={() => setSelectedImage("/assets/car-wheel cap-ful.png")}
+                                        >
+                                            <img
+                                                src="/assets/car-wheel cap-ful.png"
+                                                alt="Full Wheel Cap Collection"
+                                                className="w-full h-full object-contain md:object-cover filter drop-shadow-2xl"
+                                            />
+                                            <div className="absolute bottom-8 left-8 bg-black/50 backdrop-blur-md px-6 py-2 rounded-full border border-white/10">
+                                                <span className="text-white font-bold uppercase tracking-widest text-sm">Full Collection View</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ScrollReveal>
+                            )}
 
                             {hasMore && (
                                 <div className="flex justify-center mt-12">
