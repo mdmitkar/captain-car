@@ -67,9 +67,9 @@ const Services = () => {
 
 const services = [
     {
-        title: "Car Audio Systems",
-        description: "Transform your daily drive into a concert. We install premium sound systems, heavy-duty amplifiers, and earth-shaking subwoofers from global top brands.",
-        image: "/pioneeraudio.png",
+        title: "Concert Audio",
+        description: "High-fidelity sound systems that shake the ground.",
+        image: "/bossaudiosystem.png",
         icon: (
             <svg className="w-full h-full fill-current" viewBox="0 0 24 24">
                 <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
@@ -97,9 +97,9 @@ const services = [
         )
     },
     {
-        title: "Professional Installation",
-        description: "Zero compromise. We use non-invasive, coupler-to-coupler installation techniques that protect your car's original wiring and warranty.",
-        image: "/roofcarrier.png",
+        title: "Privacy Films",
+        description: "Advanced heat rejection and UV protection.",
+        image: "/suntekwindowfilm.png",
         icon: (
             <svg className="w-full h-full fill-current" viewBox="0 0 24 24">
                 <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z" />
