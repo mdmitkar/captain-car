@@ -7,7 +7,7 @@ const Home = () => {
         <div className="bg-black text-white font-sans overflow-x-hidden selection:bg-brand-red selection:text-white">
 
             {/* ================= HERO SECTION ================= */}
-            <div className="relative w-full flex flex-col items-center justify-center pt-32 pb-12 md:min-h-screen md:pt-40 md:pb-20 overflow-hidden">
+            <div className="relative w-full flex flex-col items-center justify-center pt-20 pb-12 md:min-h-screen md:pt-20 md:pb-20 overflow-hidden">
                 {/* Background Components - Kept simple patterns only */}
                 <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'url(/assets/figma-img/bg-pattern.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
 
@@ -16,8 +16,8 @@ const Home = () => {
 
                 {/* Hero Content */}
                 <ScrollReveal>
-                    <div className="relative z-10 flex flex-col items-center justify-center w-full px-4">
-                        <div className="text-center max-w-6xl mx-auto mb-8 md:mb-8 mt-4 md:mt-0 relative z-20 pointer-events-none">
+                    <div className="relative z-10 flex flex-col items-center justify-center w-full ">
+                        <div className="text-center max-w-6xl mx-auto mb-8 md:mb-8  md:mt-0 relative z-20 pointer-events-none">
                             {/* Improved Visibility & Styling: Textured Backing & Stronger Shadows */}
                             <div className="inline-block px-4 py-2 rounded-xl backdrop-blur-sm bg-black/10 md:bg-transparent md:backdrop-filter-none">
                                 <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-6 leading-tight tracking-tighter uppercase italic flex flex-col gap-2 md:gap-4 drop-shadow-[0_8px_15px_rgba(0,0,0,0.9)]">
@@ -32,23 +32,21 @@ const Home = () => {
                         </div>
 
                         {/* Car Image Container - REMOVED CLOUD IMAGE LAYER COMPLETELY */}
-                        <div className="relative w-full max-w-7xl mx-auto my-6 md:my-12 group flex justify-center items-center">
+                        <div className="relative w-full group flex justify-center items-center my-6 md:my-12">
                             {/* Platform Shadow/Glow */}
                             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-4/5 h-12 md:h-24 bg-gradient-to-t from-black via-brand-red/10 to-transparent blur-3xl z-0 transition-all duration-1000 group-hover:via-brand-red/20" />
 
-                            {/* Smoke/Cloud Oval Background - Visible only on Laptop/Desktop */}
-                            <img
-                                src="/assets/figma-img/smoke0cloud.png"
-                                alt="Smoke Effect"
-                                className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mt-[100px] md:w-[1750px] max-w-none h-auto object-contain opacity-80 z-0 pointer-events-none mix-blend-screen"
-                            />
-
-                            {/* CLEAN IMAGE: No background text/ghosting behind it */}
-                            <img
-                                src="/assets/figma-img/car2.png"
-                                alt="Modified Porsche GT3 RS"
-                                className="relative z-10 w-[90%] md:w-[90%] h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700 ease-out md:-mt-[800px]"
-                            />
+                            {/* Replaced Car & Smoke Images with Video */}
+                            <video
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                className="relative z-10 w-full h-auto object-cover md:-mt-[800px]"
+                            >
+                                <source src="/assets/figma-img/car-video - Made with Clipchamp.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
 
                         {/* CTA Buttons */}
@@ -275,18 +273,42 @@ const Home = () => {
                 </div>
 
                 {/* Scrolling Marquee text for "Cool" effect */}
-                <div className="flex whitespace-nowrap overflow-hidden">
-                    <div className="animate-marquee flex gap-12 md:gap-24 items-center">
-                        {/* Repeated twice for seamless loop */}
-                        {[1, 2].map((i) => (
-                            <React.Fragment key={i}>
-                                {['HYUNDAI', 'MARUTI SUZUKI', 'HONDA', 'TATA', 'MAHINDRA', 'TOYOTA', 'KIA', 'VOLKSWAGEN', 'SKODA', 'MERCEDES', 'BMW', 'AUDI'].map((car, idx) => (
-                                    <span key={`${i}-${idx}`} className="text-3xl md:text-6xl font-black text-transparent text-stroke-white opacity-30 uppercase italic hover:opacity-100 hover:text-white transition-all duration-300 cursor-default">
-                                        {car}
-                                    </span>
-                                ))}
-                            </React.Fragment>
-                        ))}
+                {/* Scrolling Marquee text for "Cool" effect */}
+                <div className="relative w-full overflow-hidden">
+                    {/* Background Layer: Dimmed / Outlined */}
+                    <div className="flex whitespace-nowrap select-none">
+                        <div className="animate-marquee flex gap-12 md:gap-24 items-center">
+                            {[1, 2].map((i) => (
+                                <React.Fragment key={i}>
+                                    {['HYUNDAI', 'MARUTI SUZUKI', 'HONDA', 'TATA', 'MAHINDRA', 'TOYOTA', 'KIA', 'VOLKSWAGEN', 'SKODA', 'MERCEDES', 'BMW', 'AUDI'].map((car, idx) => (
+                                        <span key={`${i}-${idx}`} className="text-3xl md:text-6xl font-black text-transparent text-stroke-white opacity-20 uppercase italic transition-all duration-300">
+                                            {car}
+                                        </span>
+                                    ))}
+                                </React.Fragment>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Foreground Layer: Highlighted (White) - Only visible in center via Mask */}
+                    <div
+                        className="absolute inset-0 flex whitespace-nowrap select-none pointer-events-none"
+                        style={{
+                            maskImage: 'linear-gradient(90deg, transparent 0%, transparent 30%, black 50%, transparent 70%, transparent 100%)',
+                            WebkitMaskImage: 'linear-gradient(90deg, transparent 0%, transparent 30%, black 50%, transparent 70%, transparent 100%)'
+                        }}
+                    >
+                        <div className="animate-marquee flex gap-12 md:gap-24 items-center">
+                            {[1, 2].map((i) => (
+                                <React.Fragment key={i}>
+                                    {['HYUNDAI', 'MARUTI SUZUKI', 'HONDA', 'TATA', 'MAHINDRA', 'TOYOTA', 'KIA', 'VOLKSWAGEN', 'SKODA', 'MERCEDES', 'BMW', 'AUDI'].map((car, idx) => (
+                                        <span key={`${i}-${idx}`} className="text-3xl md:text-6xl font-black text-white uppercase italic drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">
+                                            {car}
+                                        </span>
+                                    ))}
+                                </React.Fragment>
+                            ))}
+                        </div>
                     </div>
                 </div>
                 {/* CSS for Marquee */}
