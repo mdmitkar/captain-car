@@ -19,15 +19,15 @@ const Home = () => {
             <div className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden">
 
                 {/* Video Background with Cinematic Overlay */}
+                {/* Video Background with Cinematic Overlay */}
                 <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-gradient-to-t from-premium-black via-black/50 to-black/30 z-10" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80 z-10" />
+                    {/* Overlays removed for maximum brightness */}
                     <video
                         autoPlay
                         loop
                         muted
                         playsInline
-                        className="w-full h-full object-cover scale-105"
+                        className="w-full h-full object-cover scale-105 brightness-110"
                     >
                         <source src="/assets/figma-img/car-video - Made with Clipchamp.mp4" type="video/mp4" />
                     </video>
