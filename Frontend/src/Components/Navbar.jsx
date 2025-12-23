@@ -32,20 +32,29 @@ const Navbar = () => {
                         <Link
                             key={link.path}
                             to={link.path}
-                            className={`text-base font-medium transition-colors duration-300 ${isActive(link.path)
-                                    ? 'text-brand-red'
-                                    : 'text-white hover:text-brand-red'
+                            className={`relative group px-1 py-1 transition-all duration-300 ${isActive(link.path)
+                                ? 'text-brand-red'
+                                : 'text-white hover:text-brand-red'
                                 }`}
                         >
-                            {link.name}
+                            <span className="font-bold tracking-wide text-lg">{link.name}</span>
+                            {/* Sharp Center-Out Underline */}
+                            <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-brand-red transition-all duration-300 ease-out ${isActive(link.path) ? 'w-full' : 'w-0 group-hover:w-full'}`} />
                         </Link>
                     ))}
                 </div>
 
                 {/* CTA Button */}
                 <div className="hidden md:block">
-                    <Button variant="primary">
-                        Discover More
+                    <Button
+                        variant="custom"
+                        className="group relative overflow-hidden bg-gradient-to-r from-brand-red to-red-700 text-white shadow-[0_4px_15px_rgba(220,20,60,0.4)] hover:shadow-[0_6px_25px_rgba(220,20,60,0.7)] hover:scale-105 transition-all duration-300"
+                    >
+                        {/* Shine Animation */}
+                        <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-[800ms] ease-in-out skew-x-[-20deg]" />
+                        <span className="relative z-10 font-black tracking-wider uppercase flex items-center gap-2">
+                            Discover More <span className="text-xl">→</span>
+                        </span>
                     </Button>
                 </div>
 
