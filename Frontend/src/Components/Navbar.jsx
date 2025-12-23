@@ -48,10 +48,8 @@ const Navbar = () => {
                 <div className="hidden md:block">
                     <Button
                         variant="custom"
-                        className="group relative overflow-hidden bg-gradient-to-r from-brand-red to-red-700 text-white shadow-[0_4px_15px_rgba(220,20,60,0.4)] hover:shadow-[0_6px_25px_rgba(220,20,60,0.7)] hover:scale-105 transition-all duration-300"
+                        className="group relative !bg-[#B22222] text-white shadow-none hover:bg-[#900000] hover:scale-105 transition-all duration-300 rounded-full px-8 py-3"
                     >
-                        {/* Shine Animation */}
-                        <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-[800ms] ease-in-out skew-x-[-20deg]" />
                         <span className="relative z-10 font-black tracking-wider uppercase flex items-center gap-2">
                             Discover More <span className="text-xl">→</span>
                         </span>

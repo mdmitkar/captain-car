@@ -43,7 +43,7 @@ const Home = () => {
                         {/* Car Image Container - REMOVED CLOUD IMAGE LAYER COMPLETELY */}
                         <div className="relative w-full group flex justify-center items-center my-6 md:my-12">
                             {/* Platform Shadow/Glow */}
-                            
+
 
                             {/* Replaced Car & Smoke Images with Video */}
                             <video
@@ -60,7 +60,7 @@ const Home = () => {
 
                         {/* CTA Buttons */}
                         <div className="flex flex-col sm:flex-row gap-4 md:gap-8 items-center justify-center mt-6 mb-8 md:mb-12 w-full px-4 relative z-20">
-                            <Button variant="secondary" className="px-8 py-3 md:px-10 md:py-4 bg-white text-black font-black rounded-full hover:bg-gray-200 transition-all transform hover:-translate-y-1 shadow-[0_10px_20px_rgba(255,255,255,0.1)] text-sm md:text-lg uppercase tracking-wider w-full sm:w-auto">
+                            <Button variant="custom" className="px-8 py-3 md:px-10 md:py-4 !bg-[#B22222] text-white font-black rounded-full hover:bg-[#900000] transition-all transform hover:-translate-y-1 text-sm md:text-lg uppercase tracking-wider w-full sm:w-auto">
                                 Discover More
                             </Button>
                             <button className="text-gray-300 text-sm md:text-lg font-bold hover:text-brand-red transition-colors duration-300 uppercase tracking-[0.2em] border-b-2 border-transparent hover:border-brand-red pb-1 py-3 w-full sm:w-auto">
