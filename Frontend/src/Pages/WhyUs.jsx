@@ -78,6 +78,54 @@ const WhyUs = () => {
                     </div>
                 </div>
 
+
+                {/* ================= COMPARISON TABLE ================= */}
+                <ScrollReveal direction="up" delay={300}>
+                    <div className="mb-20">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl md:text-5xl font-black uppercase italic tracking-tighter mb-4">
+                                Captain vs <span className="text-gray-500">Others</span>
+                            </h2>
+                            <p className="text-[#E31E24] font-bold tracking-widest uppercase text-sm">See the Difference</p>
+                        </div>
+
+                        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0a0a0a] shadow-2xl">
+                            {/* Table Container for horizontal scroll on very small mobile */}
+                            <div className="overflow-x-auto">
+                                <table className="w-full min-w-[600px] md:min-w-full text-left border-collapse">
+                                    <thead>
+                                        <tr className="border-b border-white/10 bg-white/5">
+                                            <th className="p-6 md:p-8 font-black uppercase italic tracking-wider text-xl md:text-2xl text-white w-1/3">Feature</th>
+                                            <th className="p-6 md:p-8 font-black uppercase italic tracking-wider text-xl md:text-2xl text-[#E31E24] w-1/3 bg-[#E31E24]/5">Captain Car Audio</th>
+                                            <th className="p-6 md:p-8 font-black uppercase italic tracking-wider text-xl md:text-2xl text-gray-500 w-1/3">Other Shops</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-white/5">
+                                        {[
+                                            { feature: "Same Day Installation", captain: "✓ Yes", other: "2-3 Days Wait" },
+                                            { feature: "Installation Warranty", captain: "✓ Lifetime", other: "30 Days / None" },
+                                            { feature: "Price Match Guarantee", captain: "✓ Yes + 5% Off", other: "No" },
+                                            { feature: "Free Sound Tuning", captain: "✓ Unlimited", other: "Paid / Once" },
+                                            { feature: "Genuine Products", captain: "✓ Authorized", other: "Mixed / Unknown" },
+                                            { feature: "After-Sales Support", captain: "✓ 24/7 WhatsApp", other: "Limited / None" }
+                                        ].map((row, idx) => (
+                                            <tr key={idx} className="group hover:bg-white/5 transition-colors">
+                                                <td className="p-6 md:p-8 font-bold text-gray-300 text-sm md:text-lg">{row.feature}</td>
+                                                <td className="p-6 md:p-8 font-black text-[#E31E24] text-lg md:text-xl bg-[#E31E24]/5 group-hover:bg-[#E31E24]/10 transition-colors">
+                                                    {row.captain}
+                                                </td>
+                                                <td className="p-6 md:p-8 font-medium text-gray-500 text-sm md:text-lg">
+                                                    {row.other}
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </ScrollReveal>
+
                 {/* Bottom Call to Action Strip */}
                 <ScrollReveal direction="up" delay={400}>
                     <div className="border-t border-white/10 pt-16 flex flex-col md:flex-row items-center justify-between gap-8">
