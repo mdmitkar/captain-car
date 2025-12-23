@@ -4,7 +4,7 @@ import ScrollReveal from '../Components/ScrollReveal';
 
 const Services = () => {
     return (
-        <div className="min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-brand-red selection:text-white pt-24 pb-20 relative">
+        <div className="min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-brand-red selection:text-white pt-20 pb-16 relative">
             {/* Background Texture */}
             <div className="absolute inset-0 z-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'url(/assets/figma-img/bg-pattern.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
             <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-brand-red/10 to-transparent pointer-events-none z-0" />
@@ -17,10 +17,10 @@ const Services = () => {
                         <div className="inline-block px-4 py-1 rounded-full border border-brand-red/30 bg-brand-red/5 text-brand-red text-sm font-bold uppercase tracking-[0.2em] mb-1 backdrop-blur-sm">
                             Expertise You Can Trust
                         </div>
-                        <h1 className="text-5xl md:text-8xl font-black text-white italic tracking-tighter uppercase mb-6 leading-none drop-shadow-2xl">
+                        <h1 className="text-5xl md:text-7xl font-black text-white italic tracking-tighter uppercase mb-6 leading-none drop-shadow-2xl">
                             Our <span className="text-[#E31E24]">Services</span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed border-l-4 border-brand-red/50 pl-6 text-left md:text-center md:border-none md:pl-0">
+                        <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed border-l-4 border-brand-red/50 pl-6 text-left md:text-center md:border-none md:pl-0">
                             We don't just upgrade cars; we transform them. Explore our comprehensive range of premium services designed for the ultimate driving experience.
                         </p>
                     </div>
@@ -30,7 +30,7 @@ const Services = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
                     {services.map((service, index) => (
                         <ScrollReveal key={index} delay={index * 100}>
-                            <div className="h-full bg-[#0a0a0a] border border-white/5 rounded-3xl p-8 hover:border-[#E31E24] hover:-translate-y-2 hover:shadow-[0_0_50px_-10px_rgba(227,30,36,0.5)] transition-all duration-500 group relative overflow-hidden flex flex-col justify-between">
+                            <div className="h-full bg-[#0a0a0a] border border-white/5 rounded-3xl p-6 hover:border-[#E31E24] hover:-translate-y-2 hover:shadow-[0_0_50px_-10px_rgba(227,30,36,0.5)] transition-all duration-500 group relative overflow-hidden flex flex-col justify-between">
                                 {/* Hover Image Background */}
                                 <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                                     <img src={service.image} alt={service.title} className="w-full h-full object-cover opacity-40 group-hover:scale-110 transition-transform duration-[10s]" />
@@ -45,7 +45,7 @@ const Services = () => {
                                             {service.icon}
                                         </div>
                                     </div>
-                                    <h3 className="text-3xl font-black text-white uppercase italic mb-4 tracking-tight group-hover:text-[#E31E24] transition-colors duration-300">{service.title}</h3>
+                                    <h3 className="text-2xl font-black text-white uppercase italic mb-4 tracking-tight group-hover:text-[#E31E24] transition-colors duration-300">{service.title}</h3>
                                     <p className="text-gray-400 leading-relaxed font-medium text-base group-hover:text-gray-200 transition-colors duration-300">{service.description}</p>
                                 </div>
 

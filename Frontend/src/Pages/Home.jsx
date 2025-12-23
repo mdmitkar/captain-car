@@ -56,7 +56,7 @@ const Home = () => {
                         <div className={`glass-panel inline-block px-6 py-2 rounded-full mb-6 border-l-4 border-brand-red transition-all duration-1000 ${showHeroText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                             <span className="text-brand-red font-bold tracking-[0.3em] uppercase text-xs md:text-sm">Premium Car Accessories</span>
                         </div>
-                        <h1 className="text-5xl md:text-8xl font-black mb-6 leading-[0.9] uppercase italic tracking-tighter drop-shadow-2xl flex flex-col gap-2">
+                        <h1 className="text-5xl md:text-7xl font-black mb-6 leading-[0.9] uppercase italic tracking-tighter drop-shadow-2xl flex flex-col gap-2">
                             <div className="flex gap-4 overflow-hidden">
                                 <span className={`block text-white transition-all duration-700 delay-[0ms] transform ${showHeroText ? 'translate-y-0 opacity-100' : 'translate-y-[100%] opacity-0'}`}>
                                     REDEFINE
@@ -74,7 +74,7 @@ const Home = () => {
                                 </span>
                             </div>
                         </h1>
-                        <p className={`text-gray-100 text-lg md:text-2xl font-light tracking-wide max-w-2xl mb-10 border-l border-white/50 pl-6 transition-all duration-1000 delay-0 transform ${showBottomContent ? 'translate-y-0 opacity-100' : 'translate-y-[20px] opacity-0'}`}>
+                        <p className={`text-gray-100 text-base md:text-xl font-light tracking-wide max-w-2xl mb-10 border-l border-white/50 pl-6 transition-all duration-1000 delay-0 transform ${showBottomContent ? 'translate-y-0 opacity-100' : 'translate-y-[20px] opacity-0'}`}>
                             Experience the pinnacle of automotive interior design. We don't just modify cars; we forge identities.
                         </p>
 
@@ -94,10 +94,10 @@ const Home = () => {
             </div>
 
             {/* ================= THE EXPERIENCE (About) ================= */}
-            <div className="relative py-24 px-6 bg-[#080808] overflow-hidden">
+            <div className="relative py-16 px-6 bg-[#080808] overflow-hidden">
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-red/5 rounded-full blur-[120px] pointer-events-none" />
 
-                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left: Image Grid */}
                     <ScrollReveal direction="right" delay={200}>
                         <div className="relative">
@@ -127,7 +127,7 @@ const Home = () => {
                     <ScrollReveal direction="left" delay={400}>
                         <div>
                             <h4 className="text-brand-red text-sm font-bold uppercase tracking-[0.3em] mb-4">Master Craftsmanship</h4>
-                            <h2 className="text-4xl md:text-6xl font-black text-white italic uppercase tracking-tighter mb-8 leading-none">
+                            <h2 className="text-4xl md:text-5xl font-black text-white italic uppercase tracking-tighter mb-8 leading-none">
                                 We Are <br />
                                 <span className="text-[#E31E24]">Captain Car.</span>
                             </h2>
@@ -161,7 +161,7 @@ const Home = () => {
             <div className="py-12 bg-black relative">
                 <div className="container mx-auto px-6 mb-8 flex items-end justify-between">
                     <ScrollReveal direction="down">
-                        <h2 className="text-4xl md:text-7xl font-black text-white uppercase italic tracking-tighter">
+                        <h2 className="text-4xl md:text-5xl font-black text-white uppercase italic tracking-tighter">
                             Premium <span className="text-[#E31E24]">Accessories<br />      & Styling</span>
                         </h2>
                     </ScrollReveal>
@@ -249,13 +249,13 @@ const Home = () => {
             </div>
 
             {/* ================= FAQ SECTION ================= */}
-            <div className="bg-[#050505] py-24 px-6 relative overflow-hidden">
+            <div className="bg-[#050505] py-16 px-6 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#E31E24]/5 rounded-full blur-[120px] pointer-events-none" />
 
                 <div className="max-w-4xl mx-auto relative z-10">
                     <ScrollReveal direction="up">
                         <div className="text-center mb-16">
-                            <h2 className="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter mb-4">
+                            <h2 className="text-3xl md:text-5xl font-black text-white uppercase italic tracking-tighter mb-4">
                                 You Asked, <span className="text-[#E31E24]">We Answered</span>
                             </h2>
                             <p className="text-gray-400">Everything you need to know about our services.</p>
@@ -294,13 +294,13 @@ const Home = () => {
             </div>
 
             {/* ================= LOCATION MAP SECTION ================= */}
-            <div className="bg-[#050505] py-20 relative overflow-hidden border-t border-white/5">
+            <div className="bg-[#050505] py-16 relative overflow-hidden border-t border-white/5">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-red/5 rounded-full blur-[150px] pointer-events-none" />
 
                 <div className="container mx-auto px-6 relative z-10">
                     <ScrollReveal direction="up">
                         <div className="text-center mb-12">
-                            <h2 className="text-4xl md:text-7xl font-black text-white uppercase italic tracking-tighter mb-4">
+                            <h2 className="text-3xl md:text-5xl font-black text-white uppercase italic tracking-tighter mb-4">
                                 Visit Our <span className="text-[#E31E24]">Workshop</span>
                             </h2>
                             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -337,7 +337,7 @@ const Home = () => {
             </div>
 
             {/* ================= CONTACT / FOOTER ================= */}
-            <footer className="bg-black pt-20 pb-10 border-t border-white/10 text-white">
+            <footer className="bg-black pt-16 pb-10 border-t border-white/10 text-white">
                 <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
 
                     {/* Brand */}

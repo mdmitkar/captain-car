@@ -3,15 +3,15 @@ import ScrollReveal from '../Components/ScrollReveal';
 
 const WhyUs = () => {
     return (
-        <div className="bg-black text-white min-h-screen pt-32 pb-20 font-sans selection:bg-[#E31E24] selection:text-white overflow-x-hidden">
+        <div className="bg-black text-white min-h-screen pt-24 pb-16 font-sans selection:bg-[#E31E24] selection:text-white overflow-x-hidden">
 
             <div className="container mx-auto px-6">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
 
                     {/* Left: Text Content */}
                     <ScrollReveal direction="left">
                         <div>
-                            <h1 className="text-5xl md:text-8xl font-black uppercase italic tracking-tighter mb-8 leading-none">
+                            <h1 className="text-5xl md:text-7xl font-black uppercase italic tracking-tighter mb-8 leading-none">
                                 Why Choose <span className="text-[#E31E24]">Captain?</span>
                             </h1>
                             <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-10 border-l-4 border-[#E31E24] pl-6">
@@ -45,7 +45,7 @@ const WhyUs = () => {
                             <div className="bg-gradient-to-br from-[#1a0505] to-black border border-[#E31E24]/30 rounded-[3rem] p-12 text-center relative overflow-hidden group hover:border-[#E31E24] transition-all duration-500 shadow-[0_0_60px_-20px_rgba(227,30,36,0.3)] hover:shadow-[0_0_80px_-20px_rgba(227,30,36,0.5)]">
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-[#E31E24]/10 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2" />
 
-                                <h2 className="text-7xl md:text-9xl font-black text-[#E31E24] mb-2 tracking-tighter group-hover:scale-105 transition-transform duration-500">
+                                <h2 className="text-6xl md:text-8xl font-black text-[#E31E24] mb-2 tracking-tighter group-hover:scale-105 transition-transform duration-500">
                                     5000+
                                 </h2>
                                 <p className="text-2xl font-bold text-white uppercase tracking-[0.2em] mb-12">Happy Customers</p>

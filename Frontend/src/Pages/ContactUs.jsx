@@ -3,14 +3,14 @@ import ScrollReveal from '../Components/ScrollReveal';
 
 const ContactUs = () => {
     return (
-        <div className="min-h-screen bg-black text-white pt-32 pb-20 font-sans selection:bg-[#E31E24] selection:text-white">
+        <div className="min-h-screen bg-black text-white pt-24 pb-16 font-sans selection:bg-[#E31E24] selection:text-white">
 
             <div className="container mx-auto px-6">
 
                 {/* Header */}
                 <ScrollReveal direction="down">
                     <div className="text-center mb-20">
-                        <h1 className="text-5xl md:text-8xl font-black uppercase italic tracking-tighter mb-4">
+                        <h1 className="text-5xl md:text-7xl font-black uppercase italic tracking-tighter mb-4">
                             Get In <span className="text-[#E31E24]">Touch</span>
                         </h1>
                         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -19,7 +19,7 @@ const ContactUs = () => {
                     </div>
                 </ScrollReveal>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-24">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
 
                     {/* Left: Contact Info */}
                     <ScrollReveal direction="left">
