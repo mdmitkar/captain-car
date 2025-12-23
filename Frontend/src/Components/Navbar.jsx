@@ -34,10 +34,10 @@ const Navbar = () => {
                         <Link
                             key={link.path}
                             to={link.path}
-                            className={`relative group px-2 py-1 transition-all duration-300 ${isActive(link.path) ? 'text-brand-red' : 'text-gray-300 hover:text-white'}`}
+                            className={`relative group px-2 py-1 transition-all duration-300 ${isActive(link.path) ? 'text-[#DC143C]' : 'text-gray-300 hover:text-white'}`}
                         >
                             <span className="font-bold tracking-widest text-sm uppercase">{link.name}</span>
-                            <span className={`absolute -bottom-1 left-0 h-[2px] bg-brand-red transition-all duration-300 ${isActive(link.path) ? 'w-full shadow-[0_0_10px_#DC143C]' : 'w-0 group-hover:w-full'}`} />
+                            <span className={`absolute -bottom-1 left-0 h-[2px] bg-[#DC143C] transition-all duration-300 ${isActive(link.path) ? 'w-full shadow-[0_0_10px_#DC143C]' : 'w-0 group-hover:w-full'}`} />
                         </Link>
                     ))}
                 </div>
@@ -76,7 +76,7 @@ const Navbar = () => {
                         key={link.path}
                         to={link.path}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="text-3xl font-black uppercase text-white tracking-tighter hover:text-brand-red transition-colors"
+                        className={`text-3xl font-black uppercase tracking-tighter hover:text-brand-red transition-colors ${isActive(link.path) ? 'text-[#DC143C]' : 'text-white'}`}
                         style={{ transitionDelay: `${idx * 100}ms` }}
                     >
                         {link.name}
