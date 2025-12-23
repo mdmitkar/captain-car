@@ -157,6 +157,38 @@ const Home = () => {
                 </div>
             </div>
 
+            {/* ================= MARQUEE (Brands) ================= */}
+            {/* ================= MARQUEE (Brands) ================= */}
+            <div className="py-10 bg-black overflow-hidden relative border-t border-b border-white/10">
+                <div className="container mx-auto px-6 mb-8 text-center relative z-10">
+                    <h3 className="text-[#E31E24] font-bold uppercase tracking-[0.3em] text-sm md:text-lg glow-text">We Work For</h3>
+                </div>
+
+                <div className="relative">
+                    {/* Gradient Mask for "Center Visible, Edges Hidden" effect */}
+                    <div className="absolute inset-0 z-20 pointer-events-none bg-gradient-to-r from-black via-transparent to-black w-full h-full" />
+
+                    <div className="flex whitespace-nowrap overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_45%,black_55%,transparent)]">
+                        <div className="animate-marquee flex gap-24 items-center">
+                            {[1, 2, 3].map((i) => (
+                                <React.Fragment key={i}>
+                                    {['MARUTI SUZUKI', 'HYUNDAI', 'MAHINDRA THAR', 'TATA MOTORS', 'HONDA', 'TOYOTA', 'RANGE ROVER', 'KIA', 'MG', 'SKODA'].map((brand, idx) => (
+                                        <span key={`${i}-${idx}`} className="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter mx-4">
+                                            {brand}
+                                        </span>
+                                    ))}
+                                </React.Fragment>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                <style>{`
+                    .animate-marquee { animation: marquee 20s linear infinite; }
+                    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+                    .glow-text { text-shadow: 0 0 20px rgba(227, 30, 36, 0.5); }
+                `}</style>
+            </div>
+
             {/* ================= SERVICES SLIDER (Horizontal) ================= */}
             <div className="py-12 bg-black relative">
                 <div className="container mx-auto px-6 mb-8 flex items-end justify-between">
@@ -170,18 +202,18 @@ const Home = () => {
                 {/* Mobile View: Manual Horizontal Scroll (Snap) */}
                 <div className="md:hidden w-full overflow-x-auto pb-8 px-6 flex gap-4 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
                     {[
-                        { title: 'Bespoke Interiors', desc: 'Hand-stitched leather tailored to perfection.', img: '/seatcover8.png', color: 'from-red-900' },
-                        { title: 'Concert Audio', desc: 'High-fidelity sound systems that shake the ground.', img: '/bossaudiosystem.png', color: 'from-blue-900' },
-                        { title: 'Privacy Films', desc: 'Advanced heat rejection and UV protection.', img: '/suntekwindowfilm.png', color: 'from-yellow-900' },
-                        { title: 'Tech Upgrades', desc: 'Android players, mood lighting, & security.', img: '/cardisplay2.png', color: 'from-purple-900' },
-                        { title: 'Exterior Accessories', desc: 'Roof carriers, wheel caps, and detailing.', img: '/roofcarrier.png', color: 'from-green-900' },
+                        { title: 'Bespoke Interiors', desc: 'Hand-stitched leather tailored to perfection.', img: '/seatcover8.png' },
+                        { title: 'Concert Audio', desc: 'High-fidelity sound systems that shake the ground.', img: '/bossaudiosystem.png' },
+                        { title: 'Privacy Films', desc: 'Advanced heat rejection and UV protection.', img: '/suntekwindowfilm.png' },
+                        { title: 'Tech Upgrades', desc: 'Android players, mood lighting, & security.', img: '/cardisplay2.png' },
+                        { title: 'Exterior Accessories', desc: 'Roof carriers, wheel caps, and detailing.', img: '/roofcarrier.png' },
                     ].map((service, idx) => (
-                        <div key={idx} className="flex-shrink-0 w-[85vw] snap-center h-[500px] relative rounded-3xl overflow-hidden border border-white/10 group">
-                            <div className={`absolute inset-0 bg-gradient-to-b ${service.color} to-black opacity-30`} />
-                            <img src={service.img} alt={service.title} className="absolute inset-0 w-full h-full object-contain p-8" />
-                            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black via-black/80 to-transparent">
-                                <h3 className="text-3xl font-black text-white uppercase italic mb-2">{service.title}</h3>
-                                <p className="text-gray-400 text-sm mb-4">{service.desc}</p>
+                        <div key={idx} className="flex-shrink-0 w-[85vw] snap-center h-[380px] relative rounded-3xl overflow-hidden border border-white/10 group">
+                            <div className="absolute inset-0 bg-gradient-to-b from-[#1a0505] to-black opacity-60" />
+                            <img src={service.img} alt={service.title} className="absolute inset-0 w-full h-full object-contain" />
+                            <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black via-black/90 to-transparent">
+                                <h3 className="text-2xl font-black text-white uppercase italic mb-2">{service.title}</h3>
+                                <p className="text-gray-400 text-xs mb-3">{service.desc}</p>
                                 <span className="text-brand-red font-bold uppercase tracking-widest text-xs flex items-center gap-2">Explore <span>→</span></span>
                             </div>
                         </div>
@@ -190,26 +222,26 @@ const Home = () => {
 
                 {/* Desktop View: Auto Marquee */}
                 <div className="hidden md:block relative w-full overflow-hidden pb-4">
-                    <div className="flex gap-8 animate-marquee-slow hover:[animation-play-state:paused] w-max">
+                    <div className="flex gap-6 animate-marquee-slow hover:[animation-play-state:paused] w-max">
                         {/* Duplicate the array 3 times for seamless looping */}
                         {[...Array(3)].map((_, i) => (
                             <React.Fragment key={i}>
                                 {[
-                                    { title: 'Bespoke Interiors', desc: 'Hand-stitched leather tailored to perfection.', img: '/seatcover8.png', color: 'from-red-900' },
-                                    { title: 'Concert Audio', desc: 'High-fidelity sound systems that shake the ground.', img: '/bossaudiosystem.png', color: 'from-blue-900' },
-                                    { title: 'Privacy Films', desc: 'Advanced heat rejection and UV protection.', img: '/suntekwindowfilm.png', color: 'from-yellow-900' },
-                                    { title: 'Tech Upgrades', desc: 'Android players, mood lighting, & security.', img: '/cardisplay2.png', color: 'from-purple-900' },
-                                    { title: 'Exterior Accessories', desc: 'Roof carriers, wheel caps, and detailing.', img: '/roofcarrier.png', color: 'from-green-900' },
+                                    { title: 'Bespoke Interiors', desc: 'Hand-stitched leather tailored to perfection.', img: '/seatcover8.png' },
+                                    { title: 'Concert Audio', desc: 'High-fidelity sound systems that shake the ground.', img: '/bossaudiosystem.png' },
+                                    { title: 'Privacy Films', desc: 'Advanced heat rejection and UV protection.', img: '/suntekwindowfilm.png' },
+                                    { title: 'Tech Upgrades', desc: 'Android players, mood lighting, & security.', img: '/cardisplay2.png' },
+                                    { title: 'Exterior Accessories', desc: 'Roof carriers, wheel caps, and detailing.', img: '/roofcarrier.png' },
                                 ].map((service, idx) => (
-                                    <div key={`${i}-${idx}`} className="w-[400px] flex-shrink-0 relative h-[500px] rounded-3xl overflow-hidden group border border-white/10 bg-white/5">
-                                        <div className={`absolute inset-0 bg-gradient-to-b ${service.color} to-black opacity-30 group-hover:opacity-20 transition-opacity duration-500`} />
-                                        <img src={service.img} alt={service.title} className="absolute inset-0 w-full h-full object-contain p-8 group-hover:scale-105 transition-transform duration-700" />
+                                    <div key={`${i}-${idx}`} className="w-[350px] flex-shrink-0 relative h-[400px] rounded-3xl overflow-hidden group border border-white/10 bg-white/5">
+                                        <div className="absolute inset-0 bg-gradient-to-b from-[#1a0505] to-black opacity-50 group-hover:opacity-40 transition-opacity duration-500" />
+                                        <img src={service.img} alt={service.title} className="absolute inset-0 w-full h-full object-contain group-hover:scale-105 transition-transform duration-700" />
 
-                                        <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black via-black/80 to-transparent">
-                                            <h3 className="text-3xl font-black text-white uppercase italic mb-2 tracking-tighter">{service.title}</h3>
-                                            <p className="text-gray-300 mb-6 font-medium text-sm leading-relaxed">{service.desc}</p>
+                                        <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black via-black/90 to-transparent">
+                                            <h3 className="text-2xl font-black text-white uppercase italic mb-2 tracking-tighter">{service.title}</h3>
+                                            <p className="text-gray-300 mb-4 font-medium text-xs leading-relaxed">{service.desc}</p>
                                             <span className="inline-flex items-center gap-2 text-brand-red font-bold uppercase tracking-widest text-xs group-hover:gap-4 transition-all">
-                                                Explore Service <span>→</span>
+                                                Explore <span>→</span>
                                             </span>
                                         </div>
                                     </div>
@@ -223,28 +255,6 @@ const Home = () => {
                     .animate-marquee-slow { animation: marquee-scroll 60s linear infinite; }
                     /* Slower animation for larger images */
                     @keyframes marquee-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-33.33%); } }
-                `}</style>
-            </div>
-
-            {/* ================= MARQUEE (Brands) ================= */}
-            <div className="py-2 bg-brand-red overflow-hidden relative border-t border-b border-black"> {/* Reduced padding */}
-                <div className="absolute inset-0 bg-[url('/assets/figma-img/bg-pattern.png')] opcode-10 mix-blend-multiply" />
-                <div className="flex whitespace-nowrap overflow-hidden">
-                    <div className="animate-marquee flex gap-16 items-center">
-                        {[1, 2, 3].map((i) => (
-                            <React.Fragment key={i}>
-                                {['AUDI', 'BMW', 'MERCEDES', 'PORSCHE', 'JAGUAR', 'LAND ROVER', 'VOLVO', 'LEXUS', 'TOYOTA', 'HONDA'].map((brand, idx) => (
-                                    <span key={`${i}-${idx}`} className="text-5xl md:text-7xl font-black text-black/20 uppercase italic tracking-tighter">
-                                        {brand}
-                                    </span>
-                                ))}
-                            </React.Fragment>
-                        ))}
-                    </div>
-                </div>
-                <style>{`
-                    .animate-marquee { animation: marquee 30s linear infinite; }
-                    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
                 `}</style>
             </div>
 
@@ -357,7 +367,7 @@ const Home = () => {
                         <h4 className="text-[#E31E24] font-bold uppercase tracking-widest mb-6">Explore</h4>
                         <ul className="space-y-4 text-gray-400 font-medium">
                             <li><Link to="/services" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-[#E31E24]">›</span> Our Services</Link></li>
-                            <li><Link to="/why-us" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-[#E31E24]">›</span> About Us</Link></li>
+                            <li><Link to="/why-us" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-[#E31E24]">›</span> Why Us</Link></li>
                             <li><Link to="/contact" className="hover:text-white transition-colors flex items-center gap-2"><span className="text-[#E31E24]">›</span> Contact</Link></li>
                         </ul>
                     </div>
