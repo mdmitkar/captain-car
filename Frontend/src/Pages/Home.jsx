@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '../Components/Button';
 import ScrollReveal from '../Components/ScrollReveal';
 
 const Home = () => {
+    const [showHeroText, setShowHeroText] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowHeroText(true);
+        }, 3000);
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <div className="bg-black text-white font-sans overflow-x-hidden selection:bg-brand-red selection:text-white">
 
@@ -17,10 +26,10 @@ const Home = () => {
                 {/* Hero Content */}
                 <ScrollReveal>
                     <div className="relative z-10 flex flex-col items-center justify-center w-full ">
-                        <div className="text-center max-w-6xl mx-auto mb-8 md:mb-8  md:mt-0 relative z-20 pointer-events-none">
+                        <div className={`text-center max-w-6xl mx-auto mb-8 md:mb-8 md:mt-0 relative z-20 pointer-events-none transition-opacity duration-1000 ${showHeroText ? 'opacity-100' : 'opacity-0'}`}>
                             {/* Improved Visibility & Styling: Textured Backing & Stronger Shadows */}
                             <div className="inline-block px-4 py-2 rounded-xl backdrop-blur-sm bg-black/10 md:bg-transparent md:backdrop-filter-none">
-                                <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-6 leading-tight tracking-tighter uppercase italic flex flex-col gap-2 md:gap-4 drop-shadow-[0_8px_15px_rgba(0,0,0,0.9)]">
+                                <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-8xl font-black mb-6 leading-tight tracking-tighter uppercase italic flex flex-col gap-2 md:gap-4 drop-shadow-[0_8px_15px_rgba(0,0,0,0.9)]">
                                     <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-300 drop-shadow-sm">Enhance Your</span>
                                     <span className="text-stroke-white text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400 drop-shadow-md">Vehicle's</span>
                                     <span className="text-brand-red drop-shadow-[0_0_25px_rgba(220,20,60,0.8)]">Performance</span>
@@ -42,7 +51,7 @@ const Home = () => {
                                 loop
                                 muted
                                 playsInline
-                                className="relative z-10 w-full h-auto object-cover md:-mt-[800px]"
+                                className="relative z-10 w-full h-auto object-cover md:-mt-[700px]"
                             >
                                 <source src="/assets/figma-img/car-video - Made with Clipchamp.mp4" type="video/mp4" />
                                 Your browser does not support the video tag.
