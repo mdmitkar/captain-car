@@ -14,7 +14,7 @@ const Services = () => {
                 {/* Hero Section */}
                 <ScrollReveal>
                     <div className="text-center mb-20 relative">
-                        <div className="inline-block px-4 py-1 rounded-full border border-brand-red/30 bg-brand-red/5 text-brand-red text-sm font-bold uppercase tracking-[0.2em] mb-6 backdrop-blur-sm">
+                        <div className="inline-block px-4 py-1 rounded-full border border-brand-red/30 bg-brand-red/5 text-brand-red text-sm font-bold uppercase tracking-[0.2em] mb-1 backdrop-blur-sm">
                             Expertise You Can Trust
                         </div>
                         <h1 className="text-5xl md:text-8xl font-black text-white italic tracking-tighter uppercase mb-6 leading-none drop-shadow-2xl">

@@ -4,6 +4,16 @@ import ScrollReveal from '../Components/ScrollReveal';
 import Button from '../Components/Button';
 
 const Products = () => {
+    const [expandedCategories, setExpandedCategories] = React.useState({});
+    const [selectedImage, setSelectedImage] = React.useState(null);
+
+    const toggleCategory = (categoryId) => {
+        setExpandedCategories(prev => ({
+            ...prev,
+            [categoryId]: !prev[categoryId]
+        }));
+    };
+
     const categories = [
         {
             title: "Seat Covers",
@@ -15,7 +25,7 @@ const Products = () => {
                 { id: 4, name: "Custom Stitch Pattern", img: "/seatcover4.png" },
                 { id: 5, name: "Ergonomic Design", img: "/seatcover5.png" },
                 { id: 6, name: "Two-Tone Classic", img: "/seatcover6.png" },
-                { id: 7, name: "Ventilated Series", img: "/seatcover7.png" },
+                
                 { id: 8, name: "Diamond Quilt", img: "/seatcover8.png" },
                 { id: 9, name: "Executive Suite", img: "/seatcover9.png" },
             ]
@@ -96,54 +106,100 @@ const Products = () => {
 
             {/* ================= PRODUCTS GRID ================= */}
             <div className="max-w-7xl mx-auto px-6 pb-32">
-                {categories.map((category, idx) => (
-                    <div key={category.id} className="mb-24 last:mb-0">
-                        <ScrollReveal direction="left" delay={100}>
-                            <div className="flex items-center gap-4 mb-10 border-b border-white/10 pb-4">
-                                <h2 className="text-3xl md:text-5xl font-black uppercase italic tracking-tighter text-white">
-                                    {category.title}
-                                </h2>
-                                <div className="h-[1px] flex-grow bg-gradient-to-r from-brand-red to-transparent"></div>
-                            </div>
-                        </ScrollReveal>
+                {categories.map((category, idx) => {
+                    const isExpanded = expandedCategories[category.id];
+                    const visibleItems = isExpanded ? category.items : category.items.slice(0, 6);
+                    const hasMore = category.items.length > 6;
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {category.items.map((product, pIdx) => (
-                                <ScrollReveal key={product.id} direction="up" delay={pIdx * 100}>
-                                    <div className="group relative bg-[#111] rounded-3xl overflow-hidden border border-white/5 hover:border-brand-red/30 transition-all duration-500">
-                                        {/* Image Container */}
-                                        <div className="relative h-64 md:h-72 w-full bg-[#1a1a1a] p-8 flex items-center justify-center overflow-hidden">
-                                            <div className="absolute inset-0 bg-gradient-to-tr from-brand-red/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                            <img
-                                                src={product.img}
-                                                alt={product.name}
-                                                className="w-full h-full object-contain filter drop-shadow-2xl group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700 ease-out"
-                                            />
-                                        </div>
+                    return (
+                        <div key={category.id} className="mb-24 last:mb-0">
+                            <ScrollReveal direction="left" delay={100}>
+                                <div className="flex items-center gap-4 mb-10 border-b border-white/10 pb-4">
+                                    <h2 className="text-3xl md:text-5xl font-black uppercase italic tracking-tighter text-white">
+                                        {category.title}
+                                    </h2>
+                                    <div className="h-[1px] flex-grow bg-gradient-to-r from-brand-red to-transparent"></div>
+                                </div>
+                            </ScrollReveal>
 
-                                        {/* Content */}
-                                        <div className="p-6 relative">
-                                            <h3 className="text-xl font-bold uppercase italic tracking-tight mb-2 text-gray-200 group-hover:text-white transition-colors">
-                                                {product.name}
-                                            </h3>
-                                            <div className="flex justify-between items-end mt-4">
-                                                <Link to="/contact">
-                                                    <span className="text-brand-red text-sm font-bold uppercase tracking-widest border-b border-transparent hover:border-brand-red transition-all cursor-pointer">
-                                                        Enquire Now
-                                                    </span>
-                                                </Link>
-                                                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
-                                                    <span className="text-lg">→</span>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {visibleItems.map((product, pIdx) => (
+                                    <ScrollReveal key={product.id} direction="up" delay={pIdx * 100}>
+                                        <div className="group relative bg-[#111] rounded-3xl overflow-hidden border border-white/5 hover:border-brand-red/30 transition-all duration-500">
+                                            {/* Image Container */}
+                                            <div
+                                                className="relative h-64 md:h-72 w-full bg-[#1a1a1a] p-8 flex items-center justify-center overflow-hidden cursor-zoom-in"
+                                                onClick={() => setSelectedImage(product.img)}
+                                            >
+                                                <div className="absolute inset-0 bg-gradient-to-tr from-brand-red/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                                <img
+                                                    src={product.img}
+                                                    alt={product.name}
+                                                    className="w-full h-full object-contain filter drop-shadow-2xl group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700 ease-out"
+                                                />
+                                            </div>
+
+                                            {/* Content */}
+                                            <div className="p-6 relative">
+                                                <h3 className="text-xl font-bold uppercase italic tracking-tight mb-2 text-gray-200 group-hover:text-white transition-colors">
+                                                    {product.name}
+                                                </h3>
+                                                <div className="flex justify-between items-end mt-4">
+                                                    <Link to="/contact">
+                                                        <span className="text-brand-red text-sm font-bold uppercase tracking-widest border-b border-transparent hover:border-brand-red transition-all cursor-pointer">
+                                                            Enquire Now
+                                                        </span>
+                                                    </Link>
+                                                    <Link to="/contact">
+                                                        <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
+                                                            <span className="text-lg">→</span>
+                                                        </div>
+                                                    </Link>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </ScrollReveal>
-                            ))}
+                                    </ScrollReveal>
+                                ))}
+                            </div>
+
+                            {hasMore && (
+                                <div className="flex justify-center mt-12">
+                                    <Button
+                                        onClick={() => toggleCategory(category.id)}
+                                        variant="custom"
+                                        className="px-8 py-3 bg-white/5 hover:bg-brand-red text-white uppercase tracking-widest text-sm font-bold skew-x-[-10deg] transition-all"
+                                    >
+                                        <span className="skew-x-[10deg] inline-block">
+                                            {isExpanded ? 'Show Less' : 'View All'}
+                                        </span>
+                                    </Button>
+                                </div>
+                            )}
                         </div>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
+
+            {/* ================= LIGHTBOX ================= */}
+            {selectedImage && (
+                <div
+                    className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-4"
+                    onClick={() => setSelectedImage(null)}
+                >
+                    <button
+                        className="absolute top-8 right-8 text-white/50 hover:text-brand-red text-4xl transition-colors"
+                        onClick={() => setSelectedImage(null)}
+                    >
+                        ×
+                    </button>
+                    <img
+                        src={selectedImage}
+                        alt="Full review"
+                        className="max-w-full max-h-[90vh] object-contain drop-shadow-2xl animate-zoom-in"
+                        onClick={(e) => e.stopPropagation()}
+                    />
+                </div>
+            )}
 
             {/* ================= CONTACT / FOOTER ================= */}
             <footer className="bg-black pt-20 pb-10 border-t border-white/10 text-white">
