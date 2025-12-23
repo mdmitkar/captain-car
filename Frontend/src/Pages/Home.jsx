@@ -78,16 +78,11 @@ const Home = () => {
                             Experience the pinnacle of automotive interior design. We don't just modify cars; we forge identities.
                         </p>
 
-                        <div className={`flex flex-col sm:flex-row gap-6 transition-all duration-1000 delay-[300ms] transform ${showBottomContent ? 'translate-y-0 opacity-100' : 'translate-y-[20px] opacity-0'}`}>
-                            <Link to="/contact">
-                                <Button variant="custom" className="px-10 py-4 bg-brand-red hover:bg-white hover:text-brand-red text-white font-black rounded-none skew-x-[-10deg] transition-all duration-300 uppercase tracking-widest shadow-[5px_5px_0px_rgba(255,255,255,0.1)] hover:shadow-[5px_5px_0px_#B22222]">
-                                    <span className="skew-x-[10deg] inline-block">Start Project</span>
-                                </Button>
-                            </Link>
+                        <div className={`flex justify-center w-full transition-all duration-1000 delay-[300ms] transform ${showBottomContent ? 'translate-y-0 opacity-100' : 'translate-y-[20px] opacity-0'}`}>
                             <Link to="/services">
-                                <button className="px-10 py-4 border border-white/50 hover:border-brand-red text-white font-bold uppercase tracking-widest hover:bg-brand-red/10 transition-all duration-300 skew-x-[-10deg] backdrop-blur-sm">
-                                    <span className="skew-x-[10deg] inline-block">View Gallery</span>
-                                </button>
+                                <Button variant="custom" className="mt-32 px-12 py-5 bg-[#E31E24] hover:bg-white hover:text-[#E31E24] text-white text-xl font-black rounded-none skew-x-[-10deg] transition-all duration-300 uppercase tracking-widest shadow-[0_0_30px_rgba(227,30,36,0.4)] hover:shadow-[0_0_50px_rgba(255,255,255,0.4)]">
+                                    <span className="skew-x-[10deg] inline-block">Discover More</span>
+                                </Button>
                             </Link>
                         </div>
                     </ScrollReveal>

@@ -42,18 +42,6 @@ const Navbar = () => {
                     ))}
                 </div>
 
-                {/* CTA Button */}
-                <div className="hidden md:block">
-                    <Button
-                        variant="custom"
-                        className="relative overflow-hidden !bg-brand-red-dark hover:!bg-brand-red text-white shadow-[0_0_15px_rgba(220,20,60,0.4)] hover:shadow-[0_0_25px_rgba(220,20,60,0.6)] transition-all duration-300 rounded-full px-6 py-2 group"
-                    >
-                        <span className="relative z-10 font-black tracking-widest uppercase text-xs flex items-center gap-2">
-                            Book Now <span className="transform group-hover:translate-x-1 transition-transform">→</span>
-                        </span>
-                    </Button>
-                </div>
-
                 {/* Mobile Menu Button */}
                 <button
                     className="md:hidden text-white p-2"
