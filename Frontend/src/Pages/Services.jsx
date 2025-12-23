@@ -30,7 +30,7 @@ const Services = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
                     {services.map((service, index) => (
                         <ScrollReveal key={index} delay={index * 100}>
-                            <div className="h-full bg-[#0a0a0a] border border-white/5 rounded-3xl p-6 hover:border-[#E31E24] hover:-translate-y-2 hover:shadow-[0_0_50px_-10px_rgba(227,30,36,0.5)] transition-all duration-500 group relative overflow-hidden flex flex-col justify-between">
+                            <div className="h-full bg-gradient-to-b from-[#1a0505] to-black border border-white/5 rounded-3xl p-6 hover:border-[#E31E24] hover:-translate-y-2 hover:shadow-[0_0_50px_-10px_rgba(227,30,36,0.5)] transition-all duration-500 group relative overflow-hidden flex flex-col justify-between">
                                 {/* Hover Image Background */}
                                 <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                                     <img src={service.image} alt={service.title} className="w-full h-full object-cover opacity-40 group-hover:scale-110 transition-transform duration-[10s]" />
@@ -99,7 +99,7 @@ const services = [
     {
         title: "Professional Installation",
         description: "Zero compromise. We use non-invasive, coupler-to-coupler installation techniques that protect your car's original wiring and warranty.",
-        image: "/tyremiddle.png",
+        image: "/roofcarrier.png",
         icon: (
             <svg className="w-full h-full fill-current" viewBox="0 0 24 24">
                 <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z" />
@@ -119,7 +119,7 @@ const services = [
     {
         title: "Exterior Styling",
         description: "Turn heads. From aerodynamic body kits and chrome detailing to bold alloy wheels and wraps, we define your car's road presence.",
-        image: "/roofcarrier.png",
+        image: "/tyremiddle.png",
         icon: (
             <svg className="w-full h-full fill-current" viewBox="0 0 24 24">
                 <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" />

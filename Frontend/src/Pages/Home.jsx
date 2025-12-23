@@ -39,6 +39,7 @@ const Home = () => {
         { title: 'Concert Audio', desc: 'High-fidelity sound systems that shake the ground.', img: '/bossaudiosystem.png' },
         { title: 'Privacy Films', desc: 'Advanced heat rejection and UV protection.', img: '/suntekwindowfilm.png' },
         { title: 'Tech Upgrades', desc: 'Android players, mood lighting, & security.', img: '/cardisplay2.png' },
+        { title: 'Exterior Styling', desc: "Turn heads. From aerodynamic body kits and chrome detailing to bold alloy wheels and wraps, we define your car's road presence.", img: '/tyremiddle.png' },
     ];
 
     return (
