@@ -25,7 +25,7 @@ const Products = () => {
                 { id: 4, name: "Custom Stitch Pattern", img: "/seatcover4.png" },
                 { id: 5, name: "Ergonomic Design", img: "/seatcover5.png" },
                 { id: 6, name: "Two-Tone Classic", img: "/seatcover6.png" },
-                
+
                 { id: 8, name: "Diamond Quilt", img: "/seatcover8.png" },
                 { id: 9, name: "Executive Suite", img: "/seatcover9.png" },
             ]
@@ -53,7 +53,18 @@ const Products = () => {
             title: "Carriers & Bumpers",
             id: "carriers",
             items: [
-                { id: 17, name: "Heavy Duty Roof Carrier", img: "/roofcarrier.png" },
+                // Display 3 Carriers first
+                { id: 17, name: "Heavy Duty Roof Carrier", img: "/carrier5.png" },
+                { id: 24, name: "Aerodynamic Carrier", img: "/carrier2.webp" },
+                { id: 25, name: "Luggage Rack Pro", img: "/carrier3.webp" },
+                // Display 3 Bumpers next
+                { id: 26, name: "Front Guard Bumper", img: "/bumper1.webp" },
+                { id: 27, name: "Rear Protection Bumper", img: "/bumper2.webp" },
+                { id: 28, name: "Off-Road Bumper", img: "/bumper3.jpg" },
+                // Remaining items for "View All"
+                { id: 29, name: "Sleek Roof Carrier", img: "/carrier4.jpg" },
+                { id: 30, name: "Utility Carrier", img: "/carrier6.webp" },
+                { id: 31, name: "Sport Bumper Guard", img: "/bumper4.jpg" },
             ]
         },
         {
