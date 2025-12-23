@@ -17,7 +17,7 @@ const Navbar = () => {
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-            <div className="glass-panel mx-4 mt-4 rounded-2xl px-6 py-3 flex items-center justify-between">
+            <div className="glass-panel mx-4 mt-4 rounded-full px-8 py-4 flex items-center justify-between bg-black/40 backdrop-blur-xl border border-white/10 shadow-2xl transition-all duration-300 hover:bg-black/60">
                 {/* Logo */}
                 <Link to="/" className="flex items-center group">
                     <img

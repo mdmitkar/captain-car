@@ -4,12 +4,21 @@ import ScrollReveal from '../Components/ScrollReveal';
 
 const Home = () => {
     const [showHeroText, setShowHeroText] = useState(false);
+    const [showBottomContent, setShowBottomContent] = useState(false);
 
     useEffect(() => {
-        const timer = setTimeout(() => {
+        const timer1 = setTimeout(() => {
             setShowHeroText(true);
-        }, 1000); // Faster initial load for punchy effect
-        return () => clearTimeout(timer);
+        }, 3000); // 3-second delay for Title
+
+        const timer2 = setTimeout(() => {
+            setShowBottomContent(true);
+        }, 5500); // 5.5-second delay for Subtitle & Buttons
+
+        return () => {
+            clearTimeout(timer1);
+            clearTimeout(timer2);
+        };
     }, []);
 
     return (
@@ -36,18 +45,32 @@ const Home = () => {
                 {/* Hero Content - Left to Right Animation */}
                 <div className="relative z-20 container mx-auto px-6 h-full flex flex-col justify-center items-start">
                     <ScrollReveal direction="left" delay={500} className="max-w-4xl">
-                        <div className="glass-panel inline-block px-6 py-2 rounded-full mb-6 border-l-4 border-brand-red">
+                        <div className={`glass-panel inline-block px-6 py-2 rounded-full mb-6 border-l-4 border-brand-red transition-all duration-1000 ${showHeroText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                             <span className="text-brand-red font-bold tracking-[0.3em] uppercase text-xs md:text-sm">Premium Car Modification</span>
                         </div>
-                        <h1 className="text-5xl md:text-8xl font-black mb-6 leading-[0.9] uppercase italic tracking-tighter drop-shadow-2xl">
-                            <span className="block text-white">Redefine Your</span>
-                            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-brand-red-light filter drop-shadow-[0_0_20px_rgba(220,20,60,0.5)]">Driving Impact</span>
+                        <h1 className="text-5xl md:text-8xl font-black mb-6 leading-[0.9] uppercase italic tracking-tighter drop-shadow-2xl flex flex-col gap-2">
+                            <div className="flex gap-4 overflow-hidden">
+                                <span className={`block text-white transition-all duration-700 delay-[0ms] transform ${showHeroText ? 'translate-y-0 opacity-100' : 'translate-y-[100%] opacity-0'}`}>
+                                    REDEFINE
+                                </span>
+                                <span className={`block text-white transition-all duration-700 delay-[200ms] transform ${showHeroText ? 'translate-y-0 opacity-100' : 'translate-y-[100%] opacity-0'}`}>
+                                    YOUR
+                                </span>
+                            </div>
+                            <div className="flex gap-4 overflow-hidden">
+                                <span className={`block text-transparent bg-clip-text bg-gradient-to-r from-[#DC143C] to-[#FF6B6B] filter drop-shadow-[0_0_20px_rgba(220,20,60,0.5)] transition-all duration-700 delay-[400ms] transform ${showHeroText ? 'translate-y-0 opacity-100' : 'translate-y-[100%] opacity-0'}`}>
+                                    DRIVING
+                                </span>
+                                <span className={`block text-transparent bg-clip-text bg-gradient-to-r from-[#DC143C] to-[#FF6B6B] filter drop-shadow-[0_0_20px_rgba(220,20,60,0.5)] transition-all duration-700 delay-[600ms] transform ${showHeroText ? 'translate-y-0 opacity-100' : 'translate-y-[100%] opacity-0'}`}>
+                                    IMPACT
+                                </span>
+                            </div>
                         </h1>
-                        <p className="text-gray-300 text-lg md:text-2xl font-light tracking-wide max-w-2xl mb-10 border-l border-white/20 pl-6">
+                        <p className={`text-gray-300 text-lg md:text-2xl font-light tracking-wide max-w-2xl mb-10 border-l border-white/20 pl-6 transition-all duration-1000 delay-0 transform ${showBottomContent ? 'translate-y-0 opacity-100' : 'translate-y-[20px] opacity-0'}`}>
                             Experience the pinnacle of automotive interior design. We don't just modify cars; we forge identities.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-6">
+                        <div className={`flex flex-col sm:flex-row gap-6 transition-all duration-1000 delay-[300ms] transform ${showBottomContent ? 'translate-y-0 opacity-100' : 'translate-y-[20px] opacity-0'}`}>
                             <Button variant="custom" className="px-10 py-4 bg-brand-red hover:bg-white hover:text-brand-red text-white font-black rounded-none skew-x-[-10deg] transition-all duration-300 uppercase tracking-widest shadow-[5px_5px_0px_rgba(255,255,255,0.1)] hover:shadow-[5px_5px_0px_#B22222]">
                                 <span className="skew-x-[10deg] inline-block">Start Project</span>
                             </Button>
