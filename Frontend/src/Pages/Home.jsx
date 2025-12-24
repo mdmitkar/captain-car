@@ -127,35 +127,43 @@ const Home = () => {
             </div>
 
             {/* ================= THE EXPERIENCE (About) ================= */}
-            <div className="relative py-16 px-6 bg-[#080808] overflow-hidden">
+            <div className="relative py-24 px-6 bg-black overflow-hidden">
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-red/5 rounded-full blur-[120px] pointer-events-none" />
 
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left: Image Grid */}
                     <ScrollReveal direction="right" delay={200}>
                         <div className="relative">
-                            <div className="absolute inset-0 bg-brand-red blur-[60px] opacity-20" />
-                            <div className="relative grid grid-cols-2 gap-4">
-                                <div className="space-y-4 pt-12">
-                                    <div className="h-64 bg-neutral-900 rounded-2xl border border-white/5 overflow-hidden group">
-                                        <img src="/bumper3.jpg" alt="Professional Styling" className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" />
+                            <div className="absolute inset-0 bg-brand-red blur-[60px] opacity-10" />
+                            <div className="relative grid grid-cols-2 gap-8 md:gap-12">
+                                {/* Left Column: Dark Showroom Products */}
+                                <div className="space-y-8 md:space-y-12 pt-16">
+                                    <div className="h-64 md:h-72 group relative bg-neutral-950 border border-white/5 rounded-3xl overflow-hidden shadow-2xl">
+                                        <div className="absolute inset-0 bg-brand-red/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                        <img src="/bumper/bumper4.jpg" alt="Pro Bumper" className="w-full h-full object-contain p-6 group-hover:scale-110 group-hover:-rotate-3 transition-all duration-700 relative z-10" />
                                     </div>
-                                    <div className="h-48 bg-neutral-900 rounded-2xl border border-white/5 overflow-hidden group">
-                                        <img src="/cardisplay1.png" alt="Android Interface" className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" />
+                                    <div className="h-44 md:h-52 group relative bg-neutral-950 border border-white/5 rounded-2xl overflow-hidden shadow-xl">
+                                        <div className="absolute inset-0 bg-white/5 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                        <img src="/cardisplay1.png" alt="Tech Interface" className="w-full h-full object-contain p-6 group-hover:scale-110 transition-all duration-700 relative z-10" />
                                     </div>
-                                    <div className="h-56 bg-neutral-900 rounded-2xl border border-white/5 overflow-hidden group">
-                                        <img src="/carrier5.png" alt="Travel Gear" className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" />
+                                    <div className="h-56 md:h-64 group relative bg-neutral-950 border border-white/5 rounded-3xl overflow-hidden shadow-2xl">
+                                        <div className="absolute inset-0 bg-brand-red/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                        <img src="/carrier5.png" alt="Roof Rack" className="w-full h-full object-contain p-8 group-hover:scale-110 group-hover:rotate-3 transition-all duration-700 relative z-10" />
                                     </div>
                                 </div>
-                                <div className="space-y-4">
-                                    <div className="h-48 bg-neutral-900 rounded-2xl border border-white/5 overflow-hidden group">
-                                        <img src="/bossaudiosystem.png" alt="Sound System" className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" />
+                                {/* Right Column: Dark Showroom Products */}
+                                <div className="space-y-8 md:space-y-12">
+                                    <div className="h-44 md:h-52 group relative bg-neutral-950 border border-white/5 rounded-2xl overflow-hidden shadow-xl">
+                                        <div className="absolute inset-0 bg-white/5 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                        <img src="/bossaudiosystem.png" alt="Pro Audio" className="w-full h-full object-contain p-6 group-hover:scale-110 transition-all duration-700 relative z-10" />
                                     </div>
-                                    <div className="h-64 bg-neutral-900 rounded-2xl border border-white/5 overflow-hidden group">
-                                        <img src="/seatcover1.png" alt="Bespoke Stitching" className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" />
+                                    <div className="h-72 md:h-80 group relative bg-neutral-950 border border-white/10 rounded-[3rem] overflow-hidden shadow-2xl">
+                                        <div className="absolute inset-0 bg-brand-red/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                        <img src="/seat cover/seatcover2.png" alt="Luxury Seating" className="w-full h-full object-contain p-6 group-hover:scale-110 group-hover:-rotate-2 transition-all duration-700 relative z-10" />
                                     </div>
-                                    <div className="h-48 bg-neutral-900 rounded-2xl border border-white/5 overflow-hidden group">
-                                        <img src="/keylessentrysystem.png" alt="Advanced Tech" className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" />
+                                    <div className="h-44 md:h-52 group relative bg-neutral-950 border border-white/5 rounded-2xl overflow-hidden shadow-xl">
+                                        <div className="absolute inset-0 bg-white/5 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                        <img src="/key-less-entry/key-less-entry-system-1.png" alt="Car Tech" className="w-full h-full object-contain p-8 group-hover:scale-110 transition-all duration-700 relative z-10" />
                                     </div>
                                 </div>
                             </div>
