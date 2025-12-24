@@ -25,7 +25,6 @@ const Products = () => {
                 { id: 4, name: "Custom Stitch Pattern", img: "/seatcover4.png" },
                 { id: 5, name: "Ergonomic Design", img: "/seatcover5.png" },
                 { id: 6, name: "Two-Tone Classic", img: "/seatcover6.png" },
-
                 { id: 8, name: "Diamond Quilt", img: "/seatcover8.png" },
                 { id: 9, name: "Executive Suite", img: "/seatcover9.png" },
             ]
@@ -100,6 +99,19 @@ const Products = () => {
                 { id: 36, name: "Custom Stitch Mat", img: "/assets/floor-mat4.png" },
                 { id: 37, name: "Rubber Heavy Mat", img: "/assets/floor-mat5.png" },
             ]
+        },
+        {
+            title: "Premium Air Fresheners",
+            id: "air-fresheners",
+            items: [
+                { id: 101, name: "Royal Oudh", img: "/airfreshner.jpg" },
+                { id: 102, name: "Oceanic Breeze", img: "/airfreshner2.jpg" },
+                { id: 103, name: "Lavender Mist", img: "/airfreshner3.jpg" },
+                { id: 104, name: "Citrus Burst", img: "/airfreshner4.jpg" },
+                { id: 105, name: "Musk Intense", img: "/airfreshner5.jpg" },
+                { id: 106, name: "Vanilla Noir", img: "/airfreshner6.jpg" },
+                { id: 107, name: "Sandalwood Pure", img: "/airfreshner7.jpg" },
+            ]
         }
     ];
 
@@ -134,7 +146,7 @@ const Products = () => {
 
                     // Special logic for categories expanding from 3 items
                     // 'wheel-caps' needs to show only 3 but view all expands to custom view
-                    if (['wheel-caps', 'floor-mats', 'seat-covers', 'speakers', 'audio-video', 'sun-control'].includes(category.id)) {
+                    if (['air-fresheners', 'wheel-caps', 'floor-mats', 'seat-covers', 'speakers', 'audio-video', 'sun-control'].includes(category.id)) {
                         visibleItems = isExpanded ? category.items : category.items.slice(0, 3);
                         hasMore = category.items.length > 3;
                     }
@@ -158,17 +170,18 @@ const Products = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 {visibleItems.map((product, pIdx) => (
                                     <ScrollReveal key={product.id} direction="up" delay={pIdx * 100}>
-                                        <div className="group relative bg-[#111] rounded-3xl overflow-hidden border border-white/5 hover:border-brand-red/30 transition-all duration-500">
+                                        <div className="group relative bg-[#0f0f0f] rounded-3xl overflow-hidden border border-white/5 hover:border-brand-red/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(227,30,36,0.15)] hover:-translate-y-2">
                                             {/* Image Container */}
                                             <div
-                                                className="relative h-64 md:h-72 w-full bg-[#1a1a1a] p-8 flex items-center justify-center overflow-hidden cursor-zoom-in"
+                                                className="relative h-64 md:h-80 w-full bg-gradient-to-b from-[#151515] to-[#0a0a0a] p-6 flex items-center justify-center overflow-hidden cursor-zoom-in group-hover:bg-[#1a1a1a] transition-colors"
                                                 onClick={() => setSelectedImage(product.img)}
                                             >
-                                                <div className="absolute inset-0 bg-gradient-to-tr from-brand-red/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-red/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                                                 <img
                                                     src={product.img}
                                                     alt={product.name}
-                                                    className="w-full h-full object-contain filter drop-shadow-2xl group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700 ease-out"
+                                                    loading="lazy"
+                                                    className="w-full h-full object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] group-hover:scale-105 group-hover:drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)] transition-all duration-700 ease-out"
                                                 />
                                             </div>
 
