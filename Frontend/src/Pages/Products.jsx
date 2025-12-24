@@ -19,108 +19,88 @@ const Products = () => {
             title: "Seat Covers",
             id: "seat-covers",
             items: [
-                { id: 1, name: "Blue Mesh Fabric", img: "/seatcover1.png" },
-                { id: 2, name: "Beige Comfort", img: "/seatcover2.png" },
-                { id: 3, name: "Tan Sport Leatherette", img: "/seatcover3.png" },
-                { id: 4, name: "Grey Ribbed Fabric ", img: "/seatcover4.png" },
-                { id: 5, name: "Brown Black Ergonomic", img: "/seatcover5.png" },
-                { id: 6, name: "Dual-Tone Brown", img: "/seatcover6.png" },
-                { id: 8, name: "Beige Diamond Stitch", img: "/seatcover8.png" },
-                { id: 9, name: "Brown Executive", img: "/seatcover9.png" },
+                { id: 5, name: "Charcoal Black Ergonomic", img: "/seat cover/seatcover5-removebg-preview.png" },
+                { id: 4, name: "Grey Ribbed Performance", img: "/seat cover/seatcover4-removebg-preview.png" },
+                { id: 1, name: "Cerulean Mesh Fabric", img: "/seat cover/seatcover1-removebg-preview.png" },
+                { id: 2, name: "Arctic Beige Comfort", img: "/seat cover/seatcover2-removebg-preview.png" },
+                { id: 6, name: "Dual-Tone Mahogany", img: "/seatcover6.png" },
+                { id: 8, name: "Signature Diamond Stitch", img: "/seatcover8.png" },
             ]
         },
         {
-            title: "Audio & Video Players",
+            title: "Audio & Video Hubs",
             id: "audio-video",
             items: [
-                { id: 10, name: "Android Touch Display", img: "/cardisplay1.png" },
-                { id: 11, name: "Wide Screen Touch Display", img: "/cardisplay2.png" },
-                { id: 12, name: "OEM Fit Touch Display", img: "/cardisplay3.png" },
-                { id: 41, name: "USB Bluetooth Audio Player", img: "/assets/car-audio-1.png" },
-                { id: 42, name: "Classic Single-DIN Player", img: "/assets/car-audio-2.png" },
-                { id: 43, name: "LED Display Audio Player", img: "/assets/car-audio-3.png" },
+                { id: 10, name: "Android Precision Touch", img: "/car-display/cardisplay1-removebg-preview.png" },
+                { id: 11, name: "Wide Dynamic Dashboard", img: "/car-display/cardisplay2-removebg-preview.png" },
+                { id: 12, name: "OEM Intelligent Interface", img: "/car-display/cardisplay3-removebg-preview.png" },
+                { id: 41, name: "Bluetooth Command Center", img: "/car-audio-player/car-audio-1-removebg-preview.png" },
+                { id: 42, name: "Classic Single-DIN Hub", img: "/car-audio-player/car-audio-2-removebg-preview.png" },
+                { id: 43, name: "LED Symphony Display", img: "/car-audio-player/car-audio-3-removebg-preview.png" },
             ]
         },
         {
-            title: "Speakers & Woofers",
+            title: "Performance Speakers",
             id: "speakers",
             items: [
-
-                { id: 16, name: "Boss Audio System", img: "/bossaudiosystem.png" },
-                { id: 38, name: "Pro Series Speaker", img: "/assets/car-speaker.png" },
-                { id: 39, name: "Component Speaker", img: "/assets/car-speaker-2.png" },
-                { id: 40, name: "Coaxial Speaker Pair", img: "/assets/car-speaker-3.png" },
+                { id: 16, name: "Boss Audio Masterpiece", img: "/speaker/bossaudiosystem-removebg-preview.png" },
+                { id: 38, name: "Pro Series Acoustic", img: "/speaker/car-speaker-removebg-preview.png" },
+                { id: 39, name: "Component Precision Pair", img: "/speaker/car-speaker-2-removebg-preview.png" },
+                { id: 40, name: "Coaxial Harmony Set", img: "/speaker/car-speaker-3-removebg-preview.png" },
             ]
         },
         {
-            title: "Carriers & Bumpers",
+            title: "Armor & Carriers",
             id: "carriers",
             items: [
-                // Display 3 Carriers first
-                { id: 17, name: "Heavy Duty Roof Carrier", img: "/carrier5.png" },
+                { id: 17, name: "Heavy Duty Roof Frame", img: "/carrier/carrier5-removebg-hero.png" },
+                { id: 26, name: "Front Guard Precision", img: "/bumper/bumper1-removebg-preview.png" },
+                { id: 27, name: "Rear Shell Protection", img: "/bumper/bumper2-removebg-preview.png" },
+                { id: 28, name: "Off-Road Tactical Bumper", img: "/bumper/bumper3-removebg-preview.png" },
                 { id: 24, name: "Aerodynamic Carrier", img: "/carrier2.webp" },
-                { id: 25, name: "Luggage Rack Pro", img: "/carrier3.webp" },
-                // Display 3 Bumpers next
-                { id: 26, name: "Front Guard Bumper", img: "/bumper1.webp" },
-                { id: 27, name: "Rear Protection Bumper", img: "/bumper2.webp" },
-                { id: 28, name: "Off-Road Bumper", img: "/bumper3.jpg" },
-                // Remaining items for "View All"
-                { id: 29, name: "Sleek Roof Carrier", img: "/carrier4.jpg" },
-                { id: 30, name: "Utility Carrier", img: "/carrier6.webp" },
-                { id: 31, name: "Sport Bumper Guard", img: "/bumper4.jpg" },
+                { id: 25, name: "Luggage Rack Horizon", img: "/carrier3.webp" },
             ]
         },
         {
-            title: "Sun Control Film",
-            id: "sun-control",
-            items: [
-                { id: 44, name: "Premium Car Washing", img: "/carwashing4.png" },
-
-                { id: 46, name: "Deep Clean Wash", img: "/windowwash2.png" },
-                { id: 47, name: "Quick Wash Service", img: "/carwashing3.png" },
-            ]
-        },
-        {
-            title: "LED Lights & Ambience",
-            id: "led-lights",
-            items: [
-                { id: 48, name: "GVAA LED Headlight", img: "/ledlight1.jpg" },
-                { id: 49, name: "A-Class LED Headlight", img: "/ledlight2.png" },
-                { id: 50, name: "Elegant LED Headlight", img: "/ledlight3.png" },
-                
-            ]
-        },
-        {
-            title: "Wheel Caps",
+            title: "Wheel Precision Caps",
             id: "wheel-caps",
             items: [
-                { id: 22, name: "Sport Ring Cap", img: "/assets/car-wheel cap.png" },
-                { id: 34, name: "Matte Black Cap", img: "/assets/car-wheel cap2.png" },
-                { id: 35, name: "Silver Star Cap", img: "/assets/car-wheel cap-3.png" },
+                { id: 22, name: "Sport Ring Velocity", img: "/car-tyre-cap/car-wheel_cap-removebg-preview.png" },
+                { id: 34, name: "Matte Black Stealth", img: "/car-tyre-cap/car-wheel_cap2-removebg-preview.png" },
+                { id: 35, name: "Silver Star Radiant", img: "/car-tyre-cap/car-wheel_cap-3-removebg-preview.png" },
             ]
         },
         {
-            title: "Floor Mats",
+            title: "Floor Architecture",
             id: "floor-mats",
             items: [
-                { id: 23, name: "Beige 7D Floor Mat", img: "/assets/floor-mat.png" },
-                { id: 32, name: "Red-Black Carpet Mat", img: "/assets/floor-mat2.png" },
-                { id: 33, name: "Black All-Weather Mat", img: "/assets/floor-mat3.png" },
-                { id: 36, name: "Grey Custom Stitch Mat", img: "/assets/floor-mat4.png" },
-                { id: 37, name: "Black Heavy Rubber Mat", img: "/assets/floor-mat5.png" },
+                { id: 23, name: "Beige 7D Precision Mat", img: "/assets/floor-mat.png" },
+                { id: 32, name: "Red-Black Circuit Mat", img: "/assets/floor-mat2.png" },
+                { id: 33, name: "Stealth All-Weather Mat", img: "/assets/floor-mat3.png" },
+                { id: 36, name: "Grey Custom Artisan Mat", img: "/assets/floor-mat4.png" },
+                { id: 37, name: "Heavy Duty Vulcan Mat", img: "/assets/floor-mat5.png" },
             ]
         },
         {
-            title: "Premium Air Fresheners",
+            title: "Elite Air Fragrances",
             id: "air-fresheners",
             items: [
-                { id: 101, name: "Royal Oudh", img: "/airfreshner.jpg" },
-                { id: 102, name: "Oceanic Breeze", img: "/airfreshner2.jpg" },
-                { id: 103, name: "Lavender Mist", img: "/airfreshner3.jpg" },
-                { id: 104, name: "Citrus Burst", img: "/airfreshner4.jpg" },
-                { id: 105, name: "Musk Intense", img: "/airfreshner5.jpg" },
-                { id: 106, name: "Vanilla Noir", img: "/airfreshner6.jpg" },
-                { id: 107, name: "Sandalwood Pure", img: "/airfreshner7.jpg" },
+                { id: 101, name: "Royal Oudh Essence", img: "/car-air-freshner/airfreshner-removebg-preview.png" },
+                { id: 102, name: "Oceanic Breeze Mist", img: "/car-air-freshner/airfreshner2-removebg-preview.png" },
+                { id: 103, name: "Lavender Mist Aura", img: "/car-air-freshner/airfreshner3-removebg-preview.png" },
+                { id: 104, name: "Citrus Burst Energy", img: "/car-air-freshner/airfreshner4-removebg-preview.png" },
+                { id: 105, name: "Musk Intense Noir", img: "/car-air-freshner/airfreshner5-removebg-preview.png" },
+                { id: 106, name: "Vanilla Velvet Cloud", img: "/car-air-freshner/airfreshner6-removebg-preview.png" },
+                { id: 107, name: "Sandalwood Pure Grain", img: "/car-air-freshner/airfreshner7-removebg-preview.png" },
+            ]
+        },
+        {
+            title: "Sun Control & Glass",
+            id: "sun-control",
+            items: [
+                { id: 44, name: "Glacier Thermal Shield", img: "/carwashing4.png" },
+                { id: 46, name: "Precision Window Clarity", img: "/windowwash2.png" },
+                { id: 47, name: "Rapid Hydro Shield", img: "/carwashing3.png" },
             ]
         }
     ];
