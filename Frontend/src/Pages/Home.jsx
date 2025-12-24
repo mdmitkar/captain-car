@@ -32,11 +32,7 @@ const Home = () => {
     }, []);
 
     const services = [
-        {
-            title: 'Bespoke Interiors',
-            desc: 'Transform your cabin into a luxury lounge. We offer hand-stitched leather upholstery, custom headliners, and floor laminations tailored to your exact taste.',
-            img: '/seatcover-hero.png'
-        },
+     
         {
             title: 'Concert Audio',
             desc: 'Audiophile-grade sound engineering. From high-fidelity speakers and powerful subwoofers to precision DSP tuning for a studio-quality experience on wheels.',
