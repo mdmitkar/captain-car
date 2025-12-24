@@ -22,11 +22,11 @@ const Home = () => {
     useEffect(() => {
         const timer1 = setTimeout(() => {
             setShowHeroText(true);
-        }, 3000);
+        }, 1860);
 
         const timer2 = setTimeout(() => {
             setShowBottomContent(true);
-        }, 5500);
+        }, 3500);
 
         return () => {
             clearTimeout(timer1);
@@ -35,11 +35,31 @@ const Home = () => {
     }, []);
 
     const services = [
-        { title: 'Bespoke Interiors', desc: 'Hand-stitched leather tailored to perfection.', img: '/seatcover8.png' },
-        { title: 'Concert Audio', desc: 'High-fidelity sound systems that shake the ground.', img: '/bossaudiosystem.png' },
-        { title: 'Privacy Films', desc: 'Advanced heat rejection and UV protection.', img: '/suntekwindowfilm.png' },
-        { title: 'Tech Upgrades', desc: 'Android players, mood lighting, & security.', img: '/cardisplay2.png' },
-        { title: 'Exterior Styling', desc: "Turn heads. From aerodynamic body kits and chrome detailing to bold alloy wheels and wraps, we define your car's road presence.", img: '/tyremiddle.png' },
+        {
+            title: 'Bespoke Interiors',
+            desc: 'Transform your cabin into a luxury lounge. We offer hand-stitched leather upholstery, custom headliners, and floor laminations tailored to your exact taste.',
+            img: '/seatcover8.png'
+        },
+        {
+            title: 'Concert Audio',
+            desc: 'Audiophile-grade sound engineering. From high-fidelity speakers and powerful subwoofers to precision DSP tuning for a studio-quality experience on wheels.',
+            img: '/bossaudiosystem.png'
+        },
+        {
+            title: 'Privacy Films',
+            desc: 'Stay cool and protected. Our premium window films provide up to 99% UV rejection and significant heat reduction without compromising visibility or style.',
+            img: '/suntekwindowfilm.png'
+        },
+        {
+            title: 'Tech Upgrades',
+            desc: 'The latest in automotive intelligence. High-resolution Android displays, 360-degree cameras, and ambient mood lighting controlled right from your smartphone.',
+            img: '/cardisplay2.png'
+        },
+        {
+            title: 'Exterior Styling',
+            desc: "Command the road with presence. Custom body kits, premium alloy wheels, and professional chrome deletions that give your vehicle a distinct, aggressive edge.",
+            img: '/tyremiddle.png'
+        },
     ];
 
     return (
@@ -55,7 +75,7 @@ const Home = () => {
                         playsInline
                         className="w-full h-full object-cover scale-105 brightness-110"
                     >
-                        <source src="/assets/figma-img/car-video - Made with Clipchamp.mp4" type="video/mp4" />
+                        <source src="/assets/captain/final-thar-video.mp4" type="video/mp4" />
                     </video>
                 </div>
 
@@ -144,10 +164,24 @@ const Home = () => {
                                 We Are <br />
                                 <span className="text-[#E31E24]">Captain Car.</span>
                             </h2>
-                            <p className="text-gray-400 text-lg leading-relaxed mb-8 border-l-2 border-brand-red pl-6">
-                                Founded by <strong>Tanveer Farooqui</strong>, we stand as the premier destination for automotive perfection.
-                                From precision audio tuning to bespoke leather tailoring, our workshop in <span className="text-white font-bold">Bhiwandi</span> is where stock vehicles come to undergo a radical transformation.
-                            </p>
+
+                            <div className="space-y-6 text-gray-400 text-lg leading-relaxed mb-10">
+                                <p className="border-l-2 border-brand-red pl-6">
+                                    Founded by <strong>Tanveer Farooqui</strong>, Captain Car has evolved from a passionate vision into Bhiwandi's most trusted sanctuary for automotive excellence. With over 15 years of hands-on experience, Tanveer has personally overseen thousands of transformations, ensuring that every vehicle leaving our workshop carries a signature of perfection.
+                                </p>
+
+                                <p>
+                                    Our philosophy is simple: your car is an extension of your personality. Whether it's the tactile feel of premium Nappa leather, the crystalline clarity of a high-end audio system, or the sleek sophistication of advanced window films, we believe in a holistic approach to car modification. We don't just "install" products; we "integrate" them into the very soul of your vehicle.
+                                </p>
+
+                                <p>
+                                    In an era of mass-produced, off-the-shelf solutions, we take pride in our <span className="text-white font-bold">"Bespoke" mindset</span>. Every seat cover is hand-stitched by master craftsmen with decades of experience. Every audio system is tuned using precision instruments to match the acoustics of your specific car model. We understand that our clients expect nothing but the best, and we are here to exceed those expectations every single time.
+                                </p>
+
+                                <p>
+                                    Located conveniently in <span className="text-white font-bold">Chavindra, Bhiwandi</span>, our facility is equipped with state-of-the-art tools and a dedicated team of specialists. We serve a discerning clientele who travel from across the region because they know that at Captain Car, quality is never compromised for speed. We invite you to experience the difference that true dedication makes.
+                                </p>
+                            </div>
 
                             <div className="grid grid-cols-2 gap-8 mb-10">
                                 <div>
@@ -167,6 +201,56 @@ const Home = () => {
                             </Link>
                         </div>
                     </ScrollReveal>
+                </div>
+            </div>
+
+            {/* ================= THE CAPTAIN'S STANDARD (Process) ================= */}
+            <div className="py-20 bg-black border-t border-white/5">
+                <div className="max-w-7xl mx-auto px-6">
+                    <ScrollReveal direction="up">
+                        <div className="text-center mb-16">
+                            <h4 className="text-brand-red text-sm font-bold uppercase tracking-[0.3em] mb-4">Our Methodology</h4>
+                            <h2 className="text-4xl md:text-6xl font-black text-white italic uppercase tracking-tighter mb-6">
+                                The <span className="text-[#E31E24]">Captain's</span> Standard
+                            </h2>
+                            <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+                                Transparency, precision, and passion. We follow a meticulous four-step process to ensure your vehicle transformation exceeds every industry standard.
+                            </p>
+                        </div>
+                    </ScrollReveal>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {[
+                            {
+                                step: "01",
+                                title: "Vision Consultation",
+                                desc: "Every project begins with a personal sit-down with our experts. We listen to your needs, assess your car's acoustics and layout, and help you select materials that perfectly match your lifestyle and aesthetic preferences."
+                            },
+                            {
+                                step: "02",
+                                title: "Bespoke Design",
+                                desc: "Our designers create a blueprint for your modifications. Whether it's a custom speaker placement for optimal sound staging or a specific stitch pattern for your seat covers, every detail is planned before a single screw is turned."
+                            },
+                            {
+                                step: "03",
+                                title: "Precision Craft",
+                                desc: "This is where the magic happens. Our technicians use specialized tools and traditional craftsmanship to install your upgrades. We use coupler-to-coupler wiring to protect your car's electrical integrity and warranty."
+                            },
+                            {
+                                step: "04",
+                                title: "The Final Handover",
+                                desc: "Before you take the keys, Tanveer Farooqui personally inspects the work. We walk you through every feature, conduct a final sound-tuning session, and ensure you are 100% satisfied with the transformation."
+                            }
+                        ].map((item, idx) => (
+                            <ScrollReveal key={idx} direction="up" delay={idx * 150}>
+                                <div className="p-8 bg-neutral-900/50 border border-white/5 rounded-[2rem] hover:border-[#E31E24]/50 transition-all group h-full">
+                                    <span className="text-5xl font-black text-[#E31E24]/20 group-hover:text-[#E31E24]/40 transition-colors block mb-6">{item.step}</span>
+                                    <h3 className="text-xl font-bold text-white mb-4 uppercase italic tracking-tight">{item.title}</h3>
+                                    <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                                </div>
+                            </ScrollReveal>
+                        ))}
+                    </div>
                 </div>
             </div>
 
