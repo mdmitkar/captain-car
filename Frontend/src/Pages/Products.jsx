@@ -74,10 +74,10 @@ const Products = () => {
             title: "Sun Control Film",
             id: "sun-control",
             items: [
-                { id: 18, name: "Suntek Protection", img: "/suntekwindowfilm.png" },
-                { id: 19, name: "3M Wrap Film", img: "/3M.png" },
-                { id: 20, name: "LLumar Film", img: "/LLumar.png" },
-                { id: 21, name: "Garware Ice Cool", img: "/garware.png" },
+                { id: 44, name: "Premium Car Washing", img: "/carwashing4.png" },
+                { id: 45, name: "Window Washing", img: "/windowwash.png" },
+                
+                { id: 47, name: "Quick Wash Service", img: "/carwashing3.png" },
             ]
         },
         {
