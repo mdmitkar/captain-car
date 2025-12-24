@@ -205,7 +205,7 @@ const ContactUs = () => {
                             </div>
                             <div>
                                 <p className="text-xs text-gray-600 font-bold uppercase tracking-widest mb-1">Happy Clients</p>
-                                <p className="text-3xl font-black text-white italic tracking-tighter">4.9/5</p>
+                                <p className="text-3xl font-black text-white italic tracking-tighter">4.6/5</p>
                             </div>
                         </div>
                     </div>

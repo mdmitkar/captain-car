@@ -32,11 +32,7 @@ const Home = () => {
     }, []);
 
     const services = [
-        {
-            title: 'Bespoke Interiors',
-            desc: 'Transform your cabin into a luxury lounge. We offer hand-stitched leather upholstery, custom headliners, and floor laminations tailored to your exact taste.',
-            img: '/seatcover-hero.png'
-        },
+     
         {
             title: 'Concert Audio',
             desc: 'Audiophile-grade sound engineering. From high-fidelity speakers and powerful subwoofers to precision DSP tuning for a studio-quality experience on wheels.',
@@ -468,7 +464,7 @@ const Home = () => {
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83194.4788254592!2d73.05857195929217!3d19.274098379261684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7bd0bd3ab28a7%3A0x9a04787bb35296c9!2sCaptain%20Car%20Audio!5e0!3m2!1sen!2sin!4v1766560019806!5m2!1sen!2sin"
                                 width="100%"
                                 height="100%"
-                                className="w-full h-full grayscale-[0.8] contrast-[1.2] invert brightness-[0.8] animate-in fade-in duration-1000"
+                                className="w-full h-full animate-in fade-in duration-1000"
                                 style={{ border: 0 }}
                                 allowFullScreen=""
                                 loading="lazy"
