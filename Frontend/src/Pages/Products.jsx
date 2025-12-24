@@ -19,26 +19,26 @@ const Products = () => {
             title: "Seat Covers",
             id: "seat-covers",
             items: [
-                { id: 1, name: "Luxury Leather Red", img: "/seatcover1.png" },
-                { id: 2, name: "Premium Beige Comfort", img: "/seatcover2.png" },
-                { id: 3, name: "Sport Black Edition", img: "/seatcover3.png" },
-                { id: 4, name: "Custom Stitch Pattern", img: "/seatcover4.png" },
-                { id: 5, name: "Ergonomic Design", img: "/seatcover5.png" },
-                { id: 6, name: "Two-Tone Classic", img: "/seatcover6.png" },
-                { id: 8, name: "Diamond Quilt", img: "/seatcover8.png" },
-                { id: 9, name: "Executive Suite", img: "/seatcover9.png" },
+                { id: 1, name: "Blue Mesh Fabric", img: "/seatcover1.png" },
+                { id: 2, name: "Beige Comfort", img: "/seatcover2.png" },
+                { id: 3, name: "Tan Sport Leatherette", img: "/seatcover3.png" },
+                { id: 4, name: "Grey Ribbed Fabric ", img: "/seatcover4.png" },
+                { id: 5, name: "Brown Black Ergonomic", img: "/seatcover5.png" },
+                { id: 6, name: "Dual-Tone Brown", img: "/seatcover6.png" },
+                { id: 8, name: "Beige Diamond Stitch", img: "/seatcover8.png" },
+                { id: 9, name: "Brown Executive", img: "/seatcover9.png" },
             ]
         },
         {
             title: "Audio & Video Players",
             id: "audio-video",
             items: [
-                { id: 10, name: "Touch Display Unit 1", img: "/cardisplay1.png" },
-                { id: 11, name: "Touch Display Unit 2", img: "/cardisplay2.png" },
-                { id: 12, name: "Touch Display Unit 3", img: "/cardisplay3.png" },
-                { id: 41, name: "Premium Audio 1", img: "/assets/car-audio-1.png" },
-                { id: 42, name: "Premium Audio 2", img: "/assets/car-audio-2.png" },
-                { id: 43, name: "Premium Audio 3", img: "/assets/car-audio-3.png" },
+                { id: 10, name: "Android Touch Display", img: "/cardisplay1.png" },
+                { id: 11, name: "Wide Screen Touch Display", img: "/cardisplay2.png" },
+                { id: 12, name: "OEM Fit Touch Display", img: "/cardisplay3.png" },
+                { id: 41, name: "USB Bluetooth Audio Player", img: "/assets/car-audio-1.png" },
+                { id: 42, name: "Classic Single-DIN Player", img: "/assets/car-audio-2.png" },
+                { id: 43, name: "LED Display Audio Player", img: "/assets/car-audio-3.png" },
             ]
         },
         {
@@ -84,10 +84,10 @@ const Products = () => {
             title: "LED Lights & Ambience",
             id: "led-lights",
             items: [
-                { id: 48, name: "Premium LED Strip", img: "/ledlight1.jpg" },
-                { id: 49, name: "Ambience Kit", img: "/ledlight2.png" },
-                { id: 50, name: "Underbody Light", img: "/ledlight3.png" },
-                { id: 51, name: "Interior Mood Light", img: "/assets/new photos/ledlight2.jpg" },
+                { id: 48, name: "GVAA LED Headlight", img: "/ledlight1.jpg" },
+                { id: 49, name: "A-Class LED Headlight", img: "/ledlight2.png" },
+                { id: 50, name: "Elegant LED Headlight", img: "/ledlight3.png" },
+                
             ]
         },
         {
@@ -103,11 +103,11 @@ const Products = () => {
             title: "Floor Mats",
             id: "floor-mats",
             items: [
-                { id: 23, name: "Premium 7D Mat", img: "/assets/floor-mat.png" },
-                { id: 32, name: "Luxury Floor Mat", img: "/assets/floor-mat2.png" },
-                { id: 33, name: "All-Weather Mat", img: "/assets/floor-mat3.png" },
-                { id: 36, name: "Custom Stitch Mat", img: "/assets/floor-mat4.png" },
-                { id: 37, name: "Rubber Heavy Mat", img: "/assets/floor-mat5.png" },
+                { id: 23, name: "Beige 7D Floor Mat", img: "/assets/floor-mat.png" },
+                { id: 32, name: "Red-Black Carpet Mat", img: "/assets/floor-mat2.png" },
+                { id: 33, name: "Black All-Weather Mat", img: "/assets/floor-mat3.png" },
+                { id: 36, name: "Grey Custom Stitch Mat", img: "/assets/floor-mat4.png" },
+                { id: 37, name: "Black Heavy Rubber Mat", img: "/assets/floor-mat5.png" },
             ]
         },
         {
@@ -202,7 +202,7 @@ const Products = () => {
                                                 </h3>
                                                 <div className="flex justify-between items-end mt-4">
                                                     <a
-                                                        href={`https://wa.me/919822119832?text=${encodeURIComponent(`Hey, I want to know more about ${product.name}. Kindly share more details.`)}`}
+                                                        href={`https://wa.me/919822119832?text=${encodeURIComponent(`Hey, I want to know more about ${product.name} ${category.title}. Kindly share more details.`)}`}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
                                                         className="group/btn"
@@ -212,7 +212,7 @@ const Products = () => {
                                                         </span>
                                                     </a>
                                                     <a
-                                                        href={`https://wa.me/919822119832?text=${encodeURIComponent(`Hey, I want to know more about ${product.name}. Kindly share more details.`)}`}
+                                                        href={`https://wa.me/919822119832?text=${encodeURIComponent(`Hey, I want to know more about ${product.name} ${category.title}. Kindly share more details.`)}`}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
                                                     >
