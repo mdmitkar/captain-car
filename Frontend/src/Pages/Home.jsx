@@ -134,38 +134,35 @@ const Home = () => {
                     {/* Left: Image Grid */}
                     <ScrollReveal direction="right" delay={200}>
                         <div className="relative">
-                            <div className="absolute inset-0 bg-brand-red blur-[60px] opacity-10" />
-                            <div className="relative grid grid-cols-2 gap-8 md:gap-12">
-                                {/* Left Column: Dark Showroom Products */}
-                                <div className="space-y-8 md:space-y-12 pt-16">
-                                    <div className="h-64 md:h-72 group relative bg-neutral-950 border border-white/5 rounded-3xl overflow-hidden shadow-2xl">
-                                        <div className="absolute inset-0 bg-brand-red/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                                        <img src="/bumper/bumper4.jpg" alt="Pro Bumper" className="w-full h-full object-contain p-6 group-hover:scale-110 group-hover:-rotate-3 transition-all duration-700 relative z-10" />
+                            {/* Subtle background glow behind images */}
+                            <div className="absolute inset-0 bg-brand-red blur-[100px] opacity-10 pointer-events-none" />
+
+                            <div className="relative grid grid-cols-2 gap-6 md:gap-8 lg:gap-12">
+                                {/* Uniform Showroom Grid */}
+                                {[
+                                    { src: "/bumper/bumper4.jpg", alt: "Pro Bumper" },
+                                    { src: "/cardisplay1.png", alt: "Tech Interface" },
+                                    { src: "/carrier5.png", alt: "Roof Rack" },
+                                    { src: "/speaker/speaker-1.png", alt: "Pro Audio" },
+                                    { src: "/seat cover/seatcover2.png", alt: "Luxury Seating" },
+                                    { src: "/key-less-entry/key-less-entry-system-1.png", alt: "Car Tech" }
+                                ].map((img, idx) => (
+                                    <div key={idx} className="group relative h-48 md:h-64 flex items-center justify-center">
+                                        {/* Red Type Effect: Scanning Line - Clipped to the image height */}
+                                        <div className="absolute inset-0 overflow-hidden pointer-events-none z-20">
+                                            <div className="scan-line opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                        </div>
+
+                                        {/* Red Type Effect: Core Glow */}
+                                        <div className="absolute inset-0 bg-brand-red/5 blur-[60px] rounded-full opacity-40 group-hover:opacity-100 group-hover:bg-brand-red/15 transition-all duration-700 pointer-events-none" />
+
+                                        <img
+                                            src={img.src}
+                                            alt={img.alt}
+                                            className="w-full h-full object-contain group-hover:scale-110 transition-all duration-700 relative z-10"
+                                        />
                                     </div>
-                                    <div className="h-44 md:h-52 group relative bg-neutral-950 border border-white/5 rounded-2xl overflow-hidden shadow-xl">
-                                        <div className="absolute inset-0 bg-white/5 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                                        <img src="/cardisplay1.png" alt="Tech Interface" className="w-full h-full object-contain p-6 group-hover:scale-110 transition-all duration-700 relative z-10" />
-                                    </div>
-                                    <div className="h-56 md:h-64 group relative bg-neutral-950 border border-white/5 rounded-3xl overflow-hidden shadow-2xl">
-                                        <div className="absolute inset-0 bg-brand-red/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                                        <img src="/carrier5.png" alt="Roof Rack" className="w-full h-full object-contain p-8 group-hover:scale-110 group-hover:rotate-3 transition-all duration-700 relative z-10" />
-                                    </div>
-                                </div>
-                                {/* Right Column: Dark Showroom Products */}
-                                <div className="space-y-8 md:space-y-12">
-                                    <div className="h-44 md:h-52 group relative bg-neutral-950 border border-white/5 rounded-2xl overflow-hidden shadow-xl">
-                                        <div className="absolute inset-0 bg-white/5 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                                        <img src="/bossaudiosystem.png" alt="Pro Audio" className="w-full h-full object-contain p-6 group-hover:scale-110 transition-all duration-700 relative z-10" />
-                                    </div>
-                                    <div className="h-72 md:h-80 group relative bg-neutral-950 border border-white/10 rounded-[3rem] overflow-hidden shadow-2xl">
-                                        <div className="absolute inset-0 bg-brand-red/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                                        <img src="/seat cover/seatcover2.png" alt="Luxury Seating" className="w-full h-full object-contain p-6 group-hover:scale-110 group-hover:-rotate-2 transition-all duration-700 relative z-10" />
-                                    </div>
-                                    <div className="h-44 md:h-52 group relative bg-neutral-950 border border-white/5 rounded-2xl overflow-hidden shadow-xl">
-                                        <div className="absolute inset-0 bg-white/5 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                                        <img src="/key-less-entry/key-less-entry-system-1.png" alt="Car Tech" className="w-full h-full object-contain p-8 group-hover:scale-110 transition-all duration-700 relative z-10" />
-                                    </div>
-                                </div>
+                                ))}
                             </div>
                         </div>
                     </ScrollReveal>
@@ -173,27 +170,28 @@ const Home = () => {
                     {/* Right: Content */}
                     <ScrollReveal direction="left" delay={400}>
                         <div>
-                            <h4 className="text-brand-red text-sm font-bold uppercase tracking-[0.3em] mb-4">Master Craftsmanship</h4>
-                            <h2 className="text-4xl md:text-5xl font-black text-white italic uppercase tracking-tighter mb-8 leading-none">
+                            <h4 className="text-brand-red text-sm font-bold uppercase tracking-[0.5em] mb-4">The Legacy of Precision</h4>
+
+                            <h2 className="text-5xl md:text-7xl font-black text-white italic uppercase tracking-tighter mb-8 leading-[0.8]">
                                 We Are <br />
                                 <span className="text-[#E31E24]">Captain Car.</span>
                             </h2>
 
                             <div className="space-y-6 text-gray-400 text-lg leading-relaxed mb-10">
-                                <p className="border-l-2 border-brand-red pl-6">
-                                    Founded by <strong>Tanveer Farooqui</strong>, Captain Car has evolved from a passionate vision into Bhiwandi's <strong>architectural sanctuary</strong> for automotive excellence. With over 15 years of personal expertise, Tanveer treats every vehicle not as a machine, but as a canvas for <strong>exquisite</strong> art, ensuring that every transformation carries a signature of <strong>integrity</strong>.
+                                <p className="border-l-4 border-brand-red pl-6">
+                                    Founded by <strong className="text-white">Tanveer Farooqui</strong>, Captain Car has evolved from a passionate vision into Bhiwandi's <strong className="text-red-500">architectural sanctuary</strong> for automotive excellence. With over 15 years of personal expertise, Tanveer treats every vehicle not as a machine, but as a canvas for <strong className="text-red-500">exquisite</strong> art.
                                 </p>
 
                                 <p>
-                                    Our philosophy is simple: your car is an extension of your personality. Whether it's the tactile feel of premium Nappa leather or the crystalline clarity of a high-end audio system, we take a <strong>holistic</strong> approach. We don't just "install" products; we <strong>integrate</strong> them into the very soul of your vehicle with a <strong>bespoke</strong> mindset.
+                                    Our philosophy is simple: your car is an extension of your personality. Whether it's the tactile feel of premium <strong className="text-red-500">Nappa leather</strong> or the crystalline clarity of a high-end audio system, we take a <strong className="text-red-500">holistic</strong> approach, ensuring every project carries our signature of <strong className="text-red-500">integrity</strong>.
                                 </p>
 
                                 <p>
-                                    We remain at the <strong>pioneering</strong> edge of technology and style. From <strong>intuitive</strong> Android hubs that turn your dashboard into a futuristic cockpit to <strong>sophisticated</strong> leather interiors that provide a sense of <strong>grandeur</strong>, our work is defined by <strong>pristine</strong> quality. We believe that exclusive luxury and comfort are the ultimate measures of success.
+                                    We remain at the <strong className="text-red-500">pioneering</strong> edge of technology and style. From <strong className="text-red-500">intuitive</strong> Android hubs that turn your dashboard into a futuristic cockpit to <strong className="text-red-500">sophisticated</strong> interiors that provide a sense of <strong className="text-red-500">grandeur</strong>, our work is defined by <strong className="text-red-500">pristine</strong> quality.
                                 </p>
 
                                 <p>
-                                    Located in <span className="text-white font-bold">Chavindra, Bhiwandi</span>, our state-of-the-art facility serves a discerning clientele who value <strong>authenticity</strong> over speed. Trust is the foundation of our <strong>legacy</strong>, and we promise a <strong>meticulous</strong> transformation that is both <strong>radical and timeless</strong>.
+                                    Located in <span className="text-white font-bold">Chavindra, Bhiwandi</span>, our state-of-the-art facility serves a discerning clientele who value <strong className="text-red-500">authenticity</strong> over speed. Trust is the foundation of our <strong className="text-red-500">legacy</strong>, and we promise a <strong className="text-red-500">meticulous</strong> transformation that is both <strong className="text-red-500">radical and timeless</strong>.
                                 </p>
                             </div>
 
