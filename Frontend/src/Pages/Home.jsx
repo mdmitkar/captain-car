@@ -205,7 +205,7 @@ const Home = () => {
                                             <img
                                                 src={brand.src}
                                                 alt={brand.name}
-                                                className="h-16 md:h-24 w-auto object-contain invert opacity-100 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
+                                                className="h-16 md:h-24 w-auto object-contain brightness-0 invert opacity-100 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
                                             />
                                         </div>
                                     ))}
