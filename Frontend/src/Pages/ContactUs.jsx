@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ScrollReveal from '../Components/ScrollReveal';
 
 const ContactUs = () => {
+    const [submitted, setSubmitted] = useState(false);
     return (
         <div className="min-h-screen bg-black text-white pt-24 pb-16 font-sans selection:bg-[#E31E24] selection:text-white">
 
@@ -73,29 +74,78 @@ const ContactUs = () => {
 
                             <h3 className="text-3xl font-black text-white uppercase italic mb-8">Send a Message</h3>
 
-                            <form className="space-y-6 relative z-10">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div className="space-y-2">
-                                        <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Name</label>
-                                        <input type="text" className="w-full bg-black border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-[#E31E24] transition-colors" placeholder="Your Name" />
+                            {submitted ? (
+                                <div className="text-center py-12 animate-fade-in">
+                                    <div className="w-16 h-16 bg-[#E31E24] rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(227,30,36,0.6)]">
+                                        <svg className="w-8 h-8 fill-white" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" /></svg>
                                     </div>
-                                    <div className="space-y-2">
-                                        <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Phone</label>
-                                        <input type="tel" className="w-full bg-black border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-[#E31E24] transition-colors" placeholder="Your Number" />
-                                    </div>
+                                    <h4 className="text-2xl font-black text-white uppercase italic mb-2">Message Sent!</h4>
+                                    <p className="text-gray-400">We'll get back to you shortly.</p>
+                                    <button
+                                        onClick={() => setSubmitted(false)}
+                                        className="mt-6 text-[#E31E24] font-bold uppercase text-xs tracking-widest hover:text-white transition-colors"
+                                    >
+                                        Send Another
+                                    </button>
                                 </div>
-                                <div className="space-y-2">
-                                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Email</label>
-                                    <input type="email" className="w-full bg-black border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-[#E31E24] transition-colors" placeholder="your@email.com" />
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Message</label>
-                                    <textarea rows="4" className="w-full bg-black border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-[#E31E24] transition-colors resize-none" placeholder="Tell us about your car..."></textarea>
-                                </div>
-                                <button type="button" className="w-full bg-[#E31E24] text-white font-bold uppercase tracking-widest py-4 rounded-xl hover:bg-white hover:text-[#E31E24] transition-all transform hover:-translate-y-1">
-                                    Send Message
-                                </button>
-                            </form>
+                            ) : (
+                                <>
+                                    <iframe name="hidden_iframe" id="hidden_iframe" style={{ display: 'none' }}></iframe>
+                                    <form
+                                        action="https://docs.google.com/forms/d/e/1FAIpQLSdnbal2oJXly_MLc_HYrvU1Mbqh_GcBHMOgA2f1nW0MPAvJGw/formResponse"
+                                        method="POST"
+                                        target="hidden_iframe"
+                                        onSubmit={() => setTimeout(() => setSubmitted(true), 500)}
+                                        className="space-y-6 relative z-10"
+                                    >
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div className="space-y-2">
+                                                <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Name</label>
+                                                <input
+                                                    type="text"
+                                                    name="entry.392644873"
+                                                    required
+                                                    className="w-full bg-black border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-[#E31E24] transition-colors"
+                                                    placeholder="Your Name"
+                                                />
+                                            </div>
+                                            <div className="space-y-2">
+                                                <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Phone</label>
+                                                <input
+                                                    type="tel"
+                                                    name="entry.82022918"
+                                                    required
+                                                    className="w-full bg-black border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-[#E31E24] transition-colors"
+                                                    placeholder="Your Number"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Email</label>
+                                            <input
+                                                type="email"
+                                                name="entry.2067350709"
+                                                required
+                                                className="w-full bg-black border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-[#E31E24] transition-colors"
+                                                placeholder="your@email.com"
+                                            />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Message</label>
+                                            <textarea
+                                                name="entry.5473408"
+                                                required
+                                                rows="4"
+                                                className="w-full bg-black border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-[#E31E24] transition-colors resize-none"
+                                                placeholder="Tell us about your car..."
+                                            ></textarea>
+                                        </div>
+                                        <button type="submit" className="w-full bg-[#E31E24] text-white font-bold uppercase tracking-widest py-4 rounded-xl hover:bg-white hover:text-[#E31E24] transition-all transform hover:-translate-y-1">
+                                            Send Message
+                                        </button>
+                                    </form>
+                                </>
+                            )}
                         </div>
                     </ScrollReveal>
                 </div>
