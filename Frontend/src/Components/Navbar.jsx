@@ -1,24 +1,48 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Button from './Button';
+import { productCategories } from '../Data/categories';
 
 const Navbar = () => {
     const location = useLocation();
+    const navigate = useNavigate();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+
+    React.useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 50);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const scrollToCategory = (id) => {
+        setMobileMenuOpen(false);
+        if (location.pathname !== '/products') {
+            navigate('/products');
+            setTimeout(() => {
+                const element = document.getElementById(id);
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
+            }, 500);
+        } else {
+            const element = document.getElementById(id);
+            if (element) element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     const navLinks = [
         { name: 'Home', path: '/' },
         { name: 'Services', path: '/services' },
         { name: 'Why Us', path: '/why-us' },
-        { name: 'Products', path: '/products' },
+        { name: 'Products', path: '/products', isDropdown: true },
         { name: 'Contact Us', path: '/contact' },
     ];
 
     const isActive = (path) => location.pathname === path;
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-            <div className="glass-panel mx-4 mt-2 rounded-full px-8 py-4 flex items-center justify-between bg-black/40 backdrop-blur-xl border border-white/10 shadow-2xl transition-all duration-300 hover:bg-black/60">
+        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'py-2' : 'py-4'}`}>
+            <div className={`mx-4 rounded-full px-8 py-3 flex items-center justify-between transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-xl border border-white/10 shadow-2xl' : 'bg-black/40 backdrop-blur-lg border border-white/5'}`}>
                 {/* Logo */}
                 <Link to="/" className="flex items-center group">
                     <img
@@ -29,16 +53,49 @@ const Navbar = () => {
                 </Link>
 
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex items-center gap-10">
+                <div className="hidden md:flex items-center gap-8">
                     {navLinks.map((link) => (
-                        <Link
-                            key={link.path}
-                            to={link.path}
-                            className={`relative group px-2 py-1 transition-all duration-300 ${isActive(link.path) ? 'text-[#DC143C]' : 'text-gray-300 hover:text-white'}`}
-                        >
-                            <span className="font-bold tracking-widest text-sm uppercase">{link.name}</span>
-                            <span className={`absolute -bottom-1 left-0 h-[2px] bg-[#DC143C] transition-all duration-300 ${isActive(link.path) ? 'w-full shadow-[0_0_10px_#DC143C]' : 'w-0 group-hover:w-full'}`} />
-                        </Link>
+                        <div key={link.name} className="relative group">
+                            <Link
+                                to={link.path}
+                                className={`relative px-2 py-1 transition-all duration-300 flex items-center ${isActive(link.path) ? 'text-[#DC143C]' : 'text-gray-300 group-hover:text-white'}`}
+                            >
+                                <span className="font-bold tracking-widest text-sm uppercase flex items-center gap-1">
+                                    {link.name}
+                                    {link.isDropdown && <span className="text-[10px] mt-0.5 transition-transform duration-300 group-hover:rotate-180">▼</span>}
+                                </span>
+                                <span className={`absolute -bottom-1 left-0 h-[2px] bg-[#DC143C] transition-all duration-300 ${isActive(link.path) ? 'w-full shadow-[0_0_10px_#DC143C]' : 'w-0 group-hover:w-full'}`} />
+                            </Link>
+
+                            {/* Dropdown for Products */}
+                            {link.isDropdown && (
+                                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-8 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-4">
+                                    <div className="w-[600px] bg-[#050505] border border-white/10 rounded-3xl p-8 shadow-[0_40px_80px_rgba(0,0,0,0.8)] backdrop-blur-2xl overflow-hidden relative group/menu">
+                                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#DC143C] via-[#DC143C]/50 to-transparent" />
+
+                                        {/* Decorative Blur */}
+                                        <div className="absolute -top-20 -right-20 w-60 h-60 bg-[#DC143C]/10 rounded-full blur-[80px] pointer-events-none" />
+
+                                        <div className="grid grid-cols-2 gap-x-8 gap-y-4 relative z-10">
+                                            {productCategories.map((category) => (
+                                                <button
+                                                    key={category.id}
+                                                    onClick={() => scrollToCategory(category.id)}
+                                                    className="group/item flex items-center justify-between text-left text-gray-400 hover:text-white px-4 py-3 rounded-xl transition-all hover:bg-white/5 border border-transparent hover:border-white/5"
+                                                >
+                                                    <span className="text-xs font-bold uppercase tracking-widest group-hover/item:translate-x-2 transition-transform duration-300">
+                                                        {category.title}
+                                                    </span>
+                                                    <span className="opacity-0 group-hover/item:opacity-100 -translate-x-2 group-hover/item:translate-x-0 transition-all duration-300 text-[#DC143C]">
+                                                        →
+                                                    </span>
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
                     ))}
                 </div>
 
@@ -60,15 +117,30 @@ const Navbar = () => {
             {/* Mobile Menu Overlay */}
             <div className={`fixed inset-0 bg-black/95 backdrop-blur-xl z-40 transition-all duration-500 ease-in-out md:hidden flex flex-col items-center justify-center gap-8 ${mobileMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'}`}>
                 {navLinks.map((link, idx) => (
-                    <Link
-                        key={link.path}
-                        to={link.path}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className={`text-3xl font-black uppercase tracking-tighter hover:text-brand-red transition-colors ${isActive(link.path) ? 'text-[#DC143C]' : 'text-white'}`}
-                        style={{ transitionDelay: `${idx * 100}ms` }}
-                    >
-                        {link.name}
-                    </Link>
+                    <div key={link.path} className="flex flex-col items-center gap-4">
+                        <Link
+                            to={link.path}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className={`text-3xl font-black uppercase tracking-tighter hover:text-brand-red transition-colors ${isActive(link.path) ? 'text-[#DC143C]' : 'text-white'}`}
+                            style={{ transitionDelay: `${idx * 100}ms` }}
+                        >
+                            {link.name}
+                        </Link>
+                        {/* Mobile Submenu for Products */}
+                        {link.isDropdown && (
+                            <div className="flex flex-col items-center gap-3 animate-fade-in">
+                                {productCategories.map((category) => (
+                                    <button
+                                        key={category.id}
+                                        onClick={() => scrollToCategory(category.id)}
+                                        className="text-gray-500 hover:text-white text-sm font-bold uppercase tracking-widest"
+                                    >
+                                        {category.title}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
+                    </div>
                 ))}
                 <div className="mt-8">
                     <Button
