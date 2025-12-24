@@ -75,7 +75,7 @@ const Products = () => {
             id: "sun-control",
             items: [
                 { id: 44, name: "Premium Car Washing", img: "/carwashing4.png" },
-                { id: 45, name: "Window Washing", img: "/windowwash.png" },
+                
                 { id: 46, name: "Deep Clean Wash", img: "/windowwash2.png" },
                 { id: 47, name: "Quick Wash Service", img: "/carwashing3.png" },
             ]

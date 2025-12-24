@@ -17,7 +17,7 @@ const ContactUs = () => {
             icon: <svg className="w-8 h-8" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" /></svg>,
             title: "Email",
             subtitle: "Drop us a line anytime",
-            value: "contact@captaincar.in",
+            value: "captaincardecor@gmail.com",
             color: "text-white"
         },
         {
@@ -92,18 +92,24 @@ const ContactUs = () => {
 
                     {/* Right Side: Form Section */}
                     <ScrollReveal direction="right" delay={200} className="lg:col-span-7">
-                        <div className="bg-[#0a0a0a] border border-white/5 rounded-[3rem] p-10 md:p-14 shadow-2xl relative">
+                        <div className="bg-[#080808] border border-white/10 rounded-[3rem] p-10 md:p-14 shadow-2xl relative overflow-hidden group">
                             {/* Inner Shadows and Lights */}
-                            <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#E31E24]/10 rounded-full blur-[60px] pointer-events-none" />
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-[#E31E24]/5 rounded-full blur-[80px] pointer-events-none group-hover:bg-[#E31E24]/10 transition-colors duration-700" />
+                            <div className="absolute bottom-0 left-0 w-40 h-40 bg-blue-500/5 rounded-full blur-[60px] pointer-events-none group-hover:bg-blue-500/10 transition-colors duration-700" />
 
                             <div className="mb-12 relative z-10">
-                                <h3 className="text-4xl font-black text-white uppercase italic tracking-tighter mb-4">Inquiry Form</h3>
-                                <div className="w-20 h-1 bg-[#E31E24]" />
+                                <h3 className="text-4xl font-black text-white uppercase italic tracking-tighter mb-4 flex items-center gap-3">
+                                    Inquiry Form
+                                    <span className="w-2 h-2 rounded-full bg-[#E31E24] animate-pulse"></span>
+                                </h3>
+                                <div className="w-full h-[1px] bg-white/10">
+                                    <div className="w-20 h-full bg-[#E31E24]"></div>
+                                </div>
                             </div>
 
                             {submitted ? (
                                 <div className="text-center py-20 animate-fade-in relative z-10">
-                                    <div className="w-24 h-24 bg-[#E31E24] rounded-full flex items-center justify-center mx-auto mb-8 shadow-[0_0_50px_rgba(227,30,36,0.4)] relative">
+                                    <div className="w-24 h-24 bg-gradient-to-br from-[#E31E24] to-[#990a0f] rounded-full flex items-center justify-center mx-auto mb-8 shadow-[0_0_50px_rgba(227,30,36,0.4)] relative">
                                         <div className="absolute inset-0 rounded-full border border-white animate-ping opacity-20" />
                                         <svg className="w-12 h-12 fill-white" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" /></svg>
                                     </div>
@@ -127,49 +133,54 @@ const ContactUs = () => {
                                         className="space-y-8 relative z-10"
                                     >
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                            <div className="space-y-3">
-                                                <label className="text-[10px] font-black text-[#E31E24] uppercase tracking-[0.3em] ml-2">Pilot Name</label>
+                                            <div className="relative group/input">
+                                                <label className="text-[10px] font-black text-[#E31E24] uppercase tracking-[0.3em] ml-4 mb-2 block">Pilot Name</label>
                                                 <input
                                                     type="text"
                                                     name="entry.392644873"
                                                     required
-                                                    className="w-full bg-[#050505] border border-white/10 rounded-2xl p-5 text-white focus:outline-none focus:border-[#E31E24] transition-all focus:ring-4 focus:ring-[#E31E24]/10 placeholder:text-gray-700"
+                                                    className="w-full bg-white/5 border border-white/10 rounded-2xl p-5 text-white focus:outline-none focus:bg-white/10 focus:border-[#E31E24] transition-all duration-300 placeholder:text-gray-600"
                                                     placeholder="Enter Full Name"
                                                 />
+                                                <div className="absolute bottom-0 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent via-[#E31E24] to-transparent scale-x-0 group-hover/input:scale-x-100 transition-transform duration-500" />
                                             </div>
-                                            <div className="space-y-3">
-                                                <label className="text-[10px] font-black text-[#E31E24] uppercase tracking-[0.3em] ml-2">Secret Line</label>
+                                            <div className="relative group/input">
+                                                <label className="text-[10px] font-black text-[#E31E24] uppercase tracking-[0.3em] ml-4 mb-2 block">Secret Line</label>
                                                 <input
                                                     type="tel"
                                                     name="entry.82022918"
                                                     required
-                                                    className="w-full bg-[#050505] border border-white/10 rounded-2xl p-5 text-white focus:outline-none focus:border-[#E31E24] transition-all focus:ring-4 focus:ring-[#E31E24]/10 placeholder:text-gray-700"
+                                                    className="w-full bg-white/5 border border-white/10 rounded-2xl p-5 text-white focus:outline-none focus:bg-white/10 focus:border-[#E31E24] transition-all duration-300 placeholder:text-gray-600"
                                                     placeholder="+91-00000-00000"
                                                 />
+                                                <div className="absolute bottom-0 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent via-[#E31E24] to-transparent scale-x-0 group-hover/input:scale-x-100 transition-transform duration-500" />
                                             </div>
                                         </div>
-                                        <div className="space-y-3">
-                                            <label className="text-[10px] font-black text-[#E31E24] uppercase tracking-[0.3em] ml-2">Email Access</label>
+                                        <div className="relative group/input">
+                                            <label className="text-[10px] font-black text-[#E31E24] uppercase tracking-[0.3em] ml-4 mb-2 block">Email Access</label>
                                             <input
                                                 type="email"
                                                 name="entry.2067350709"
                                                 required
-                                                className="w-full bg-[#050505] border border-white/10 rounded-2xl p-5 text-white focus:outline-none focus:border-[#E31E24] transition-all focus:ring-4 focus:ring-[#E31E24]/10 placeholder:text-gray-700"
+                                                className="w-full bg-white/5 border border-white/10 rounded-2xl p-5 text-white focus:outline-none focus:bg-white/10 focus:border-[#E31E24] transition-all duration-300 placeholder:text-gray-600"
                                                 placeholder="pilot@shuttle.com"
                                             />
+                                            <div className="absolute bottom-0 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent via-[#E31E24] to-transparent scale-x-0 group-hover/input:scale-x-100 transition-transform duration-500" />
                                         </div>
-                                        <div className="space-y-3">
-                                            <label className="text-[10px] font-black text-[#E31E24] uppercase tracking-[0.3em] ml-2">Project Brief</label>
+                                        <div className="relative group/input">
+                                            <label className="text-[10px] font-black text-[#E31E24] uppercase tracking-[0.3em] ml-4 mb-2 block">Project Brief</label>
                                             <textarea
                                                 name="entry.5473408"
                                                 required
                                                 rows="5"
-                                                className="w-full bg-[#050505] border border-white/10 rounded-2xl p-5 text-white focus:outline-none focus:border-[#E31E24] transition-all focus:ring-4 focus:ring-[#E31E24]/10 placeholder:text-gray-700 resize-none"
+                                                className="w-full bg-white/5 border border-white/10 rounded-2xl p-5 text-white focus:outline-none focus:bg-white/10 focus:border-[#E31E24] transition-all duration-300 placeholder:text-gray-600 resize-none"
                                                 placeholder="Tell us about your machine and the vision you have for it..."
                                             ></textarea>
+                                            <div className="absolute bottom-4 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent via-[#E31E24] to-transparent scale-x-0 group-hover/input:scale-x-100 transition-transform duration-500" />
                                         </div>
-                                        <button type="submit" className="w-full bg-[#E31E24] text-white font-black uppercase tracking-[0.4em] py-5 rounded-2xl hover:bg-white hover:text-black transition-all transform hover:-translate-y-2 shadow-[0_20px_40px_rgba(227,30,36,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.2)]">
-                                            Launch Mission
+                                        <button type="submit" className="w-full bg-gradient-to-r from-[#E31E24] to-[#B01015] text-white font-black uppercase tracking-[0.4em] py-5 rounded-2xl hover:bg-white hover:text-white hover:to-white transition-all transform hover:-translate-y-2 shadow-[0_20px_40px_rgba(227,30,36,0.2)] hover:shadow-[0_0_60px_rgba(227,30,36,0.4)] relative overflow-hidden group/btn">
+                                            <span className="relative z-10">Launch Mission</span>
+                                            <div className="absolute inset-0 bg-white transform -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-500 z-0 opacity-0 group-hover/btn:opacity-10" />
                                         </button>
                                     </form>
                                 </>
