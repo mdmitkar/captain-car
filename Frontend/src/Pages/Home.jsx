@@ -180,14 +180,34 @@ const Home = () => {
                     {/* Gradient Mask for "Center Visible, Edges Hidden" effect */}
                     <div className="absolute inset-0 z-20 pointer-events-none bg-gradient-to-r from-black via-transparent to-black w-full h-full" />
 
-                    <div className="flex whitespace-nowrap overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_45%,black_55%,transparent)]">
-                        <div className="animate-marquee flex gap-24 items-center">
-                            {[1, 2, 3].map((i) => (
+                    <div className="flex whitespace-nowrap overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_30%,black_70%,transparent)]">
+                        <div className="animate-marquee flex gap-16 items-center">
+                            {[...Array(3)].map((_, i) => (
                                 <React.Fragment key={i}>
-                                    {['MARUTI SUZUKI', 'HYUNDAI', 'MAHINDRA THAR', 'TATA MOTORS', 'HONDA', 'TOYOTA', 'RANGE ROVER', 'KIA', 'MG', 'SKODA'].map((brand, idx) => (
-                                        <span key={`${i}-${idx}`} className="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter mx-4">
-                                            {brand}
-                                        </span>
+                                    {[
+                                        { name: 'Maruti Suzuki', src: '/assets/car_logos/suzuki.svg' },
+                                        { name: 'Hyundai', src: '/assets/car_logos/hyundai.svg' },
+                                        { name: 'Mahindra', src: '/assets/car_logos/mahindra.svg' },
+                                        { name: 'Tata Motors', src: '/assets/car_logos/tata.svg' },
+                                        { name: 'Honda', src: '/assets/car_logos/honda.svg' },
+                                        { name: 'Toyota', src: '/assets/car_logos/toyota.svg' },
+                                        { name: 'Kia', src: '/assets/car_logos/kia.svg' },
+                                        { name: 'MG', src: '/assets/car_logos/mg.svg' },
+                                        { name: 'Skoda', src: '/assets/car_logos/skoda.svg' },
+                                        { name: 'Volkswagen', src: '/assets/car_logos/volkswagen.svg' },
+                                        { name: 'Fiat', src: '/assets/car_logos/fiat.svg' },
+                                        { name: 'Ford', src: '/assets/car_logos/ford.svg' },
+                                        { name: 'Nissan', src: '/assets/car_logos/nissan.svg' },
+                                        { name: 'Opel', src: '/assets/car_logos/opel.svg' },
+                                        { name: 'Renault', src: '/assets/car_logos/renault.svg' }
+                                    ].map((brand, idx) => (
+                                        <div key={`${i}-${idx}`} className="mx-8 flex items-center justify-center min-w-[120px]">
+                                            <img
+                                                src={brand.src}
+                                                alt={brand.name}
+                                                className="h-16 md:h-24 w-auto object-contain invert opacity-100 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
+                                            />
+                                        </div>
                                     ))}
                                 </React.Fragment>
                             ))}
@@ -195,7 +215,7 @@ const Home = () => {
                     </div>
                 </div>
                 <style>{`
-                    .animate-marquee { animation: marquee 20s linear infinite; }
+                    .animate-marquee { animation: marquee 40s linear infinite; }
                     @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
                     .glow-text { text-shadow: 0 0 20px rgba(227, 30, 36, 0.5); }
                 `}</style>
