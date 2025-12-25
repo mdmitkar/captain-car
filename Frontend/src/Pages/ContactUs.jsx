@@ -136,7 +136,7 @@ const ContactUs = () => {
                                     >
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                             <div className="relative group/input">
-                                                <label className="text-[10px] font-black text-[#E31E24] uppercase tracking-[0.3em] ml-4 mb-2 block">Pilot Name</label>
+                                                <label className="text-[10px] font-black text-[#E31E24] uppercase tracking-[0.3em] ml-4 mb-2 block"> Name</label>
                                                 <input
                                                     type="text"
                                                     name="entry.392644873"
@@ -147,7 +147,7 @@ const ContactUs = () => {
                                                 <div className="absolute bottom-0 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent via-[#E31E24] to-transparent scale-x-0 group-hover/input:scale-x-100 transition-transform duration-500" />
                                             </div>
                                             <div className="relative group/input">
-                                                <label className="text-[10px] font-black text-[#E31E24] uppercase tracking-[0.3em] ml-4 mb-2 block">Secret Line</label>
+                                                <label className="text-[10px] font-black text-[#E31E24] uppercase tracking-[0.3em] ml-4 mb-2 block">Phone Number</label>
                                                 <input
                                                     type="tel"
                                                     name="entry.82022918"
@@ -170,7 +170,7 @@ const ContactUs = () => {
                                             <div className="absolute bottom-0 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent via-[#E31E24] to-transparent scale-x-0 group-hover/input:scale-x-100 transition-transform duration-500" />
                                         </div>
                                         <div className="relative group/input">
-                                            <label className="text-[10px] font-black text-[#E31E24] uppercase tracking-[0.3em] ml-4 mb-2 block">Project Brief</label>
+                                            <label className="text-[10px] font-black text-[#E31E24] uppercase tracking-[0.3em] ml-4 mb-2 block">Message</label>
                                             <textarea
                                                 name="entry.5473408"
                                                 required
@@ -181,7 +181,7 @@ const ContactUs = () => {
                                             <div className="absolute bottom-4 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent via-[#E31E24] to-transparent scale-x-0 group-hover/input:scale-x-100 transition-transform duration-500" />
                                         </div>
                                         <button type="submit" className="w-full bg-gradient-to-r from-[#E31E24] to-[#B01015] text-white font-black uppercase tracking-[0.4em] py-5 rounded-2xl hover:bg-white hover:text-white hover:to-white transition-all transform hover:-translate-y-2 shadow-[0_20px_40px_rgba(227,30,36,0.2)] hover:shadow-[0_0_60px_rgba(227,30,36,0.4)] relative overflow-hidden group/btn">
-                                            <span className="relative z-10">Launch Mission</span>
+                                            <span className="relative z-10">Send Message</span>
                                             <div className="absolute inset-0 bg-white transform -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-500 z-0 opacity-0 group-hover/btn:opacity-10" />
                                         </button>
                                     </form>
