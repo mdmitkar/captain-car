@@ -69,8 +69,8 @@ const Products = () => {
                 { id: 26, name: "Front Guard Precision", img: "/bumper/bumper1-removebg-preview.png" },
                 { id: 27, name: "Rear Shell Protection", img: "/bumper/bumper2-removebg-preview.png" },
                 { id: 28, name: "Off-Road Tactical Bumper", img: "/bumper/bumper3-removebg-preview.png" },
-                { id: 24, name: "Aerodynamic Carrier", img: "/carrier2.webp" },
-                { id: 25, name: "Luggage Rack Horizon", img: "/carrier3.webp" },
+                { id: 24, name: "Aerodynamic Carrier", img: "/assets/nobgcarrier2.png" },
+                { id: 25, name: "Luggage Rack Horizon", img: "/assets/nobgcarrier3.png" },
             ]
         },
         {
@@ -86,11 +86,11 @@ const Products = () => {
             title: "Floor Architecture",
             id: "floor-mats",
             items: [
-                { id: 23, name: "Beige 7D Precision Mat", img: "/assets/floor-mat.png" },
-                { id: 32, name: "Red-Black Circuit Mat", img: "/assets/floor-mat2.png" },
-                { id: 33, name: "Stealth All-Weather Mat", img: "/assets/floor-mat3.png" },
-                { id: 36, name: "Grey Custom Artisan Mat", img: "/assets/floor-mat4.png" },
-                { id: 37, name: "Heavy Duty Vulcan Mat", img: "/assets/floor-mat5.png" },
+                { id: 23, name: "Beige 7D Precision Mat", img: "/assets/nobgfloormat/floor-mat.png" },
+                { id: 32, name: "Red-Black Circuit Mat", img: "/assets/nobgfloormat/floor-mat2.png" },
+                { id: 33, name: "Stealth All-Weather Mat", img: "/assets/nobgfloormat/floor-mat3.png" },
+                { id: 36, name: "Grey Custom Artisan Mat", img: "/assets/nobgfloormat/floor-mat4.png" },
+                { id: 37, name: "Heavy Duty Vulcan Mat", img: "/assets/nobgfloormat/floor-mat5.png" },
             ]
         },
         {
