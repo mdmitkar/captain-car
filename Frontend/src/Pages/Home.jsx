@@ -32,7 +32,7 @@ const Home = () => {
     }, []);
 
     const services = [
-     
+
         {
             title: 'Concert Audio',
             desc: 'Audiophile-grade sound engineering. From high-fidelity speakers and powerful subwoofers to precision DSP tuning for a studio-quality experience on wheels.',
@@ -75,9 +75,9 @@ const Home = () => {
                 <div className="relative z-20 container mx-auto px-6 h-full flex flex-col justify-center items-start">
                     <ScrollReveal direction="left" delay={500} className="max-w-4xl">
                         <div className={`glass-panel inline-block px-6 py-2 rounded-full mb-6 border-l-4 border-brand-red transition-all duration-1000 ${showHeroText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                            <span className="text-brand-red font-bold tracking-[0.3em] uppercase text-xs md:text-sm">Premium Car Accessories</span>
+                            <span className="text-brand-red font-bold tracking-[0.3em] uppercase text-[10px] md:text-xs">Premium Car Accessories</span>
                         </div>
-                        <h1 className="text-5xl md:text-7xl font-black mb-6 leading-[0.9] uppercase italic tracking-tighter drop-shadow-2xl flex flex-col gap-2">
+                        <h1 className="text-3xl md:text-5xl font-black mb-6 leading-[0.9] uppercase italic tracking-tighter drop-shadow-2xl flex flex-col gap-2">
                             <div className="flex gap-4 overflow-hidden">
                                 <span className={`block text-white transition-all duration-700 delay-[0ms] transform ${showHeroText ? 'translate-y-0 opacity-100' : 'translate-y-[100%] opacity-0'}`}>
                                     CRAFT
@@ -95,7 +95,7 @@ const Home = () => {
                                 </span>
                             </div>
                         </h1>
-                        <p className={`text-gray-100 text-base md:text-xl font-bold tracking-wide max-w-2xl mb-10 border-l border-white/50 pl-6 transition-all duration-1000 delay-0 transform ${showBottomContent ? 'translate-y-0 opacity-100' : 'translate-y-[20px] opacity-0'}`}>
+                        <p className={`text-gray-100 text-sm md:text-base font-bold tracking-wide max-w-2xl mb-10 border-l border-white/50 pl-6 transition-all duration-1000 delay-0 transform ${showBottomContent ? 'translate-y-0 opacity-100' : 'translate-y-[20px] opacity-0'}`}>
                             Experience the pinnacle of automotive interior design. We don't just modify cars: we forge identities...
                         </p>
 
@@ -108,7 +108,7 @@ const Home = () => {
 
                 <div className={`absolute bottom-40 left-0 w-full flex justify-center z-30 transition-all duration-1000 delay-[300ms] transform ${showBottomContent ? 'translate-y-0 opacity-100' : 'translate-y-[20px] opacity-0'}`}>
                     <Link to="/services">
-                        <Button variant="custom" className="px-12 py-5 bg-[#E31E24] hover:bg-white hover:text-[#E31E24] text-white text-xl font-black rounded-none skew-x-[-10deg] transition-all duration-300 uppercase tracking-widest shadow-[0_0_30px_rgba(227,30,36,0.4)] hover:shadow-[0_0_50px_rgba(255,255,255,0.4)]">
+                        <Button variant="custom" className="px-10 py-4 bg-[#E31E24] hover:bg-white hover:text-[#E31E24] text-white text-lg font-black rounded-none skew-x-[-10deg] transition-all duration-300 uppercase tracking-widest shadow-[0_0_30px_rgba(227,30,36,0.4)] hover:shadow-[0_0_50px_rgba(255,255,255,0.4)]">
                             <span className="skew-x-[10deg] inline-block">Discover More</span>
                         </Button>
                     </Link>
@@ -144,20 +144,15 @@ const Home = () => {
                             <div className="absolute bottom-12 left-12 right-12 z-20">
                                 <div className="flex items-center gap-4 mb-4">
                                     <div className="w-16 h-[2px] bg-brand-red shadow-[0_0_10px_#E31E24]" />
-                                    <span className="text-white font-black uppercase italic tracking-widest text-sm md:text-base">Founder & Master Craftsman</span>
+                                    <span className="text-white font-black uppercase italic tracking-widest text-xs md:text-sm">Founder & Master Craftsman</span>
                                 </div>
-                                <h3 className="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter mb-2 leading-none">
+                                <h3 className="text-2xl md:text-4xl font-black text-white uppercase italic tracking-tighter mb-2 leading-none">
                                     Tanveer <span className="text-brand-red">Farooqui</span>
                                 </h3>
-                                <p className="text-gray-400 text-xs md:text-sm font-bold uppercase tracking-[0.4em]">The Heart of Captain Car Audio</p>
+                                <p className="text-gray-400 text-[10px] md:text-xs font-bold uppercase tracking-[0.4em]">The Heart of Captain Car Audio</p>
                             </div>
 
                             {/* Tech HUD Detail */}
-                            <div className="absolute top-10 left-10 w-24 h-24 border-t-2 border-l-2 border-brand-red/20 z-20 pointer-events-none" />
-                            <div className="absolute top-10 right-10 flex flex-col items-end opacity-40 z-20">
-                                <span className="text-[10px] font-mono text-brand-red">Est. 2008</span>
-                                <span className="text-[10px] font-mono text-white">Precision Certified</span>
-                            </div>
                         </div>
                     </ScrollReveal>
 
@@ -166,12 +161,12 @@ const Home = () => {
                         <div>
                             <h4 className="text-brand-red text-sm font-bold uppercase tracking-[0.5em] mb-4">The Legacy of Precision</h4>
 
-                            <h2 className="text-5xl md:text-7xl font-black text-white italic uppercase tracking-tighter mb-8 leading-[0.8]">
+                            <h2 className="text-3xl md:text-5xl font-black text-white italic uppercase tracking-tighter mb-8 leading-[0.8]">
                                 We Are <br />
                                 <span className="text-[#E31E24]">Captain Car.</span>
                             </h2>
 
-                            <div className="space-y-6 text-gray-400 text-lg leading-relaxed mb-10 text-justify">
+                            <div className="space-y-6 text-gray-400 text-base leading-relaxed mb-10 text-justify">
                                 <p className="border-l-4 border-brand-red pl-6">
                                     Founded by <strong className="text-white">Tanveer Farooqui</strong>, Captain Car has evolved from a passionate vision into Bhiwandi's architectural sanctuary for automotive excellence. With over 15 years of personal expertise, Tanveer treats every vehicle not as a machine, but as a canvas for exquisite art.
                                 </p>
@@ -191,12 +186,12 @@ const Home = () => {
 
                             <div className="grid grid-cols-2 gap-8 mb-10">
                                 <div>
-                                    <h3 className="text-3xl font-black text-white mb-1">15+</h3>
-                                    <p className="text-xs text-gray-500 uppercase tracking-widest">Years Experience</p>
+                                    <h3 className="text-2xl font-black text-white mb-1">15+</h3>
+                                    <p className="text-[10px] text-gray-500 uppercase tracking-widest">Years Experience</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-3xl font-black text-white mb-1">5000+</h3>
-                                    <p className="text-xs text-gray-500 uppercase tracking-widest">Cars Modified</p>
+                                    <h3 className="text-2xl font-black text-white mb-1">5000+</h3>
+                                    <p className="text-[10px] text-gray-500 uppercase tracking-widest">Cars Modified</p>
                                 </div>
                             </div>
 
@@ -215,11 +210,11 @@ const Home = () => {
                 <div className="max-w-7xl mx-auto px-6">
                     <ScrollReveal direction="up">
                         <div className="text-center mb-16">
-                            <h4 className="text-brand-red text-sm font-bold uppercase tracking-[0.3em] mb-4">Our Methodology</h4>
-                            <h2 className="text-4xl md:text-6xl font-black text-white italic uppercase tracking-tighter mb-6">
+                            <h4 className="text-brand-red text-xs font-bold uppercase tracking-[0.3em] mb-4">Our Methodology</h4>
+                            <h2 className="text-2xl md:text-4xl font-black text-white italic uppercase tracking-tighter mb-6">
                                 The <span className="text-[#E31E24]">Captain's</span> Standard
                             </h2>
-                            <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+                            <p className="text-gray-400 text-base max-w-3xl mx-auto">
                                 Transparency, precision, and passion. We follow a meticulous four-step process to ensure your vehicle transformation exceeds every industry standard.
                             </p>
                         </div>
@@ -231,22 +226,22 @@ const Home = () => {
                             {
                                 step: "01",
                                 title: "Vision Consultation",
-                                desc: "Every project begins with a personal sit-down with our experts. We listen to your needs, assess your car's acoustics and layout, and help you select materials that perfectly match your lifestyle and aesthetic preferences."
+                                desc: "Each commission commences with an executive consultation. We analyze your vehicle’s acoustics and layout to curate materials that impeccably align with your lifestyle and aesthetic prerequisites."
                             },
                             {
                                 step: "02",
                                 title: "Bespoke Design",
-                                desc: "Our designers create a blueprint for your modifications. Whether it's a custom speaker placement for optimal sound staging or a specific stitch pattern for your seat covers, every detail is planned before a single screw is turned."
+                                desc: "Our designers engineer a comprehensive schematic for your modification. From acoustically calibrated sound staging to intricate stitch patterns, every nuance is rigorously planned prior to physical execution."
                             },
                             {
                                 step: "03",
                                 title: "Precision Craft",
-                                desc: "The transition from blueprint to reality. Our technicians use high-precision tools and hand-crafted techniques to install your chosen components, ensuring a factory-perfect fit and finish that is both durable and beautiful."
+                                desc: "The realization of the design blueprint. Our master technicians utilize precision instrumentation to integrate components, ensuring a factory-grade fit and finish that epitomizes both durability and sophistication."
                             },
                             {
                                 step: "04",
                                 title: "The Final Handover",
-                                desc: "Before you take the keys, Tanveer Farooqui personally inspects the work. We walk you through every feature, conduct a final sound-tuning session, and ensure you are 100% satisfied with the transformation."
+                                desc: "Prior to delivery, Tanveer Farooqui personally audits the craftsmanship. We facilitate a comprehensive presentation, finalize acoustic calibrations, and ensure the transformation exceeds your most exacting standards."
                             }
                         ].map((item, idx) => (
                             <ScrollReveal key={idx} direction="up" delay={idx * 150}>
@@ -254,8 +249,8 @@ const Home = () => {
                                     {/* HUD Background Scan Line */}
                                     <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-red to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-scan-down pointer-events-none" />
 
-                                    <span className="text-6xl font-black text-brand-red/10 group-hover:text-brand-red/20 transition-all duration-700 block mb-6 italic">{item.step}</span>
-                                    <h3 className="text-2xl font-black text-white mb-4 uppercase italic tracking-tighter group-hover:text-brand-red transition-colors duration-500">{item.title}</h3>
+                                    <span className="text-5xl font-black text-brand-red/10 group-hover:text-brand-red/20 transition-all duration-700 block mb-6 italic">{item.step}</span>
+                                    <h3 className="text-xl font-black text-white mb-4 uppercase italic tracking-tighter group-hover:text-brand-red transition-colors duration-500">{item.title}</h3>
                                     <p className="text-gray-400 text-sm leading-relaxed text-justify font-medium">{item.desc}</p>
 
                                     {/* Corner Accent */}
@@ -333,7 +328,7 @@ const Home = () => {
             <div className="py-12 bg-black relative">
                 <div className="container mx-auto px-6 mb-8 flex items-end justify-between">
                     <ScrollReveal direction="down">
-                        <h2 className="text-4xl md:text-5xl font-black text-white uppercase italic tracking-tighter">
+                        <h2 className="text-2xl md:text-4xl font-black text-white uppercase italic tracking-tighter">
                             Premium <span className="text-[#E31E24]">Accessories<br />      & Styling</span>
                         </h2>
                     </ScrollReveal>
@@ -346,9 +341,9 @@ const Home = () => {
                             <div className="absolute inset-0 bg-gradient-to-b from-[#1a0505] to-black opacity-60" />
                             <img src={service.img} alt={service.title} className="absolute inset-0 w-full h-full object-contain" />
                             <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black via-black/90 to-transparent">
-                                <h3 className="text-2xl font-black text-white uppercase italic mb-2">{service.title}</h3>
-                                <p className="text-gray-400 text-xs mb-3">{service.desc}</p>
-                                <span className="text-brand-red font-bold uppercase tracking-widest text-xs flex items-center gap-2">Explore <span>→</span></span>
+                                <h3 className="text-xl font-black text-white uppercase italic mb-2">{service.title}</h3>
+                                <p className="text-gray-400 text-[10px] mb-3">{service.desc}</p>
+                                <span className="text-brand-red font-bold uppercase tracking-widest text-[10px] flex items-center gap-2">Explore <span>→</span></span>
                             </div>
                         </div>
                     ))}
@@ -370,7 +365,7 @@ const Home = () => {
                                         <img src={service.img} alt={service.title} className="absolute inset-0 w-full h-full object-contain group-hover:scale-110 transition-transform duration-1000 px-12" />
 
                                         <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black via-black/95 to-transparent z-10">
-                                            <h3 className="text-3xl font-black text-white uppercase italic mb-1 tracking-tighter">{service.title}</h3>
+                                            <h3 className="text-2xl font-black text-white uppercase italic mb-1 tracking-tighter">{service.title}</h3>
                                             <p className="text-gray-300 mb-4 font-medium text-[11px] leading-relaxed line-clamp-2 max-w-[85%]">{service.desc}</p>
                                             <span className="inline-flex items-center gap-2 text-brand-red font-bold uppercase tracking-widest text-[10px] group-hover:gap-4 transition-all">
                                                 Explore Full Catalogue <span>→</span>
@@ -397,10 +392,10 @@ const Home = () => {
                 <div className="max-w-4xl mx-auto relative z-10">
                     <ScrollReveal direction="up">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-5xl font-black text-white uppercase italic tracking-tighter mb-4">
+                            <h2 className="text-2xl md:text-4xl font-black text-white uppercase italic tracking-tighter mb-4">
                                 You Asked, <span className="text-[#E31E24]">We Answered</span>
                             </h2>
-                            <p className="text-gray-400">Everything you need to know about our services.</p>
+                            <p className="text-gray-400 text-sm">Everything you need to know about our services.</p>
                         </div>
                     </ScrollReveal>
 
@@ -414,7 +409,7 @@ const Home = () => {
                                         onClick={() => toggleFaq(idx)}
                                         className="w-full flex items-center justify-between p-6 text-left transition-colors"
                                     >
-                                        <span className={`text-xl font-bold uppercase italic tracking-tight transition-colors duration-300 ${openFaq === idx ? 'text-[#E31E24]' : 'text-white group-hover:text-gray-200'}`}>
+                                        <span className={`text-lg font-bold uppercase italic tracking-tight transition-colors duration-300 ${openFaq === idx ? 'text-[#E31E24]' : 'text-white group-hover:text-gray-200'}`}>
                                             {faq.q}
                                         </span>
                                         <span className={`w-8 h-8 flex items-center justify-center rounded-full border transition-all duration-300 ${openFaq === idx ? 'bg-[#E31E24] border-[#E31E24] rotate-45' : 'border-white/10 group-hover:border-[#E31E24] group-hover:text-[#E31E24]'}`}>
@@ -442,10 +437,10 @@ const Home = () => {
                 <div className="container mx-auto px-6 relative z-10">
                     <ScrollReveal direction="up">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-5xl font-black text-white uppercase italic tracking-tighter mb-4">
+                            <h2 className="text-2xl md:text-4xl font-black text-white uppercase italic tracking-tighter mb-4">
                                 Visit Our <span className="text-[#E31E24]">Workshop</span>
                             </h2>
-                            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                            <p className="text-gray-400 text-base max-w-2xl mx-auto">
                                 Come see where the magic happens. We are located in the heart of Bhiwandi.
                             </p>
                         </div>

@@ -15,16 +15,33 @@ const Services = () => {
 
                 {/* Hero Section */}
                 <ScrollReveal>
-                    <div className="text-center mb-20 relative">
-                        <div className="inline-block px-4 py-1 rounded-full border border-brand-red/30 bg-brand-red/5 text-brand-red text-sm font-bold uppercase tracking-[0.2em] mb-1 backdrop-blur-sm">
+                    <div className="text-center mb-16 relative pt-10">
+                        <div className="inline-block px-4 py-1.5 rounded-full border border-brand-red/30 bg-brand-red/5 text-brand-red text-xs font-bold uppercase tracking-[0.2em] mb-4 backdrop-blur-sm">
                             Expertise You Can Trust
                         </div>
-                        <h1 className="text-5xl md:text-7xl font-black text-white italic tracking-tighter uppercase mb-6 leading-none drop-shadow-2xl">
+                        <h1 className="text-3xl md:text-5xl font-black text-white italic tracking-tighter uppercase mb-6 leading-none drop-shadow-2xl">
                             Our <span className="text-[#E31E24]">Services</span>
                         </h1>
-                        <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed border-l-4 border-brand-red/50 pl-6 text-left md:text-center md:border-none md:pl-0">
-                            We don't just upgrade cars; we transform them. Explore our comprehensive range of premium services designed for the ultimate driving experience.
+                        <p className="text-sm md:text-base text-gray-400 max-w-3xl mx-auto leading-relaxed border-l-4 border-brand-red/50 pl-6 text-left md:text-center md:border-none md:pl-0">
+                            We don't just upgrade cars; we transform them. From concert-level audio to showroom-finish detailing, explore our comprehensive range of premium services.
                         </p>
+                    </div>
+                </ScrollReveal>
+
+                {/* Workflow Stats (New) */}
+                <ScrollReveal delay={200}>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20 border-y border-white/5 py-8">
+                        {[
+                            { label: "Years Experience", val: "15+" },
+                            { label: "Premium Cars", val: "5000+" },
+                            { label: "Expert Technicians", val: "12" },
+                            { label: "Warranty Support", val: "100%" }
+                        ].map((stat, i) => (
+                            <div key={i} className="text-center">
+                                <div className="text-2xl font-black text-white italic">{stat.val}</div>
+                                <div className="text-[10px] text-gray-500 uppercase tracking-widest">{stat.label}</div>
+                            </div>
+                        ))}
                     </div>
                 </ScrollReveal>
 
@@ -48,8 +65,8 @@ const Services = () => {
                                             {service.icon}
                                         </div>
                                     </div>
-                                    <h3 className="text-2xl font-black text-white uppercase italic mb-4 tracking-tight group-hover:text-[#E31E24] transition-colors duration-300">{service.title}</h3>
-                                    <p className="text-gray-400 leading-relaxed font-medium text-base group-hover:text-gray-200 transition-colors duration-300">{service.description}</p>
+                                    <h3 className="text-xl font-black text-white uppercase italic mb-4 tracking-tight group-hover:text-[#E31E24] transition-colors duration-300">{service.title}</h3>
+                                    <p className="text-gray-400 leading-relaxed font-medium text-sm group-hover:text-gray-200 transition-colors duration-300">{service.description}</p>
                                 </div>
 
                                 <div className="relative z-10 mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
@@ -63,9 +80,70 @@ const Services = () => {
                     ))}
                 </div>
 
+                {/* THE PROCESS SECTION (New Content to increase page size) */}
+                <div className="mb-32 relative">
+                    <ScrollReveal direction="left">
+                        <h2 className="text-2xl md:text-4xl font-black text-white italic uppercase mb-12 tracking-tighter">
+                            The Captain's <span className="text-[#E31E24]">Standard</span>
+                        </h2>
+                    </ScrollReveal>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+                        {[
+                            { title: "Consultation", desc: "We analyze your vehicle and understand your specific needs before recommending the best upgrades.", icon: "01" },
+                            { title: "Precision Install", desc: "Our certified technicians ensure factory-finish installation with zero wire cutting or warranty voiding.", icon: "02" },
+                            { title: "Quality Check", desc: "Every upgrade goes through a rigorous testing phase to ensure flawless performance and longevity.", icon: "03" }
+                        ].map((step, idx) => (
+                            <ScrollReveal key={idx} delay={idx * 150} direction="up">
+                                <div className="bg-[#111] p-8 rounded-3xl border border-white/5 relative overflow-hidden group hover:border-[#E31E24]/50 transition-colors">
+                                    <div className="absolute top-0 right-0 p-4 text-4xl font-black text-white/5 group-hover:text-[#E31E24]/10 transition-colors">
+                                        {step.icon}
+                                    </div>
+                                    <div className="relative z-10">
+                                        <h3 className="text-xl font-bold text-white uppercase mb-4">{step.title}</h3>
+                                        <p className="text-gray-400 leading-relaxed text-sm">{step.desc}</p>
+                                    </div>
+                                </div>
+                            </ScrollReveal>
+                        ))}
+                    </div>
+                </div>
+
+                {/* TRANSFORMATION GALLERY (New Visual Content) */}
+                <div className="mb-20">
+                    <ScrollReveal direction="right">
+                        <div className="flex items-end justify-between mb-10">
+                            <h2 className="text-2xl md:text-4xl font-black text-white italic uppercase tracking-tighter">
+                                Recent <span className="text-[#E31E24]">Works</span>
+                            </h2>
+                            <Link to="/products" className="hidden md:block text-[#E31E24] font-bold uppercase tracking-widest text-[10px] border-b border-[#E31E24]">View Full Catalogue</Link>
+                        </div>
+                    </ScrollReveal>
+
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 h-[500px]">
+                        <ScrollReveal delay={0} className="col-span-2 row-span-2 h-full">
+                            <div className="w-full h-full rounded-3xl overflow-hidden relative group">
+                                <img src="/seatcover6.png" alt="Showcase" className="w-full h-full object-contain bg-[#111]" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                                    <span className="text-white font-bold uppercase">Premium Interiors</span>
+                                </div>
+                            </div>
+                        </ScrollReveal>
+                        <ScrollReveal delay={100} className="col-span-2 row-span-2 h-full">
+                            <div className="w-full h-full rounded-3xl overflow-hidden relative group">
+                                <img src="/new photos/somecarfilm1.jpg" alt="Showcase" className="w-full h-full object-cover" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                                    <span className="text-white font-bold uppercase">Sun Control & Glass</span>
+                                </div>
+                            </div>
+                        </ScrollReveal>
+                    </div>
+                </div>
+
+                {/* MODAL POPUP OVERLAY */}
                 {/* MODAL POPUP OVERLAY */}
                 {selectedService && (
-                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+                    <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4">
                         {/* Backdrop with Blur */}
                         <div
                             className="absolute inset-0 bg-black/80 backdrop-blur-md animate-in fade-in duration-300"
@@ -73,39 +151,39 @@ const Services = () => {
                         />
 
                         {/* Modal Card */}
-                        <div className="relative bg-[#0f0f0f] border border-[#E31E24]/30 rounded-[2.5rem] w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-[0_0_100px_rgba(227,30,36,0.2)] animate-in zoom-in-95 duration-300 scrollbar-hide">
+                        <div className="relative bg-[#0f0f0f] border border-[#E31E24]/30 rounded-[2.5rem] w-full max-w-2xl max-h-[85vh] overflow-y-auto shadow-[0_0_100px_rgba(227,30,36,0.2)] animate-in zoom-in-95 duration-300 scrollbar-hide">
 
                             {/* Close Button */}
                             <button
                                 onClick={() => setSelectedService(null)}
-                                className="absolute top-4 right-4 z-50 w-10 h-10 bg-black/50 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/10 hover:bg-[#E31E24] hover:border-[#E31E24] transition-colors"
+                                className="absolute top-4 right-4 z-[60] w-10 h-10 bg-black/50 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/10 hover:bg-[#E31E24] hover:border-[#E31E24] transition-colors"
                             >
                                 ✕
                             </button>
 
                             {/* Top Image / Hero */}
-                            <div className="relative h-64 md:h-80 w-full">
+                            <div className="relative h-60 md:h-72 w-full bg-[#151515] flex items-center justify-center overflow-hidden">
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-transparent to-transparent z-10" />
                                 <img
                                     src={selectedService.detailImgTop || selectedService.image}
                                     alt={selectedService.title}
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-contain p-4 relative z-0"
                                 />
                             </div>
 
-                            <div className="p-8 md:p-10 relative z-20 -mt-20">
+                            <div className="p-8 md:p-10 relative z-20 -mt-24 md:-mt-32">
                                 <div className="inline-block px-3 py-1 rounded-lg bg-[#E31E24] text-white text-[10px] font-bold uppercase tracking-widest mb-4 shadow-lg">
                                     Premium Service
                                 </div>
 
-                                <h2 className="text-3xl md:text-5xl font-black uppercase italic tracking-tighter mb-2 drop-shadow-lg">
+                                <h2 className="text-2xl md:text-3xl font-black uppercase italic tracking-tighter mb-2 drop-shadow-lg leading-none">
                                     {selectedService.title}
                                 </h2>
-                                <h3 className="text-[#E31E24] text-xl md:text-2xl font-bold italic mb-6">
+                                <h3 className="text-[#E31E24] text-base md:text-lg font-bold italic mb-6">
                                     "{selectedService.localPitch}"
                                 </h3>
 
-                                <div className="text-gray-300 leading-relaxed mb-8 border-l-2 border-[#E31E24]/50 pl-6 text-lg">
+                                <div className="text-gray-300 leading-relaxed mb-8 border-l-2 border-[#E31E24]/50 pl-6 text-sm md:text-base">
                                     {selectedService.detailedDesc}
                                 </div>
 
@@ -150,7 +228,7 @@ const services = [
         title: "Concert Audio",
         description: "High-fidelity sound systems that shake the ground.",
         image: "/bossaudiosystem.png",
-        detailImgTop: "/bossaudiosystem.png",
+        detailImgTop: "/speaker/bossaudiosystem-removebg-preview.png",
         localPitch: "Boss Bass, Pura Hall Hila Denge!",
         detailedDesc: "Experience studio-quality sound in your car. We install high-power woofers, DSPs, and amplifiers that give you a crystal clear output with zero distortion.",
         icon: (
@@ -163,7 +241,7 @@ const services = [
         title: "Interior Accessories",
         description: "Luxury meets comfort. Our custom seat covers, 7D mats, and dashboard kits are crafted to give your vehicle a showroom-fresh interior feel.",
         image: "/seatcover1.png",
-        detailImgTop: "/seat cover/seatcover5-removebg-preview.png",
+        detailImgTop: "/seat cover/seatcover2-removebg-preview.png",
         localPitch: "Interiors Jo Dil Jeet Le!",
         detailedDesc: "From Nappa leather finishes to sweat-proof fabrics, our seat covers are stitched to perfection. Comfort aur style ka perfect combo.",
         icon: (
@@ -176,7 +254,7 @@ const services = [
         title: "Ambient Lighting",
         description: "Set the mood. App-controlled LED strips and starlights.",
         image: "/cardisplay2.png",
-        detailImgTop: "/ledlight2.jpg",
+        detailImgTop: "/ledlight2.png",
         localPitch: "Gaadi Hai Ya Disco?",
         detailedDesc: "Multi-color ambient light strips with app control. Change colors according to your mood. Raat mein full vibe banegi!",
         icon: (

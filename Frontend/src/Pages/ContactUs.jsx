@@ -45,10 +45,10 @@ const ContactUs = () => {
                         <div className="inline-block px-4 py-1.5 rounded-full border border-[#E31E24]/30 bg-[#E31E24]/5 mb-6">
                             <span className="text-[#E31E24] text-xs font-black uppercase tracking-[0.3em]">Direct Connection</span>
                         </div>
-                        <h1 className="text-6xl md:text-8xl font-black uppercase italic tracking-tighter mb-8 leading-[0.8] flex flex-col items-center">
+                        <h1 className="text-3xl md:text-5xl font-black uppercase italic tracking-tighter mb-8 leading-[0.8] flex flex-col items-center">
                             Reach <span className="text-[#E31E24] skew-x-[-10deg]">Captain.</span>
                         </h1>
-                        <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                        <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto font-light leading-relaxed">
                             Have a vision for your ride? Let's discuss your transformation. Our experts are ready to turn your automotive dreams into reality.
                         </p>
                     </div>
@@ -69,9 +69,9 @@ const ContactUs = () => {
                                             </div>
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-black uppercase italic mb-1 tracking-tight">{method.title}</h3>
-                                            <p className="text-gray-500 text-xs uppercase tracking-widest mb-4 font-bold">{method.subtitle}</p>
-                                            <p className={`text-xl font-bold ${method.color}`}>{method.value}</p>
+                                            <h3 className="text-lg font-black uppercase italic mb-1 tracking-tight">{method.title}</h3>
+                                            <p className="text-gray-500 text-[10px] uppercase tracking-widest mb-4 font-bold">{method.subtitle}</p>
+                                            <p className={`text-lg font-bold ${method.color}`}>{method.value}</p>
                                             {method.subValue && <p className="text-gray-500 text-sm mt-1">{method.subValue}</p>}
                                         </div>
                                     </div>
@@ -100,7 +100,7 @@ const ContactUs = () => {
                             <div className="absolute bottom-0 left-0 w-40 h-40 bg-blue-500/5 rounded-full blur-[60px] pointer-events-none group-hover:bg-blue-500/10 transition-colors duration-700" />
 
                             <div className="mb-12 relative z-10">
-                                <h3 className="text-4xl font-black text-white uppercase italic tracking-tighter mb-4 flex items-center gap-3">
+                                <h3 className="text-2xl md:text-4xl font-black text-white uppercase italic tracking-tighter mb-4 flex items-center gap-3">
                                     Inquiry Form
                                     <span className="w-2 h-2 rounded-full bg-[#E31E24] animate-pulse"></span>
                                 </h3>
@@ -201,11 +201,11 @@ const ContactUs = () => {
                         <div className="flex gap-12">
                             <div>
                                 <p className="text-xs text-gray-600 font-bold uppercase tracking-widest mb-1">Cars Customised</p>
-                                <p className="text-3xl font-black text-white italic tracking-tighter">5000+</p>
+                                <p className="text-2xl font-black text-white italic tracking-tighter">5000+</p>
                             </div>
                             <div>
                                 <p className="text-xs text-gray-600 font-bold uppercase tracking-widest mb-1">Happy Clients</p>
-                                <p className="text-3xl font-black text-white italic tracking-tighter">4.6/5</p>
+                                <p className="text-2xl font-black text-white italic tracking-tighter">4.6/5</p>
                             </div>
                         </div>
                     </div>

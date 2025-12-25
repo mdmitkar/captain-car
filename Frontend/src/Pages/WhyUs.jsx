@@ -15,18 +15,18 @@ const WhyUs = () => {
                                 <div className="absolute top-0 right-0 w-96 h-96 bg-[#E31E24]/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2" />
                                 <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-[100px] pointer-events-none translate-y-1/2 -translate-x-1/2" />
 
-                                <h2 className="text-8xl md:text-[12rem] font-black text-[#E31E24] mb-2 tracking-tighter leading-none group-hover:scale-105 transition-transform duration-700">
+                                <h2 className="text-5xl md:text-7xl font-black text-[#E31E24] mb-2 tracking-tighter leading-none group-hover:scale-105 transition-transform duration-700">
                                     5000+
                                 </h2>
-                                <p className="text-2xl md:text-4xl font-black text-white uppercase tracking-[0.3em] mb-12">Happy Customers</p>
+                                <p className="text-lg md:text-2xl font-black text-white uppercase tracking-[0.3em] mb-12">Happy Customers</p>
 
                                 {/* Divider */}
                                 <div className="max-w-md mx-auto h-px bg-gradient-to-r from-transparent via-[#E31E24]/50 to-transparent mb-12" />
 
                                 {/* Testimonial */}
                                 <div className="relative max-w-3xl mx-auto">
-                                    <div className="absolute -top-10 left-1/2 -translate-x-1/2 text-8xl text-[#E31E24]/20 font-serif">"</div>
-                                    <p className="text-gray-300 italic text-xl md:text-3xl leading-relaxed mb-8 relative z-10">
+                                    <div className="absolute -top-10 left-1/2 -translate-x-1/2 text-7xl text-[#E31E24]/20 font-serif">"</div>
+                                    <p className="text-gray-300 italic text-base md:text-xl leading-relaxed mb-8 relative z-10">
                                         Best car audio installation in town! The team at Captain transformed my car's interior completely. Highly recommended!
                                     </p>
                                     <div className="flex items-center justify-center gap-4">
@@ -44,10 +44,10 @@ const WhyUs = () => {
                     <ScrollReveal direction="up">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                             <div>
-                                <h1 className="text-6xl md:text-8xl font-black uppercase italic tracking-tighter mb-8 leading-none">
+                                <h1 className="text-3xl md:text-5xl font-black uppercase italic tracking-tighter mb-8 leading-none">
                                     Why Choose <span className="text-[#E31E24]">Captain?</span>
                                 </h1>
-                                <p className="text-gray-400 text-xl leading-relaxed mb-12 border-l-4 border-[#E31E24] pl-8">
+                                <p className="text-gray-400 text-base leading-relaxed mb-12 border-l-4 border-[#E31E24] pl-8">
                                     At Captain Car Audio & Accessories, we are committed to enhancing your driving experience with premium products and professional service. Our team of experts ensures every installation is perfect.
                                 </p>
                             </div>
@@ -77,10 +77,10 @@ const WhyUs = () => {
                 <ScrollReveal direction="up" delay={300}>
                     <div className="mb-24 pt-20 border-t border-white/5">
                         <div className="text-center mb-16">
-                            <h2 className="text-4xl md:text-7xl font-black text-white uppercase italic tracking-tighter mb-6 text-center">
+                            <h2 className="text-2xl md:text-4xl font-black text-white uppercase italic tracking-tighter mb-6 text-center">
                                 Why <span className="text-[#E31E24]">Captain</span> is Better?
                             </h2>
-                            <p className="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
+                            <p className="text-gray-400 text-sm max-w-3xl mx-auto leading-relaxed">
                                 We don't just sell car audio – we deliver an experience. Here's what makes Captain Car Audio the #1 choice in Bhiwandi.
                             </p>
                         </div>
@@ -177,10 +177,10 @@ const WhyUs = () => {
                 <ScrollReveal direction="up" delay={300}>
                     <div className="mb-24 pt-20 border-t border-white/5">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-5xl font-black uppercase italic tracking-tighter mb-4 text-center">
+                            <h2 className="text-2xl md:text-3xl font-black uppercase italic tracking-tighter mb-4 text-center">
                                 Captain vs <span className="text-gray-500">Others</span>
                             </h2>
-                            <p className="text-[#E31E24] font-bold tracking-widest uppercase text-sm text-center">See the Difference</p>
+                            <p className="text-[#E31E24] font-bold tracking-widest uppercase text-xs text-center">See the Difference</p>
                         </div>
 
                         <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0a0a0a] shadow-2xl">
@@ -224,8 +224,8 @@ const WhyUs = () => {
                 <ScrollReveal direction="up" delay={400}>
                     <div className="border-t border-white/10 pt-16 flex flex-col md:flex-row items-center justify-between gap-8">
                         <div>
-                            <h3 className="text-2xl font-black text-white uppercase italic tracking-tighter mb-2">Ready to Upgrade?</h3>
-                            <p className="text-gray-500">Visit our workshop for a free consultation.</p>
+                            <h3 className="text-xl font-black text-white uppercase italic tracking-tighter mb-2">Ready to Upgrade?</h3>
+                            <p className="text-gray-500 text-sm">Visit our workshop for a free consultation.</p>
                         </div>
                         <button className="bg-[#E31E24] text-white px-10 py-4 font-bold uppercase tracking-widest hover:bg-white hover:text-[#E31E24] transition-all transform hover:-translate-y-1 skew-x-[-10deg]">
                             <span className="skew-x-[10deg] inline-block">Get Directions</span>

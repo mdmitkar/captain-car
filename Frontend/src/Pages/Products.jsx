@@ -126,10 +126,10 @@ const Products = () => {
                         <span className="text-brand-red font-bold tracking-[0.3em] uppercase text-xs md:text-sm mb-4 inline-block">
                             Store Catalogue
                         </span>
-                        <h1 className="text-5xl md:text-8xl font-black mb-6 leading-[0.9] uppercase italic tracking-tighter">
+                        <h1 className="text-3xl md:text-5xl font-black mb-6 leading-[0.9] uppercase italic tracking-tighter">
                             Our Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#DC143C] to-[#FF6B6B]">Collection</span>
                         </h1>
-                        <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-light">
+                        <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto font-light">
                             Explore our curated selection of high-end accessories designed to elevate your driving experience.
                         </p>
                     </ScrollReveal>
@@ -159,7 +159,7 @@ const Products = () => {
                         <div key={category.id} id={category.id} className="mb-24 last:mb-0 scroll-mt-32">
                             <ScrollReveal direction="left" delay={100}>
                                 <div className="flex items-center gap-4 mb-10 border-b border-white/10 pb-4">
-                                    <h2 className="text-3xl md:text-5xl font-black uppercase italic tracking-tighter text-white">
+                                    <h2 className="text-2xl md:text-4xl font-black uppercase italic tracking-tighter text-white">
                                         {category.title}
                                     </h2>
                                     <div className="h-[1px] flex-grow bg-gradient-to-r from-brand-red to-transparent"></div>
@@ -186,7 +186,7 @@ const Products = () => {
 
                                             {/* Content */}
                                             <div className="p-6 relative">
-                                                <h3 className="text-xl font-bold uppercase italic tracking-tight mb-2 text-gray-200 group-hover:text-white transition-colors">
+                                                <h3 className="text-lg font-bold uppercase italic tracking-tight mb-2 text-gray-200 group-hover:text-white transition-colors">
                                                     {product.name}
                                                 </h3>
                                                 <div className="flex justify-between items-end mt-4">
@@ -196,7 +196,7 @@ const Products = () => {
                                                         rel="noopener noreferrer"
                                                         className="group/btn"
                                                     >
-                                                        <span className="text-brand-red text-sm font-bold uppercase tracking-widest border-b border-transparent group-hover/btn:border-brand-red transition-all cursor-pointer">
+                                                        <span className="text-brand-red text-xs font-bold uppercase tracking-widest border-b border-transparent group-hover/btn:border-brand-red transition-all cursor-pointer">
                                                             Enquire Now
                                                         </span>
                                                     </a>
@@ -321,7 +321,7 @@ const Products = () => {
                                 <span className="text-2xl">📞</span>
                                 <div>
                                     <p className="text-white font-bold">We're available by phone:</p>
-                                    <p className="text-xl text-brand-red font-black">9822119832</p>
+                                    <p className="text-lg text-brand-red font-black">9822119832</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4">
