@@ -55,6 +55,33 @@ const Home = () => {
         },
     ];
 
+    const smoothScrollTo = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            const elementPosition = element.getBoundingClientRect().top;
+            const startPosition = window.pageYOffset;
+            const distance = elementPosition;
+            const duration = 500; // 0.5s for instant-feel response
+            let start = null;
+
+            function step(timestamp) {
+                if (!start) start = timestamp;
+                const progress = timestamp - start;
+                const percentage = Math.min(progress / duration, 1);
+
+                // Ease-out cubic: starts fast, slows down at the end. No startup delay.
+                const ease = 1 - Math.pow(1 - percentage, 3);
+
+                window.scrollTo(0, startPosition + distance * ease);
+
+                if (progress < duration) {
+                    window.requestAnimationFrame(step);
+                }
+            }
+            window.requestAnimationFrame(step);
+        }
+    };
+
     return (
         <div className="bg-premium-black text-white font-sans overflow-x-hidden selection:bg-brand-red selection:text-white">
 
@@ -112,12 +139,23 @@ const Home = () => {
                     </ScrollReveal>
                 </div>
 
-                <div className={`absolute bottom-40 left-0 w-full flex justify-center z-30 transition-all duration-1000 delay-[300ms] transform ${showBottomContent ? 'translate-y-0 opacity-100' : 'translate-y-[20px] opacity-0'}`}>
-                    <Link to="/services">
-                        <Button variant="custom" className="px-10 py-4 bg-[#E31E24] hover:bg-white hover:text-[#E31E24] text-white text-lg font-black rounded-none skew-x-[-10deg] transition-all duration-300 uppercase tracking-widest shadow-[0_0_30px_rgba(227,30,36,0.4)] hover:shadow-[0_0_50px_rgba(255,255,255,0.4)]">
-                            <span className="skew-x-[10deg] inline-block">Discover More</span>
-                        </Button>
-                    </Link>
+                <div className={`absolute bottom-6 left-0 w-full flex flex-col items-center justify-center z-30 transition-all duration-1000 delay-[300ms] transform cursor-pointer ${showBottomContent ? 'translate-y-0 opacity-100' : 'translate-y-[20px] opacity-0'}`}>
+                    <Button
+                        variant="custom"
+                        onClick={() => smoothScrollTo('about-section')}
+                        className="mb-6 px-10 py-4 bg-[#E31E24] hover:bg-white hover:text-[#E31E24] text-white text-lg font-black rounded-none skew-x-[-10deg] transition-all duration-300 uppercase tracking-widest shadow-[0_0_30px_rgba(227,30,36,0.4)] hover:shadow-[0_0_50px_rgba(255,255,255,0.4)]"
+                    >
+                        <span className="skew-x-[10deg] inline-block">Discover More</span>
+                    </Button>
+
+                    <div
+                        className="flex flex-col -space-y-6 animate-bounce hover:scale-110 transition-transform duration-300"
+                        onClick={() => smoothScrollTo('about-section')}
+                    >
+                        <svg className="w-10 h-10 text-[#E31E24] opacity-40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7l5 5 5-5" /></svg>
+                        <svg className="w-10 h-10 text-[#E31E24] opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7l5 5 5-5" /></svg>
+                        <svg className="w-10 h-10 text-[#E31E24]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7l5 5 5-5" /></svg>
+                    </div>
                 </div>
 
                 <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
@@ -126,7 +164,7 @@ const Home = () => {
             </div>
 
             {/* ================= THE EXPERIENCE (About) ================= */}
-            <div className="relative py-24 px-6 bg-black overflow-hidden">
+            <div id="about-section" className="relative py-24 px-6 bg-black overflow-hidden">
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-red/5 rounded-full blur-[120px] pointer-events-none" />
 
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -364,9 +402,6 @@ const Home = () => {
                                 {services.map((service, idx) => (
                                     <div key={`${i}-${idx}`} className="w-[450px] flex-shrink-0 relative h-[320px] rounded-[3.5rem] overflow-hidden group border border-white/10 bg-black hover:border-brand-red/50 transition-all duration-500">
                                         {/* Digital Corner Accents */}
-                                        <div className="absolute top-8 right-8 w-10 h-10 border-t border-r border-brand-red/20 group-hover:border-brand-red transition-all duration-500 z-20" />
-                                        <div className="absolute bottom-8 left-8 w-10 h-10 border-b border-l border-brand-red/20 group-hover:border-brand-red transition-all duration-500 z-20" />
-
                                         <div className="absolute inset-0 bg-gradient-to-b from-[#1a0505] to-black opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
                                         <img src={service.img} alt={service.title} className="absolute inset-0 w-full h-full object-contain group-hover:scale-110 transition-transform duration-1000 px-12 pb-14" />
 
@@ -455,12 +490,6 @@ const Home = () => {
                     <ScrollReveal direction="up" delay={200}>
                         <div className="relative w-full h-[550px] rounded-[4rem] overflow-hidden border border-white/10 shadow-[0_0_100px_-30px_rgba(227,30,36,0.15)] group">
                             {/* HUD Detail Accent Framing */}
-                            <div className="absolute top-10 left-10 w-20 h-20 border-t-2 border-l-2 border-brand-red/40 z-20 pointer-events-none group-hover:w-24 group-hover:h-24 transition-all duration-700" />
-                            <div className="absolute bottom-10 right-10 w-20 h-20 border-b-2 border-r-2 border-brand-red/40 z-20 pointer-events-none group-hover:w-24 group-hover:h-24 transition-all duration-700" />
-
-                            {/* Diagnostic Scan Line Overlay */}
-                            <div className="absolute inset-0 pointer-events-none z-10 opacity-[0.03] bg-[linear-gradient(rgba(255,255,255,1)_1px,transparent_1px)] bg-[length:100%_3px]" />
-
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83194.4788254592!2d73.05857195929217!3d19.274098379261684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7bd0bd3ab28a7%3A0x9a04787bb35296c9!2sCaptain%20Car%20Audio!5e0!3m2!1sen!2sin!4v1766560019806!5m2!1sen!2sin"
                                 width="100%"
