@@ -219,19 +219,19 @@ const Home = () => {
 
                             <div className="space-y-6 text-gray-400 text-base leading-relaxed mb-10 text-justify">
                                 <p>
-                                    Founded by <strong className="text-white">Tanveer Farooqui</strong>, Captain Car has evolved from a passionate vision into Bhiwandi's architectural sanctuary for automotive excellence. With over 15 years of personal expertise, Tanveer treats every vehicle not as a machine, but as a canvas for exquisite art.
+                                    Founded by <strong className="text-white">Tanveer Farooqui</strong>, Captain Car began with a simple dream and has grown into one of Bhiwandi’s trusted destinations for car customization. With more than 15 years of hands-on experience, Tanveer believes every car has its own character and deserves personal attention, not just routine work.
                                 </p>
 
                                 <p>
-                                    Our philosophy is simple: your car is an extension of your personality. Whether it's the tactile feel of premium Nappa leather or the crystalline clarity of a high-end audio system, we take a holistic approach, ensuring every project carries our signature of integrity.
+                                    Our belief is clear: your car reflects who you are. From the comfort of premium Nappa leather seat covers to the rich sound of advanced audio systems, we focus on every small detail. We don’t rush work we make sure each upgrade feels right, looks premium, and lasts long.
                                 </p>
 
                                 <p>
-                                    We remain at the pioneering edge of technology and style. From intuitive Android hubs that turn your dashboard into a futuristic cockpit to sophisticated interiors that provide a sense of grandeur, our work is defined by pristine quality.
+                                    We stay updated with the latest trends and technology in car accessories. Whether it’s smart Android systems that modernize your dashboard or elegant interior upgrades that enhance comfort, our work stands for quality, durability, and clean finishing.
                                 </p>
 
                                 <p>
-                                    Located in <strong className="text-white">Chavindra, Bhiwandi</strong>, our state-of-the-art facility serves a discerning clientele who value authenticity over speed. Trust is the foundation of our legacy, and we promise a meticulous transformation that is both radical and timeless.
+                                    Based in <strong className="text-white">Chavindra, Bhiwandi</strong>, our modern workshop welcomes customers who value honest work and long term reliability. Trust is what we’ve built over the years, and every car that leaves our workshop carries our promise of quality, care, and satisfaction.
                                 </p>
                             </div>
 
