@@ -217,7 +217,7 @@ const Home = () => {
                                 <span className="text-[#E31E24]">Captain Car.</span>
                             </h2>
 
-                            <div className="space-y-6 text-gray-400 text-base leading-relaxed mb-10 text-justify">
+                            <div className="space-y-6 text-gray-400 text-base leading-relaxed mb-10 text-left">
                                 <p>
                                     Founded by <strong className="text-white">Tanveer Farooqui</strong>, Captain Car began with a simple dream and has grown into one of Bhiwandi’s trusted destinations for car customization. With more than 15 years of hands-on experience, Tanveer believes every car has its own character and deserves personal attention, not just routine work.
                                 </p>
@@ -271,7 +271,7 @@ const Home = () => {
                         </div>
                     </ScrollReveal>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
                         {/* Diagnostic Grid Style Cards */}
                         {[
                             {
@@ -296,13 +296,13 @@ const Home = () => {
                             }
                         ].map((item, idx) => (
                             <ScrollReveal key={idx} direction="up" delay={idx * 150}>
-                                <div className="group relative p-8 bg-black border border-white/5 rounded-[2.5rem] overflow-hidden hover:border-brand-red/50 transition-all duration-500 h-full">
+                                <div className="group relative p-6 bg-black border border-white/5 rounded-[2.5rem] overflow-hidden hover:border-brand-red/50 transition-all duration-500 h-full">
                                     {/* HUD Background Scan Line */}
                                     <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-red to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-scan-down pointer-events-none" />
 
                                     <span className="text-5xl font-black text-brand-red/10 group-hover:text-brand-red/20 transition-all duration-700 block mb-6 italic">{item.step}</span>
-                                    <h3 className="text-xl font-black text-white mb-4 uppercase italic tracking-tighter group-hover:text-brand-red transition-colors duration-500">{item.title}</h3>
-                                    <p className="text-gray-400 text-sm leading-relaxed text-justify font-medium">{item.desc}</p>
+                                    <h3 className="text-sm md:text-base font-black text-white mb-4 uppercase italic tracking-tighter group-hover:text-brand-red transition-colors duration-500 whitespace-nowrap">{item.title}</h3>
+                                    <p className="text-gray-400 text-sm leading-relaxed text-justify hyphens-auto tracking-tight font-medium break-words">{item.desc}</p>
 
                                     {/* Corner Accent */}
                                     <div className="absolute top-6 right-6 w-8 h-8 border-t border-r border-white/5 group-hover:border-brand-red/30 transition-colors duration-500" />
@@ -420,7 +420,7 @@ const Home = () => {
                                         <div className="relative flex-grow w-full px-8 pb-8 pt-4 bg-black z-10 flex flex-col justify-between">
                                             <div>
                                                 <h3 className="text-2xl font-black text-white uppercase italic mb-2 tracking-tighter">{service.title}</h3>
-                                                <p className="text-gray-300 mb-6 font-medium text-sm leading-relaxed text-justify">{service.desc}</p>
+                                                <p className="text-gray-300 mb-6 font-medium text-sm leading-relaxed text-left">{service.desc}</p>
                                             </div>
                                             <Link to={service.link} className="inline-flex items-center gap-2 text-brand-red font-bold uppercase tracking-widest text-xs group-hover:gap-4 transition-all hover:text-white mt-auto">
                                                 Explore Full Catalogue <span>→</span>
