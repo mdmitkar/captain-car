@@ -6,7 +6,7 @@ const Services = () => {
     const [selectedService, setSelectedService] = useState(null);
 
     return (
-        <div className="min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-brand-red selection:text-white pt-40 pb-16 relative">
+        <div className="min-h-screen bg-black text-white font-sans selection:bg-brand-red selection:text-white pt-40 pb-16 relative">
             {/* Background Texture */}
             <div className="absolute inset-0 z-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'url(/assets/figma-img/bg-pattern.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
             <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-brand-red/10 to-transparent pointer-events-none z-0" />

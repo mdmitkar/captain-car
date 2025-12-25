@@ -3,7 +3,7 @@ import ScrollReveal from '../Components/ScrollReveal';
 
 const WhyUs = () => {
     return (
-        <div className="bg-black text-white min-h-screen pt-24 pb-16 font-sans selection:bg-[#E31E24] selection:text-white overflow-x-hidden">
+        <div className="bg-black text-white min-h-screen pt-24 pb-16 font-sans selection:bg-[#E31E24] selection:text-white">
 
             <div className="container mx-auto px-6">
 
