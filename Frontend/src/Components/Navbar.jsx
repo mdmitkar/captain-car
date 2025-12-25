@@ -60,7 +60,7 @@ const Navbar = () => {
                                 to={link.path}
                                 className={`relative px-2 py-1 transition-all duration-300 flex items-center ${isActive(link.path) ? 'text-[#DC143C]' : 'text-gray-300 group-hover:text-white'}`}
                             >
-                                <span className="font-bold tracking-widest text-sm uppercase flex items-center gap-1">
+                                <span className="font-medium tracking-widest text-sm uppercase flex items-center gap-1">
                                     {link.name}
                                     {link.isDropdown && <span className="text-[10px] mt-0.5 transition-transform duration-300 group-hover:rotate-180">▼</span>}
                                 </span>
@@ -83,7 +83,7 @@ const Navbar = () => {
                                                     onClick={() => scrollToCategory(category.id)}
                                                     className="group/item flex items-center justify-between text-left text-gray-400 hover:text-white px-4 py-3 rounded-xl transition-all hover:bg-white/5 border border-transparent hover:border-white/5"
                                                 >
-                                                    <span className="text-xs font-bold uppercase tracking-widest group-hover/item:translate-x-2 transition-transform duration-300">
+                                                    <span className="text-xs font-medium uppercase tracking-widest group-hover/item:translate-x-2 transition-transform duration-300">
                                                         {category.title}
                                                     </span>
                                                     <span className="opacity-0 group-hover/item:opacity-100 -translate-x-2 group-hover/item:translate-x-0 transition-all duration-300 text-[#DC143C]">
@@ -121,7 +121,7 @@ const Navbar = () => {
                         <Link
                             to={link.path}
                             onClick={() => setMobileMenuOpen(false)}
-                            className={`text-3xl font-black uppercase tracking-tighter hover:text-brand-red transition-colors ${isActive(link.path) ? 'text-[#DC143C]' : 'text-white'}`}
+                            className={`text-3xl font-bold uppercase tracking-tighter hover:text-brand-red transition-colors ${isActive(link.path) ? 'text-[#DC143C]' : 'text-white'}`}
                             style={{ transitionDelay: `${idx * 100}ms` }}
                         >
                             {link.name}
@@ -133,7 +133,7 @@ const Navbar = () => {
                                     <button
                                         key={category.id}
                                         onClick={() => scrollToCategory(category.id)}
-                                        className="text-gray-500 hover:text-white text-sm font-bold uppercase tracking-widest"
+                                        className="text-gray-500 hover:text-white text-sm font-medium uppercase tracking-widest"
                                     >
                                         {category.title}
                                     </button>

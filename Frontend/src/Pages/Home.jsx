@@ -72,7 +72,7 @@ const Home = () => {
                     </video>
                 </div>
 
-                <div className="relative z-20 container mx-auto px-6 h-full flex flex-col justify-center items-start">
+                <div className="relative z-20 max-w-7xl w-full mx-auto px-6 h-full flex flex-col justify-center items-start">
                     <ScrollReveal direction="left" delay={500} className="max-w-4xl">
                         <div className={`glass-panel inline-block px-6 py-2 rounded-full mb-6 border-l-4 border-brand-red transition-all duration-1000 ${showHeroText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                             <span className="text-brand-red font-bold tracking-[0.3em] uppercase text-[10px] md:text-xs">Premium Car Accessories</span>
@@ -166,8 +166,8 @@ const Home = () => {
                                 <span className="text-[#E31E24]">Captain Car.</span>
                             </h2>
 
-                            <div className="space-y-6 text-gray-400 text-base leading-relaxed mb-10 text-justify">
-                                <p className="border-l-4 border-brand-red pl-6">
+                            <div className="space-y-6 text-gray-400 text-base leading-relaxed mb-10 text-left">
+                                <p>
                                     Founded by <strong className="text-white">Tanveer Farooqui</strong>, Captain Car has evolved from a passionate vision into Bhiwandi's architectural sanctuary for automotive excellence. With over 15 years of personal expertise, Tanveer treats every vehicle not as a machine, but as a canvas for exquisite art.
                                 </p>
 
@@ -251,7 +251,7 @@ const Home = () => {
 
                                     <span className="text-5xl font-black text-brand-red/10 group-hover:text-brand-red/20 transition-all duration-700 block mb-6 italic">{item.step}</span>
                                     <h3 className="text-xl font-black text-white mb-4 uppercase italic tracking-tighter group-hover:text-brand-red transition-colors duration-500">{item.title}</h3>
-                                    <p className="text-gray-400 text-sm leading-relaxed text-justify font-medium">{item.desc}</p>
+                                    <p className="text-gray-400 text-sm leading-relaxed text-left font-medium">{item.desc}</p>
 
                                     {/* Corner Accent */}
                                     <div className="absolute top-6 right-6 w-8 h-8 border-t border-r border-white/5 group-hover:border-brand-red/30 transition-colors duration-500" />
@@ -264,7 +264,7 @@ const Home = () => {
 
             {/* ================= MARQUEE (Brands) ================= */}
             <div className="py-10 bg-black overflow-hidden relative border-t border-b border-white/10">
-                <div className="container mx-auto px-6 mb-8 text-center relative z-10">
+                <div className="max-w-7xl w-full mx-auto px-6 mb-8 text-center relative z-10">
                     <h3 className="text-[#E31E24] font-bold uppercase tracking-[0.3em] text-sm md:text-lg glow-text">We Work For</h3>
                 </div>
 
@@ -326,7 +326,7 @@ const Home = () => {
 
             {/* ================= SERVICES SLIDER (Horizontal) ================= */}
             <div className="py-12 bg-black relative">
-                <div className="container mx-auto px-6 mb-8 flex items-end justify-between">
+                <div className="max-w-7xl w-full mx-auto px-6 mb-8 flex items-end justify-between">
                     <ScrollReveal direction="down">
                         <h2 className="text-2xl md:text-4xl font-black text-white uppercase italic tracking-tighter">
                             Premium <span className="text-[#E31E24]">Accessories<br />      & Styling</span>
@@ -434,7 +434,7 @@ const Home = () => {
             <div className="bg-[#050505] py-16 relative overflow-hidden border-t border-white/5">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-red/5 rounded-full blur-[150px] pointer-events-none" />
 
-                <div className="container mx-auto px-6 relative z-10">
+                <div className="max-w-7xl w-full mx-auto px-6 relative z-10">
                     <ScrollReveal direction="up">
                         <div className="text-center mb-12">
                             <h2 className="text-2xl md:text-4xl font-black text-white uppercase italic tracking-tighter mb-4">
