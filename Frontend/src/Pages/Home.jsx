@@ -111,7 +111,7 @@ const Home = () => {
                         <div className={`glass-panel inline-block px-6 py-2 rounded-full mb-6 border-l-4 border-brand-red transition-all duration-1000 ${showHeroText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                             <span className="text-brand-red font-bold tracking-[0.3em] uppercase text-[10px] md:text-xs">Premium Car Accessories</span>
                         </div>
-                        <h1 className="text-3xl md:text-5xl font-black mb-6 leading-[0.9] uppercase italic tracking-tighter drop-shadow-2xl flex flex-col gap-2">
+                        <h1 className="text-4xl md:text-7xl font-black mb-6 leading-[0.9] uppercase italic tracking-tighter drop-shadow-2xl flex flex-col gap-2">
                             <div className="flex gap-4 overflow-hidden">
                                 <span className={`block text-white transition-all duration-700 delay-[0ms] transform ${showHeroText ? 'translate-y-0 opacity-100' : 'translate-y-[100%] opacity-0'}`}>
                                     CRAFT
@@ -134,7 +134,7 @@ const Home = () => {
                             <div className={`absolute left-0 top-0 bottom-0 w-[1px] bg-white/50 origin-top transition-transform duration-700 ease-out delay-[800ms] ${showBottomContent ? 'scale-y-100' : 'scale-y-0'}`} />
 
                             {/* Animated Text */}
-                            <p className={`text-gray-100 text-sm md:text-base font-bold tracking-wide transition-all duration-1000 delay-[1200ms] transform ${showBottomContent ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
+                            <p className={`text-gray-100 text-lg md:text-xl font-bold tracking-wide transition-all duration-1000 delay-[1200ms] transform ${showBottomContent ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
                                 Experience the pinnacle of automotive interior design. We don't just modify cars: we forge identities...
                             </p>
                         </div>
