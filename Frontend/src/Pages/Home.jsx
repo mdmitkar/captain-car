@@ -107,25 +107,23 @@ const Home = () => {
                 </div>
 
                 <div className="relative z-20 w-full h-full flex flex-col justify-center items-start px-6 md:pl-20 lg:pl-32">
-                    <ScrollReveal direction="left" delay={500} className="max-w-4xl">
+                    <ScrollReveal direction="left" delay={500} className="w-full">
                         <div className={`glass-panel inline-block px-6 py-2 rounded-full mb-6 border-l-4 border-brand-red transition-all duration-1000 ${showHeroText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                             <span className="text-brand-red font-bold tracking-[0.3em] uppercase text-[10px] md:text-xs">Premium Car Accessories</span>
                         </div>
-                        <h1 className="text-4xl md:text-7xl font-black mb-6 leading-[0.9] uppercase italic tracking-tighter drop-shadow-2xl flex flex-col gap-2">
-                            <div className="flex gap-4 overflow-hidden">
+                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 leading-[1.1] md:leading-[1.2] uppercase italic tracking-tighter drop-shadow-2xl">
+                            <div className="flex flex-nowrap whitespace-nowrap gap-x-3 gap-y-2 overflow-hidden p-8 -m-8">
                                 <span className={`block text-white transition-all duration-700 delay-[0ms] transform ${showHeroText ? 'translate-y-0 opacity-100' : 'translate-y-[100%] opacity-0'}`}>
-                                    CRAFT
+                                    Premium
                                 </span>
-                                <span className={`block text-white transition-all duration-700 delay-[200ms] transform ${showHeroText ? 'translate-y-0 opacity-100' : 'translate-y-[100%] opacity-0'}`}>
-                                    YOUR
+                                <span className={`block text-transparent bg-clip-text bg-gradient-to-r from-[#DC143C] to-[#FF6B6B] filter drop-shadow-[0_0_20px_rgba(220,20,60,0.5)] transition-all duration-700 delay-[200ms] transform ${showHeroText ? 'translate-y-0 opacity-100' : 'translate-y-[100%] opacity-0'}`}>
+                                    Accessories
                                 </span>
-                            </div>
-                            <div className="flex gap-4 overflow-hidden p-8 pr-32 -m-8">
-                                <span className={`block pr-4 text-transparent bg-clip-text bg-gradient-to-r from-[#DC143C] to-[#FF6B6B] filter drop-shadow-[0_0_20px_rgba(220,20,60,0.5)] transition-all duration-700 delay-[400ms] transform ${showHeroText ? 'translate-y-0 opacity-100' : 'translate-y-[100%] opacity-0'}`}>
-                                    DRIVING
+                                <span className={`block text-transparent bg-clip-text bg-gradient-to-r from-[#DC143C] to-[#FF6B6B] filter drop-shadow-[0_0_20px_rgba(220,20,60,0.5)] transition-all duration-700 delay-[400ms] transform ${showHeroText ? 'translate-y-0 opacity-100' : 'translate-y-[100%] opacity-0'}`}>
+                                    &
                                 </span>
-                                <span className={`block pr-4 text-transparent bg-clip-text bg-gradient-to-r from-[#DC143C] to-[#FF6B6B] filter drop-shadow-[0_0_20px_rgba(220,20,60,0.5)] transition-all duration-700 delay-[600ms] transform ${showHeroText ? 'translate-y-0 opacity-100' : 'translate-y-[100%] opacity-0'}`}>
-                                    LEGACY
+                                <span className={`block text-transparent bg-clip-text bg-gradient-to-r from-[#DC143C] to-[#FF6B6B] filter drop-shadow-[0_0_20px_rgba(220,20,60,0.5)] transition-all duration-700 delay-[600ms] transform ${showHeroText ? 'translate-y-0 opacity-100' : 'translate-y-[100%] opacity-0'}`}>
+                                    Styling
                                 </span>
                             </div>
                         </h1>
@@ -223,7 +221,7 @@ const Home = () => {
                                 </p>
 
                                 <p>
-                                    We believe your car shows your personality. Whether it is fitting premium seat covers that feel luxurious or installing a heavy sound system that booms, we focus on every single detail. We are professional in work—we never rush. We take our time to ensure every fitting is perfect, giving your car that rich, classy look you always wanted.
+                                    We believe your car shows your personality. Whether it is fitting premium seat covers that feel luxurious or installing a heavy sound system that booms, we focus on every single detail. We are professional in work we never rush. We take our time to ensure every fitting is perfect, giving your car that rich, classy look you always wanted.
                                 </p>
 
                                 <p>
@@ -380,7 +378,7 @@ const Home = () => {
                 <div className="max-w-7xl w-full mx-auto px-6 mb-8 flex items-end justify-between">
                     <ScrollReveal direction="down">
                         <h2 className="text-2xl md:text-4xl font-black text-white uppercase italic tracking-tighter">
-                            Premium <span className="text-[#E31E24]">Accessories<br />      & Styling</span>
+                            Premium <span className="text-[#E31E24]">Accessories     & Styling</span>
                         </h2>
                     </ScrollReveal>
                 </div>
@@ -578,7 +576,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 uppercase tracking-widest">
+                <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-center items-center text-xs text-gray-600 uppercase tracking-widest">
                     <p>Copyright © 2025 Captain Car. All rights reserved.</p>
                 </div>
             </footer>
