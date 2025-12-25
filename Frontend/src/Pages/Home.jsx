@@ -277,22 +277,22 @@ const Home = () => {
                             {
                                 step: "01",
                                 title: "Vision Consultation",
-                                desc: "Each commission commences with an executive consultation. We analyze your vehicle’s acoustics and layout to curate materials that impeccably align with your lifestyle and aesthetic prerequisites."
+                                desc: "Every project starts with a detailed discussion. We understand your car, your usage, and your needs, and suggest the best options that suit your style, comfort, and budget."
                             },
                             {
                                 step: "02",
-                                title: "Bespoke Design",
-                                desc: "Our designers engineer a comprehensive schematic for your modification. From acoustically calibrated sound staging to intricate stitch patterns, every nuance is rigorously planned prior to physical execution."
+                                title: "Custom Design Planning",
+                                desc: "Based on the discussion, our team prepares a complete design plan. From audio setup positioning to seat cover patterns and interior finish, everything is planned clearly before starting the work."
                             },
                             {
                                 step: "03",
-                                title: "Precision Craft",
-                                desc: "The realization of the design blueprint. Our master technicians utilize precision instrumentation to integrate components, ensuring a factory-grade fit and finish that epitomizes both durability and sophistication."
+                                title: "Skilled Craftsmanship",
+                                desc: "This is where the real work begins. Our experienced technicians carefully install each component with proper tools, ensuring perfect fitting, clean finish, and long-lasting quality just like factory standards."
                             },
                             {
                                 step: "04",
-                                title: "The Final Handover",
-                                desc: "Prior to delivery, Tanveer Farooqui personally audits the craftsmanship. We facilitate a comprehensive presentation, finalize acoustic calibrations, and ensure the transformation exceeds your most exacting standards."
+                                title: "Final Inspection & Handover",
+                                desc: "Before delivery, Tanveer Farooqui personally checks the overall work quality. We fine-tune audio settings, explain all upgrades, and hand over the car only after it meets our quality promise."
                             }
                         ].map((item, idx) => (
                             <ScrollReveal key={idx} direction="up" delay={idx * 150}>
