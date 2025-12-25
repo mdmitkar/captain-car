@@ -217,7 +217,7 @@ const Home = () => {
                                 <span className="text-[#E31E24]">Captain Car.</span>
                             </h2>
 
-                            <div className="space-y-6 text-gray-400 text-base leading-relaxed mb-10 text-left">
+                            <div className="space-y-6 text-gray-400 text-base leading-relaxed mb-10 text-justify">
                                 <p>
                                     Founded by <strong className="text-white">Tanveer Farooqui</strong>, Captain Car has evolved from a passionate vision into Bhiwandi's architectural sanctuary for automotive excellence. With over 15 years of personal expertise, Tanveer treats every vehicle not as a machine, but as a canvas for exquisite art.
                                 </p>
@@ -302,7 +302,7 @@ const Home = () => {
 
                                     <span className="text-5xl font-black text-brand-red/10 group-hover:text-brand-red/20 transition-all duration-700 block mb-6 italic">{item.step}</span>
                                     <h3 className="text-xl font-black text-white mb-4 uppercase italic tracking-tighter group-hover:text-brand-red transition-colors duration-500">{item.title}</h3>
-                                    <p className="text-gray-400 text-sm leading-relaxed text-left font-medium">{item.desc}</p>
+                                    <p className="text-gray-400 text-sm leading-relaxed text-justify font-medium">{item.desc}</p>
 
                                     {/* Corner Accent */}
                                     <div className="absolute top-6 right-6 w-8 h-8 border-t border-r border-white/5 group-hover:border-brand-red/30 transition-colors duration-500" />
