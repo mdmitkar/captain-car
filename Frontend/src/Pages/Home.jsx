@@ -6,6 +6,7 @@ import ScrollReveal from '../Components/ScrollReveal';
 const Home = () => {
     const [showHeroText, setShowHeroText] = useState(false);
     const [showBottomContent, setShowBottomContent] = useState(false);
+    const [showButton, setShowButton] = useState(false);
     const [openFaq, setOpenFaq] = useState(null);
 
     const toggleFaq = (index) => {
@@ -24,10 +25,12 @@ const Home = () => {
     useEffect(() => {
         const heroTimer = setTimeout(() => setShowHeroText(true), 1860);
         const bottomTimer = setTimeout(() => setShowBottomContent(true), 3500);
+        const buttonTimer = setTimeout(() => setShowButton(true), 5500);
 
         return () => {
             clearTimeout(heroTimer);
             clearTimeout(bottomTimer);
+            clearTimeout(buttonTimer);
         };
     }, []);
 
@@ -36,22 +39,26 @@ const Home = () => {
         {
             title: 'Concert Audio',
             desc: 'Audiophile-grade sound engineering. From high-fidelity speakers and powerful subwoofers to precision DSP tuning for a studio-quality experience on wheels.',
-            img: '/speaker/bossaudiosystem-removebg-preview.png'
+            img: '/speaker/bossaudiosystem-removebg-preview.png',
+            link: '/products#speakers'
         },
         {
             title: 'Premium Interiors',
             desc: 'Luxury meets comfort. Hand-crafted Nappa leather seat covers and ergonomic fittings that transform your cabin into a first-class lounge.',
-            img: '/seat cover/seatcover1-removebg-preview.png'
+            img: '/seat cover/seatcover1-removebg-preview.png',
+            link: '/products#seat-covers'
         },
         {
             title: 'Tech Upgrades',
             desc: 'The latest in automotive intelligence. High-resolution Android displays, 360-degree cameras, and ambient mood lighting controlled right from your smartphone.',
-            img: '/car-display/cardisplay2-removebg-preview.png'
+            img: '/car-display/cardisplay2-removebg-preview.png',
+            link: '/products#audio-video'
         },
         {
             title: 'Exterior Styling',
             desc: "Command the road with presence. Custom body kits, premium alloy wheels, and professional chrome deletions that give your vehicle a distinct, aggressive edge.",
-            img: '/car-tyre-cap/car-wheel_cap-removebg-preview.png'
+            img: '/car-tyre-cap/car-wheel_cap-removebg-preview.png',
+            link: '/products#wheel-caps'
         },
     ];
 
@@ -139,7 +146,7 @@ const Home = () => {
                     </ScrollReveal>
                 </div>
 
-                <div className={`absolute bottom-6 left-0 w-full flex flex-col items-center justify-center z-30 transition-all duration-1000 delay-[300ms] transform cursor-pointer ${showBottomContent ? 'translate-y-0 opacity-100' : 'translate-y-[20px] opacity-0'}`}>
+                <div className={`absolute bottom-6 left-0 w-full flex flex-col items-center justify-center z-30 transition-all duration-1000 transform cursor-pointer ${showButton ? 'translate-y-0 opacity-100' : 'translate-y-[20px] opacity-0'}`}>
                     <Button
                         variant="custom"
                         onClick={() => smoothScrollTo('about-section')}
@@ -386,8 +393,10 @@ const Home = () => {
                             <img src={service.img} alt={service.title} className="absolute inset-0 w-full h-full object-contain pb-10" />
                             <div className="absolute bottom-0 left-0 right-0 px-6 pb-4 pt-10 bg-gradient-to-t from-black via-black/90 to-transparent">
                                 <h3 className="text-xl font-black text-white uppercase italic mb-2">{service.title}</h3>
-                                <p className="text-gray-400 text-[10px] mb-3">{service.desc}</p>
-                                <span className="text-brand-red font-bold uppercase tracking-widest text-[10px] flex items-center gap-2">Explore <span>→</span></span>
+                                <p className="text-gray-400 text-xs font-medium mb-3 leading-relaxed">{service.desc}</p>
+                                <Link to={service.link} className="text-brand-red font-bold uppercase tracking-widest text-xs flex items-center gap-2 hover:text-white transition-colors">
+                                    Explore <span>→</span>
+                                </Link>
                             </div>
                         </div>
                     ))}
@@ -406,11 +415,11 @@ const Home = () => {
                                         <img src={service.img} alt={service.title} className="absolute inset-0 w-full h-full object-contain group-hover:scale-110 transition-transform duration-1000 px-12 pb-14" />
 
                                         <div className="absolute bottom-0 left-0 right-0 px-8 pb-5 pt-12 bg-gradient-to-t from-black via-black/95 to-transparent z-10">
-                                            <h3 className="text-2xl font-black text-white uppercase italic mb-1 tracking-tighter">{service.title}</h3>
-                                            <p className="text-gray-300 mb-4 font-medium text-[11px] leading-relaxed line-clamp-2 max-w-[85%]">{service.desc}</p>
-                                            <span className="inline-flex items-center gap-2 text-brand-red font-bold uppercase tracking-widest text-[10px] group-hover:gap-4 transition-all">
+                                            <h3 className="text-2xl font-black text-white uppercase italic mb-2 tracking-tighter">{service.title}</h3>
+                                            <p className="text-gray-300 mb-6 font-medium text-sm leading-relaxed line-clamp-3 max-w-[90%]">{service.desc}</p>
+                                            <Link to={service.link} className="inline-flex items-center gap-2 text-brand-red font-bold uppercase tracking-widest text-xs group-hover:gap-4 transition-all hover:text-white">
                                                 Explore Full Catalogue <span>→</span>
-                                            </span>
+                                            </Link>
                                         </div>
                                     </div>
                                 ))}
