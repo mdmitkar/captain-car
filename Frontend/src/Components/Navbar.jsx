@@ -7,6 +7,7 @@ const Navbar = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
 
@@ -117,27 +118,58 @@ const Navbar = () => {
             {/* Mobile Menu Overlay */}
             <div className={`fixed inset-0 bg-black/95 backdrop-blur-xl z-40 transition-all duration-500 ease-in-out md:hidden flex flex-col items-center justify-center gap-8 ${mobileMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'}`}>
                 {navLinks.map((link, idx) => (
-                    <div key={link.path} className="flex flex-col items-center gap-4">
-                        <Link
-                            to={link.path}
-                            onClick={() => setMobileMenuOpen(false)}
-                            className={`text-3xl font-bold uppercase tracking-tighter hover:text-brand-red transition-colors ${isActive(link.path) ? 'text-[#DC143C]' : 'text-white'}`}
-                            style={{ transitionDelay: `${idx * 100}ms` }}
-                        >
-                            {link.name}
-                        </Link>
+                    <div key={link.path} className="flex flex-col items-center gap-4 w-full">
+                        <div className="flex items-center gap-2 justify-center w-full relative">
+                            {/* Ghost Button for alignment balance */}
+                            {link.isDropdown && <div className="p-2 w-10 h-10 invisible" />}
+
+                            <Link
+                                to={link.path}
+                                onClick={() => setMobileMenuOpen(false)}
+                                className={`text-3xl font-bold uppercase tracking-tighter hover:text-brand-red transition-colors ${isActive(link.path) ? 'text-[#DC143C]' : 'text-white'}`}
+                                style={{ transitionDelay: `${idx * 100}ms` }}
+                            >
+                                {link.name}
+                            </Link>
+
+                            {link.isDropdown && (
+                                <button
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        setMobileProductsOpen(!mobileProductsOpen);
+                                    }}
+                                    className="p-2 w-10 h-10 flex items-center justify-center text-white hover:text-[#DC143C] transition-colors"
+                                >
+                                    <svg
+                                        className={`w-6 h-6 transition-transform duration-300 ${mobileProductsOpen ? 'rotate-180' : ''}`}
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
+                            )}
+                            {/* Spacer to replace button if no dropdown, maintaining absolute center if needed, but not strictly required for other links as they are alone */}
+                            {!link.isDropdown && <div className="hidden" />}
+                        </div>
+
                         {/* Mobile Submenu for Products */}
                         {link.isDropdown && (
-                            <div className="flex flex-col items-center gap-3 animate-fade-in">
-                                {productCategories.map((category) => (
-                                    <button
-                                        key={category.id}
-                                        onClick={() => scrollToCategory(category.id)}
-                                        className="text-gray-500 hover:text-white text-sm font-medium uppercase tracking-widest"
-                                    >
-                                        {category.title}
-                                    </button>
-                                ))}
+                            <div className={`w-full overflow-hidden transition-all duration-500 ease-in-out ${mobileProductsOpen ? 'max-h-[600px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                                <div className="bg-white/5 border border-white/10 rounded-2xl p-2 mx-4 flex flex-col gap-1 backdrop-blur-sm shadow-[inset_0_0_20px_rgba(0,0,0,0.5)]">
+                                    {productCategories.map((category) => (
+                                        <button
+                                            key={category.id}
+                                            onClick={() => scrollToCategory(category.id)}
+                                            className="text-gray-400 hover:text-white hover:bg-white/10 text-xs font-bold uppercase tracking-[0.2em] py-3 px-4 rounded-xl transition-all text-left flex items-center justify-between group/subitem"
+                                        >
+                                            {category.title}
+                                            <span className="opacity-0 group-hover/subitem:opacity-100 text-[#DC143C] transition-opacity">→</span>
+                                        </button>
+                                    ))}
+                                </div>
                             </div>
                         )}
                     </div>
