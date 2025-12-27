@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import ScrollReveal from '../Components/ScrollReveal';
 
 const Services = () => {
@@ -7,6 +8,10 @@ const Services = () => {
 
     return (
         <div className="min-h-screen bg-black text-white font-sans selection:bg-brand-red selection:text-white pt-20 relative">
+            <Helmet>
+                <title>Our Services - Captain Car</title>
+                <meta name="description" content="Explore our premium car modification services: Concert Audio, Custom Interiors, Sun Control Films, Paint Protection, and Security Systems." />
+            </Helmet>
             {/* Background Texture */}
             <div className="absolute inset-0 z-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'url(/assets/figma-img/bg-pattern.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
             <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-brand-red/10 to-transparent pointer-events-none z-0" />

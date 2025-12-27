@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import ScrollReveal from '../Components/ScrollReveal';
 import Button from '../Components/Button';
 
@@ -155,6 +156,10 @@ const Products = () => {
 
     return (
         <div className="bg-premium-black text-white font-sans overflow-x-hidden selection:bg-brand-red selection:text-white">
+            <Helmet>
+                <title>Our Products - Captain Car</title>
+                <meta name="description" content="Browse our wide range of car accessories: Android Players, Speakers, Seat Covers, LED Lights, and more. Quality you can trust." />
+            </Helmet>
 
             {/* ================= HERO HEADER ================= */}
             <div className="relative pt-32 pb-20 px-6 bg-black overflow-hidden">

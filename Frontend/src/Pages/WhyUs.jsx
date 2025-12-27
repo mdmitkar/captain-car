@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import ScrollReveal from '../Components/ScrollReveal';
 
 const WhyUs = () => {
     return (
         <div className="bg-black text-white min-h-screen pt-32 font-sans selection:bg-[#E31E24] selection:text-white overflow-hidden relative">
+            <Helmet>
+                <title>Why Choose Us - Captain Car</title>
+                <meta name="description" content="Discover why Captain Car is the best car decor studio in Bhiwandi. We offer zero-wire cutting installation, genuine products, and 100% warranty support." />
+            </Helmet>
 
             {/* Background Ambient Glows */}
             <div className="fixed top-0 left-0 w-[500px] h-[500px] bg-[#E31E24]/10 rounded-full blur-[120px] pointer-events-none" />

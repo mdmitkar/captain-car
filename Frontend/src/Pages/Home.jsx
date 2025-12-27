@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Button from '../Components/Button';
 import ScrollReveal from '../Components/ScrollReveal';
 
@@ -91,6 +92,10 @@ const Home = () => {
 
     return (
         <div className="bg-premium-black text-white font-sans overflow-x-hidden selection:bg-brand-red selection:text-white">
+            <Helmet>
+                <title>Captain Car - Premium Car Decor & Audio</title>
+                <meta name="description" content="Transform your vehicle with Captain Car's premium decoration, concert-level audio, custom interiors, and tech upgrades. The #1 car modification studio in Bhiwandi." />
+            </Helmet>
 
             {/* ================= HERO SECTION ================= */}
             <div className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden">
