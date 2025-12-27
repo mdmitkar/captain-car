@@ -22,8 +22,9 @@ const Services = () => {
                         <h1 className="text-3xl md:text-5xl font-black text-white italic tracking-tighter uppercase mb-6 leading-none drop-shadow-2xl">
                             Our <span className="text-[#E31E24]">Services</span>
                         </h1>
-                        <p className="text-lg md:text-xl text-gray-300 max-w-3xl leading-relaxed border-l-4 border-brand-red/50 pl-6 text-left font-medium tracking-wide">
-                            We don't just upgrade cars; we transform them. From concert-level audio to showroom finish detailing, explore our comprehensive range of premium services.
+                        <p className="text-xl md:text-2xl lg:text-3xl text-white/90 max-w-4xl leading-relaxed border-l-4 border-[#E31E24] pl-6 text-left font-semibold tracking-wide drop-shadow-sm">
+                            We don't just upgrade cars, we transform them. <br />
+                            From concert level audio to showroom finish detailing, explore our comprehensive range of premium services.
                         </p>
                     </div>
                 </ScrollReveal>
@@ -38,8 +39,8 @@ const Services = () => {
                             { label: "Warranty Support", val: "100%" }
                         ].map((stat, i) => (
                             <div key={i} className="text-center">
-                                <div className="text-2xl font-black text-white italic">{stat.val}</div>
-                                <div className="text-[10px] text-gray-500 uppercase tracking-widest">{stat.label}</div>
+                                <div className="text-4xl md:text-5xl font-black text-white italic mb-2">{stat.val}</div>
+                                <div className="text-sm md:text-base text-gray-400 font-bold uppercase tracking-widest">{stat.label}</div>
                             </div>
                         ))}
                     </div>
@@ -65,8 +66,8 @@ const Services = () => {
                                             {service.icon}
                                         </div>
                                     </div>
-                                    <h3 className="text-xl font-black text-white uppercase italic mb-4 tracking-tight group-hover:text-[#E31E24] transition-colors duration-300">{service.title}</h3>
-                                    <p className="text-gray-400 leading-relaxed font-medium text-sm group-hover:text-gray-200 transition-colors duration-300">{service.description}</p>
+                                    <h3 className="text-2xl font-black text-white uppercase italic mb-4 tracking-tight group-hover:text-[#E31E24] transition-colors duration-300">{service.title}</h3>
+                                    <p className="text-gray-300 leading-relaxed font-medium text-base group-hover:text-white transition-colors duration-300">{service.description}</p>
                                 </div>
 
                                 <div className="relative z-10 mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
